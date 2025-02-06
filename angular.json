@@ -91,7 +91,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               {
-                "glob": "**/*",
+                "glob": "'/src/app/assets'",
                 "input": "public"
               }
             ],
@@ -103,5 +103,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "1d288004-d1a0-4dd4-a63f-f063d4fd2c87"
   }
 }

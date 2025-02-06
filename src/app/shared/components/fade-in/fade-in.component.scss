@@ -1,0 +1,90 @@
+.fade-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: white;
+    z-index: 10000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    overflow: hidden; 
+    animation: fadeOut 2s ease 3.4s;
+  }
+  
+  span {
+    font-size: 2rem;
+    font-weight: 400;
+    color: gray;
+    opacity: 0; 
+    animation: fadeIn 1s ease-in-out forwards; 
+  }
+  
+  h1 {
+    color: white;
+    font-size: 8rem;
+    clip-path: circle();
+    animation: scaleIn 1.5s ease-in-out forwards, textShadow 2s ease 1s;
+    padding: 15px;
+    display: inline-block;
+    background-color: #8774e8;
+  }
+  
+  h4 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: gray;
+    animation: fadeIn 1s ease forwards;
+    text-align: center;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes scaleIn {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes textShadow {
+    0% {
+      text-shadow: none;
+      color: #8774e8;
+    }
+    50% {
+      text-shadow: 0 0 10px rgba(135, 116, 232, 0.5), 0 0 20px rgba(135, 116, 232, 0.5);
+    }
+    100% {
+      text-shadow: 0 0 10px rgba(135, 116, 232, 0.8), 0 0 20px rgba(135, 116, 232, 0.8);
+      color: #040f0f;
+    }
+  }
+  
+  @keyframes fadeOut {
+    0%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+  }

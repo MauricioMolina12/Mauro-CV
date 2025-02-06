@@ -1,0 +1,50 @@
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  .title {
+    font-size: 2.6rem;
+    color: #8774e8;
+    max-width: 60%;
+    text-align: center;
+    transform: translateX(-100%);
+    transition: transform 1s ease;
+
+    span {
+      font-size: 6rem;
+      color: #040f0f;
+      font-weight: 800;
+    }
+
+    &.active {
+      transform: translateX(0);
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrapper {
+    flex-direction: row;
+    .title {
+      transform: translateX(-50%);
+      font-size: 4rem;
+      span {
+        font-size: 8rem;
+      }
+    }
+
+    .image {
+      width: 30%;
+      height: 80%;
+      background-image: url('../../../assets/banner2.jpeg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50% center;
+      border-radius: 10px;
+    }
+  }
+}
