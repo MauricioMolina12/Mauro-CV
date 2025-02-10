@@ -32,7 +32,7 @@ export class WhymeComponent implements OnInit {
         this.observer.observe(this.title.nativeElement);
       }
     } else {
-      this.handleScroll();
+      // this.handleScroll();
     }
   }
 

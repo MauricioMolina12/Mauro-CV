@@ -43,25 +43,25 @@ export class SpecilizingComponent {
         this.observer.observe(element.nativeElement);
       });
     } else {
-      this.handleScroll();
-      window.addEventListener('scroll', this.handleScroll);
+      // this.handleScroll();
+      // window.addEventListener('scroll', this.handleScroll);
     }
   }
 
-  handleScroll = () => {
-    this.chart.forEach((element) => {
-      if (element?.nativeElement instanceof HTMLElement) {
-        const rect = element.nativeElement.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+  // handleScroll = () => {
+  //   this.chart.forEach((element) => {
+  //     if (element?.nativeElement instanceof HTMLElement) {
+  //       const rect = element.nativeElement.getBoundingClientRect();
+  //       const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
 
-        if (isVisible) {
-          element.nativeElement.classList.add('in-view');
-        } else {
-          element.nativeElement.classList.remove('in-view');
-        }
-      }
-    });
-  };
+  //       if (isVisible) {
+  //         element.nativeElement.classList.add('in-view');
+  //       } else {
+  //         element.nativeElement.classList.remove('in-view');
+  //       }
+  //     }
+  //   });
+  // };
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['startScrolling'] && this.startScrolling) {
@@ -81,18 +81,18 @@ export class SpecilizingComponent {
   jobs = [
     {
       title: 'Frontend Developer',
-      description: '',
-      pathImage: '../../../assets/front.webp',
+      description: 'I transform ideas into interactive web experiences. With a focus on HTML, CSS, JavaScript and frameworks like Angular, React, Astro and Next.js I ensure that each page is functional, fast and visually appealing.',
+      pathImage: 'assets/front.webp',
     },
     {
       title: 'Mobile Developer',
-      description: '',
-      pathImage: '../../../assets/mobile.webp',
+      description: 'I develop native and cross-platform mobile applications using technologies such as React Native, Flutter and Ionic. My goal is to create intuitive and high-performance apps for iOS and Android.',
+      pathImage: 'assets/mobile.webp',
     },
     {
       title: 'UI/UX Designer',
-      description: '',
-      pathImage: '../../../assets/design.webp',
+      description: 'I create experience-focused user interfaces, using design principles to make apps not only aesthetically pleasing, but also easy to use. I work with tools like Figma, Sketch, and Adobe XD to design memorable experiences.',
+      pathImage: 'assets/design.webp',
     },
   ];
 }

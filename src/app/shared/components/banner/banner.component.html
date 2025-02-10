@@ -1,5 +1,6 @@
 <div class="banner-wrapper">
-  <div class="banner-profile"></div>
+  <div class="banner-profile">
+  </div>
   <div class="banner-title">
     <span> Hello, welcome </span>
     <h1>I'm Mauricio an <span class="job"></span></h1>
@@ -7,12 +8,13 @@
       I'm not a robot… but I am a machine when it comes to creating next-level
       UI/UX interfaces and frontend code..
     </p>
-  </div>
-  <div class="banner-data">
     <div class="item" *ngFor="let item of data">
       <h2>{{ item.title }}</h2>
       <span>{{ item.subtitle }}</span>
     </div>
+  </div>
+  <div class="points">
+    <div class="point" *ngFor="let point of [].constructor(100)"></div>
   </div>
   <!-- <div class="banner-tech">
     <div class="tech-slider">

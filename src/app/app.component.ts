@@ -18,7 +18,7 @@ import { WhymeComponent } from "./shared/components/whyme/whyme.component";
     SpecilizingComponent,
     FadeInComponent,
     WhymeComponent
-],
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

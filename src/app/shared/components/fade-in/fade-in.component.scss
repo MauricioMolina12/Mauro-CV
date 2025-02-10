@@ -12,7 +12,7 @@
     justify-content: center;
     gap: 10px;
     overflow: hidden; 
-    animation: fadeOut 2s ease 3.4s;
+    // animation: fadeOut 2s ease 3.4s;
   }
   
   span {
@@ -27,7 +27,7 @@
     color: white;
     font-size: 8rem;
     clip-path: circle();
-    animation: scaleIn 1.5s ease-in-out forwards, textShadow 2s ease 1s;
+    animation: scaleIn 1.5s ease-in-out forwards;
     padding: 15px;
     display: inline-block;
     background-color: #8774e8;
@@ -65,26 +65,26 @@
     }
   }
   
-  @keyframes textShadow {
-    0% {
-      text-shadow: none;
-      color: #8774e8;
-    }
-    50% {
-      text-shadow: 0 0 10px rgba(135, 116, 232, 0.5), 0 0 20px rgba(135, 116, 232, 0.5);
-    }
-    100% {
-      text-shadow: 0 0 10px rgba(135, 116, 232, 0.8), 0 0 20px rgba(135, 116, 232, 0.8);
-      color: #040f0f;
-    }
-  }
+  // @keyframes textShadow {
+  //   0% {
+  //     text-shadow: none;
+  //     color: #8774e8;
+  //   }
+  //   50% {
+  //     text-shadow: 0 0 10px rgba(135, 116, 232, 0.5), 0 0 20px rgba(135, 116, 232, 0.5);
+  //   }
+  //   100% {
+  //     text-shadow: 0 0 10px rgba(135, 116, 232, 0.8), 0 0 20px rgba(135, 116, 232, 0.8);
+  //     color: #040f0f;
+  //   }
+  // }
   
-  @keyframes fadeOut {
-    0%{
-        opacity: 1;
-    }
+  // @keyframes fadeOut {
+  //   0%{
+  //       opacity: 1;
+  //   }
 
-    100%{
-        opacity: 0;
-    }
-  }
+  //   100%{
+  //       opacity: 0;
+  //   }
+  // }

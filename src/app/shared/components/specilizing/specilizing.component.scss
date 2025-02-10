@@ -37,8 +37,6 @@
       max-height: max-content;
       min-height: 33%;
       background-color: white;
-      box-shadow: -5px -5px 10px rgba(128, 128, 128, 0.005),
-        5px 5px 10px rgb(237, 237, 237);
       border-radius: 15px;
       position: relative;
       display: flex;
@@ -58,27 +56,14 @@
 
       .card-image {
         width: 80px;
-        margin: 0 auto;
-        height: 80px;
-        background-size: contain;
-        background-repeat: no-repeat;
+        height: auto;
+        min-height: 80px;
+        aspect-ratio: 1/1;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding-bottom: 20px;
       }
 
-      .image1 {
-        background-image: url("../../../assets/front.webp");
-      }
-
-      .image2 {
-        background-image: url("../../../assets/mobile.webp");
-      }
-
-      .image3 {
-        background-image: url("../../../assets/design.webp");
-      }
 
       .card-title {
         text-align: center;
@@ -103,6 +88,7 @@
       max-width: 40%;
     }
     .cards-wrapper {
+      max-width: 80%;
       gap: 20px;
       justify-content: center;
       flex-direction: row;
