@@ -11,10 +11,17 @@
   position: sticky;
   top: 0;
   z-index: 10000;
+  
 
   &.active {
     background-color: rgba(255, 255, 255, 0.111);
     backdrop-filter: blur(20px);
+
+    .nav-title{
+      .name{
+        color: white;
+      }
+    }
   }
 
   .nav-title {
@@ -174,7 +181,7 @@
     .nav-side_bar {
       order: 2;
       transform: translateY(0);
-      width: 60%;
+      width: 70%;
       height: 100%;
       position: static;
       background-color: transparent;

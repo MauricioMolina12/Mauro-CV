@@ -24,7 +24,7 @@ export class NavBarComponent implements OnInit {
   isActive = false;
   @ViewChildren('link') links!: QueryList<ElementRef>;
   @ViewChild('nav') nav!: ElementRef;
-  items = ['home', 'about', 'Skills', 'Experience', 'Contact me'];
+  items = ['home', 'about', 'Skills', 'Educations','Experience', 'Contact me'];
   @Output() redirectSection = new EventEmitter<string>();
 
   constructor(private el: ElementRef, private renderer: Renderer2) { }
@@ -60,6 +60,7 @@ export class NavBarComponent implements OnInit {
 
   onNavItemClick(item: string) {
     this.redirectSection.emit(item); 
+    
   }
 
   // getSection(e: Event) {

@@ -32,12 +32,12 @@ export class ExperiencesComponent {
             {
               title: 'CSS',
               image: 'assets/css.png',
-              slug: 'https://edutin.com/curso-de-ionic'
+              slug: 'https://edutin.com/curso-de-css3'
             },
             {
               title: 'Ionic',
               image: 'assets/ionic.png',
-              slug: 'https://edutin.com/curso-de-css3'
+              slug: 'https://edutin.com/curso-de-ionic'
             }
           ]
 

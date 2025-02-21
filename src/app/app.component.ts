@@ -43,20 +43,22 @@ export class AppComponent implements OnInit {
   start: boolean = false
 
   ngOnInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      this.renderer.setStyle(this.document.body, 'overflowY', 'hidden');
-      setTimeout(() => {
-        this.renderer.setStyle(this.document.body, 'overflowY', 'auto');
-        this.viewPresentation = false;
-      }, 4000);
-    }
+    // if (isPlatformBrowser(this.platformId)) {
+    //   this.renderer.setStyle(this.document.body, 'overflowY', 'hidden');
+    //   setTimeout(() => {
+    //     this.renderer.setStyle(this.document.body, 'overflowY', 'auto');
+    //     this.viewPresentation = false;
+    //   }, 4000);
+    // }
   }
 
   onNavItemSelected(item: any) {
-    console.log(item);
-    const section = document.getElementById(item.toLowerCase().replace(/\s+/g, '-'));
+    const formattedId = item.toLowerCase().replace(/\s+/g, '-');
+    const section = document.getElementById(formattedId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      console.warn('Sección no encontrada:', formattedId);
     }
   }
 

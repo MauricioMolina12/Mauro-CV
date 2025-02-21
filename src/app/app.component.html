@@ -1,14 +1,14 @@
-<app-fade-in *ngIf="viewPresentation"></app-fade-in>
-<app-nav-bar (navItemClicked)="onNavItemSelected($event)"></app-nav-bar>
+<!-- <app-fade-in *ngIf="viewPresentation"></app-fade-in> -->
+<app-nav-bar (redirectSection)="onNavItemSelected($event)"></app-nav-bar>
 
 <section id="home">
     <app-banner></app-banner>
 </section>
-<section id="skills">
-    <app-specilizing [startScrolling]="start"></app-specilizing>
-</section>
 <section id="about">
     <app-whyme></app-whyme>
+</section>
+<section id="skills">
+    <app-specilizing [startScrolling]="start"></app-specilizing>
 </section>
 <section id="projects">
     <app-projects></app-projects>
@@ -16,10 +16,10 @@
 <section id="educations">
     <app-educations></app-educations>
 </section>
-<section id="experiences">
+<section id="experience">
     <app-experiences></app-experiences>
 </section>
-<section id="contact">
+<section id="contact-me">
     <app-contact></app-contact>
 </section>
 
