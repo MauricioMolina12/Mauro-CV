@@ -1,0 +1,34 @@
+<div class="experiences-wrapper">
+    <h2>Experiences</h2>
+    <div class="experiences">
+        <div class="experience" *ngFor="let experience of experiences">
+            <div class="experience-company">
+                <img [src]="experience.logo" alt="">
+                <div class="company-name">
+                    <h4>{{experience.company}}</h4>
+                    <span>{{experience.time}}</span>
+                </div>
+            </div>
+            <div class="experience-information">
+                <ul class="list">
+                    <li class="item" *ngFor="let job of experience.positions">
+                        <h2>{{job.title}}</h2>
+                        <span>{{job.description}}</span>
+                        <div class="more" *ngIf="job.courses">
+                            <h5>Courses done</h5>
+                            <div class="courses">
+                                <div class="course" *ngFor="let course of job.courses">
+                                    <div class="course-image">
+                                        <img [src]="course.image" [alt]="course.title">
+                                    </div>
+                                    <h3 class="course-name">{{course.title}}</h3>
+                                    <a [href]="course.slug" target="_blank">View course</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

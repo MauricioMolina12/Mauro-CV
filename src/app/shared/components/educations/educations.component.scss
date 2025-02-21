@@ -1,0 +1,185 @@
+.educations-wrapper {
+    width: 100%;
+    height: max-content;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-block: 60px;
+
+    h2 {
+        color: #d9d1ff;
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .educations {
+        width: 100%;
+        height: max-content;
+        min-height: 80%;
+        max-height: max-content;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+
+
+        .education {
+            width: 90%;
+            height: max-content;
+            min-height: 30%;
+            max-height: max-content;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: end;
+            margin-block: 30px;
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: -20px;
+                top: 60px;
+                bottom: 0;
+                width: 2px;
+                height: 50%;
+                border: 1px solid rgb(237, 237, 237);
+            }
+
+            .education-company {
+                position: absolute;
+                top: 0;
+                left: -40px;
+                width: 90%;
+                max-width: 90%;
+                height: 40px;
+                border-radius: 10px;
+                z-index: 1000;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                gap: 10px;
+
+                img {
+                    max-width: 15%;
+                    border-radius: 10px;
+                }
+
+                .education-name{
+                    width: 90%;
+                    max-width: 90%;
+                    h4{
+                        // white-space: nowrap;
+                        color: #d9d1ff;
+                        font-weight: 700;
+                    }
+
+                    span{
+                        color: rgb(203, 203, 203);
+
+                    }
+                }
+            }
+
+            .education-information {
+                width: 94%;
+                height: max-content;
+                min-height: 75%;
+                max-height: max-content;
+                margin-top: 45px;
+
+                .list {
+                    list-style: none;
+                    margin: 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    margin-top: 10px;
+                    padding-left: 10px;
+
+                    .item {
+                        margin-block: 10px;
+                        padding: 0;
+                        display: flex;
+                        align-items: start;
+                        justify-content: start;
+                        flex-direction: column;
+
+                        h2 {
+                            margin: 0;
+                            font-size: .9rem;
+                            font-weight: 400;
+                        }
+
+                        span,a{
+                            text-decoration: none;
+                            margin-top: 10px;
+                            display: block;
+                            color: rgb(203, 203, 203);
+                        }
+                        
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .educations-wrapper {
+        .educations {
+            width: 50%;
+
+            .education {
+
+                &::after {
+                    background-color: rgb(237, 237, 237);
+                }
+
+                .education-company {
+                    height: 50px;
+                    justify-content: start;
+                    gap: 14px;
+
+                    img {
+                        max-width: 8%;
+                        border-radius: 10px;
+                    }
+                }
+
+                .education-information {
+                    width: 94%;
+                    height: max-content;
+                    min-height: 75%;
+                    max-height: max-content;
+                    margin-top: 45px;
+
+                    .list {
+                        list-style: none;
+                        margin: 0;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        margin-top: 10px;
+
+                        .item {
+                            margin-block: 10px;
+                            padding: 0;
+
+                            h2 {
+                                font-size: .9rem;
+                            }
+
+                        
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

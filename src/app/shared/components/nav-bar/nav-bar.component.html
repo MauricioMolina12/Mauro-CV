@@ -1,6 +1,6 @@
 <nav class="nav-bar" #nav>
   <button class="burger" onclick="this.classList.toggle('active')" (click)="toggle()">
-    <span></span>
+    <!-- <span></span> -->
     <span></span>
     <span></span>
   </button>
@@ -13,7 +13,7 @@
   </div>
   <div class="nav-side_bar">
     <ul class="side-bar__list">
-        <li class="side-bar__item" *ngFor="let item of items"><a #link href="">{{item}}</a></li>
+        <li class="side-bar__item" *ngFor="let item of items"><a #link (click)="onNavItemClick(item)">{{item}}</a></li>
     </ul>
   </div>
 </nav>

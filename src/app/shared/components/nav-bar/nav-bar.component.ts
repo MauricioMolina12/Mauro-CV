@@ -2,8 +2,10 @@ import { NgFor } from '@angular/common';
 import {
   Component,
   ElementRef,
+  EventEmitter,
   HostListener,
   OnInit,
+  Output,
   QueryList,
   Renderer2,
   ViewChild,
@@ -22,10 +24,12 @@ export class NavBarComponent implements OnInit {
   isActive = false;
   @ViewChildren('link') links!: QueryList<ElementRef>;
   @ViewChild('nav') nav!: ElementRef;
+  items = ['home', 'about', 'Skills', 'Experience', 'Contact me'];
+  @Output() redirectSection = new EventEmitter<string>();
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor(private el: ElementRef, private renderer: Renderer2) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   @HostListener('document:scroll', ['$event'])
   onScroll(event: Event) {
@@ -52,6 +56,10 @@ export class NavBarComponent implements OnInit {
     } else {
       this.renderer.removeClass(this.nav.nativeElement, 'active');
     }
+  }
+
+  onNavItemClick(item: string) {
+    this.redirectSection.emit(item); 
   }
 
   // getSection(e: Event) {
@@ -81,5 +89,4 @@ export class NavBarComponent implements OnInit {
   //   return rect.top >= threshold;
   // }
 
-  items = ['Home', 'Skills', 'Works', 'Experience', 'Contact me'];
 }

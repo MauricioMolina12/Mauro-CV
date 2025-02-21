@@ -11,9 +11,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class BannerComponent {
   @Output() startClicked = new EventEmitter<void>(); 
 
-  onStartClick() {
-   console.log("Hola");
-   
+  onStartClick() {   
     this.startClicked.emit();
   }
 

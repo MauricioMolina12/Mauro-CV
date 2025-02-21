@@ -1,0 +1,227 @@
+.experiences-wrapper {
+    width: 100%;
+    height: max-content;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    h2 {
+        color: #d9d1ff;
+        font-size: 2rem;
+    }
+
+    .experiences {
+        width: 100%;
+        height: max-content;
+        min-height: 80%;
+        max-height: max-content;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+
+
+        .experience {
+            width: 90%;
+            height: max-content;
+            min-height: 30%;
+            max-height: max-content;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: end;
+            margin-block: 30px;
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: -20px;
+                top: 60px;
+                bottom: 0;
+                width: 2px;
+                height: 90%;
+                border: 1px solid rgb(237, 237, 237);
+            }
+
+            .experience-company {
+                position: absolute;
+                top: 0;
+                left: -40px;
+                width: 50%;
+                height: 40px;
+                border-radius: 10px;
+                z-index: 1000;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                gap: 10px;
+
+                img {
+                    max-width: 20%;
+                    border-radius: 10px;
+                }
+
+                .company-name{
+                    h4{
+                        white-space: nowrap;
+                        color: #d9d1ff;
+                        font-weight: 700;
+                    }
+
+                    span{
+                        color: rgb(203, 203, 203);
+
+                    }
+                }
+            }
+
+            .experience-information {
+                width: 94%;
+                height: max-content;
+                min-height: 75%;
+                max-height: max-content;
+                margin-top: 45px;
+
+                .list {
+                    list-style: none;
+                    margin: 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    margin-top: 10px;
+
+                    .item {
+                        margin-block: 10px;
+                        padding: 0;
+
+                        h2 {
+                            font-size: .9rem;
+                            font-weight: 400;
+                        }
+
+                        span{
+                            color: rgb(203, 203, 203);
+
+                        }
+
+                        .more {
+                            width: 100%;
+                            height: max-content;
+                            min-height: 40%;
+                            margin-block: 30px;
+
+                            h5 {
+                                font-weight: 500;
+                                font-size: 1rem;
+                                color: #d9d1ff;
+                            }
+
+                            a {
+                                font-size: .8rem;
+                                text-decoration: none;
+                                background-color: #8774e8;
+                                color: white;
+                                padding: 4px;
+                                border-radius: 10px;
+                                margin-top: 10px;
+                            }
+
+                            .courses {
+                                width: 100%;
+                                height: 14vh;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-around;
+
+                                .course {
+                                    width: calc(100% / 3);
+                                    height: 100%;
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+
+                                    .course-image {
+                                        width: 100%;
+                                        height: 70%;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+
+                                        img {
+                                            max-width: 60%;
+                                            height: 60%;
+                                        }
+                                    }
+
+                                    .course-name {
+                                        font-size: 1rem;
+                                        font-weight: 400;
+                                        color: #d9d1ff;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .experiences-wrapper {
+        .experiences {
+            width: 50%;
+
+            .experience {
+
+                &::after {
+                    background-color: rgb(237, 237, 237);
+                }
+
+                .experience-company {
+                    height: 50px;
+                    justify-content: start;
+                    gap: 14px;
+
+                    img {
+                        max-width: 14%;
+                        border-radius: 10px;
+                    }
+                }
+
+                .experience-information {
+                    width: 94%;
+                    height: max-content;
+                    min-height: 75%;
+                    max-height: max-content;
+                    margin-top: 45px;
+
+                    .list {
+                        list-style: none;
+                        margin: 0;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        margin-top: 10px;
+
+                        .item {
+                            margin-block: 10px;
+                            padding: 0;
+
+                            h2 {
+                                font-size: .9rem;
+                            }
+
+                        
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

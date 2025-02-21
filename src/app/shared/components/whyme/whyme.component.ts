@@ -1,9 +1,10 @@
+import { NgFor } from '@angular/common';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-whyme',
   standalone: true,
-  imports: [],
+  imports: [NgFor],
   templateUrl: './whyme.component.html',
   styleUrls: ['./whyme.component.scss'],
 })
@@ -20,8 +21,6 @@ export class WhymeComponent implements OnInit {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add('active');
-            } else {
-              entry.target.classList.remove('active');
             }
           });
         },
@@ -48,4 +47,18 @@ export class WhymeComponent implements OnInit {
       }
     }
   };
+
+  techs = [
+    'assets/html.webp',
+    'assets/css.png',
+    'assets/js.png',
+    'assets/angular.png',
+    'assets/react.png',
+    'assets/next.png',
+    'assets/astro.png',
+    'assets/flutter.png',
+    'assets/ionic.png',
+    'assets/Tailwind.jpg',
+    'assets/figma.png',
+  ]
 }

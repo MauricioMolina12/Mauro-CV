@@ -1,11 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, Inject, Input, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
 import { BannerComponent } from './shared/components/banner/banner.component';
 import { SpecilizingComponent } from './shared/components/specilizing/specilizing.component';
 import { FadeInComponent } from './shared/components/fade-in/fade-in.component';
-import { NgIf } from '@angular/common';
+import { DOCUMENT, isPlatformBrowser, NgIf } from '@angular/common';
 import { WhymeComponent } from "./shared/components/whyme/whyme.component";
+import { ProjectsComponent } from "./shared/components/projects/projects.component";
+import { ExperiencesComponent } from "./shared/components/experiences/experiences.component";
+import { ContactComponent } from "./shared/components/contact/contact.component";
+import { EducationsComponent } from "./shared/components/educations/educations.component";
 
 @Component({
   selector: 'app-root',
@@ -17,7 +21,11 @@ import { WhymeComponent } from "./shared/components/whyme/whyme.component";
     BannerComponent,
     SpecilizingComponent,
     FadeInComponent,
-    WhymeComponent
+    WhymeComponent,
+    ProjectsComponent,
+    ExperiencesComponent,
+    ContactComponent,
+    EducationsComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -25,18 +33,31 @@ import { WhymeComponent } from "./shared/components/whyme/whyme.component";
 export class AppComponent implements OnInit {
   title = 'cv';
 
+  constructor(
+    private renderer: Renderer2,
+    @Inject(DOCUMENT) private document: Document,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) { }
+
   viewPresentation: boolean = true;
-  start: boolean = false;
+  start: boolean = false
 
   ngOnInit(): void {
-    // document.body.style.overflowY = 'hidden';
-    // setTimeout(() => {
-    //   document.body.style.overflowY = 'auto';
-    //   this.viewPresentation = false;
-    // }, 4000);
+    if (isPlatformBrowser(this.platformId)) {
+      this.renderer.setStyle(this.document.body, 'overflowY', 'hidden');
+      setTimeout(() => {
+        this.renderer.setStyle(this.document.body, 'overflowY', 'auto');
+        this.viewPresentation = false;
+      }, 4000);
+    }
   }
 
-  onStartClick() {
-    this.start = true;
+  onNavItemSelected(item: any) {
+    console.log(item);
+    const section = document.getElementById(item.toLowerCase().replace(/\s+/g, '-'));
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
   }
+
 }

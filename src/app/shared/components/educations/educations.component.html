@@ -1,0 +1,22 @@
+<div class="educations-wrapper">
+    <h2>Educations & Certifications</h2>
+    <div class="educations">
+        <div class="education" *ngFor="let education of educations">
+            <div class="education-company">
+                <img [src]="education.logo" alt="">
+                <div class="education-name">
+                    <h4>{{education.education}}</h4>
+                    <span>{{education.time}}</span>
+                </div>
+            </div>
+            <div class="education-information">
+                <ul class="list">
+                    <li class="item" *ngFor="let item of education.positions">
+                        <h2>{{item.title}}</h2>
+                        <a *ngIf="education.link != undefined" target="_blank" [href]="education.link">Ver</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

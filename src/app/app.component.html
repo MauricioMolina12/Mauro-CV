@@ -1,6 +1,26 @@
-<!-- <app-fade-in *ngIf="viewPresentation"></app-fade-in> -->
-<app-nav-bar></app-nav-bar>
-<app-banner (startClicked)="onStartClick()"></app-banner>
-<app-specilizing [startScrolling]="start"></app-specilizing>
-<app-whyme></app-whyme>
+<app-fade-in *ngIf="viewPresentation"></app-fade-in>
+<app-nav-bar (navItemClicked)="onNavItemSelected($event)"></app-nav-bar>
+
+<section id="home">
+    <app-banner></app-banner>
+</section>
+<section id="skills">
+    <app-specilizing [startScrolling]="start"></app-specilizing>
+</section>
+<section id="about">
+    <app-whyme></app-whyme>
+</section>
+<section id="projects">
+    <app-projects></app-projects>
+</section>
+<section id="educations">
+    <app-educations></app-educations>
+</section>
+<section id="experiences">
+    <app-experiences></app-experiences>
+</section>
+<section id="contact">
+    <app-contact></app-contact>
+</section>
+
 <router-outlet />
