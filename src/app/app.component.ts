@@ -56,23 +56,23 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      this.renderer.setStyle(this.document.body, 'overflowY', 'hidden');
-      setTimeout(() => {
-        this.renderer.setStyle(this.document.body, 'overflowY', 'auto');
-        this.viewPresentation = false;
-      }, 4000);
-    }
+    // if (isPlatformBrowser(this.platformId)) {
+      // this.renderer.setStyle(this.document.body, 'overflowY', 'hidden');
+      // setTimeout(() => {
+        // this.renderer.setStyle(this.document.body, 'overflowY', 'auto');
+        // this.viewPresentation = false;
+      // }, 4000);
+    // }
 
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        const excludedRoutes = ['/project']; 
+    // this.router.events.subscribe((event) => {
+    //   if (event instanceof NavigationEnd) {
+    //     const excludedRoutes = ['/project']; 
 
-        this.showMainLayout = !excludedRoutes.some((path) =>
-          this.router.url.startsWith(path)
-        );
-      }
-    });
+    //     this.showMainLayout = !excludedRoutes.some((path) =>
+    //       this.router.url.startsWith(path)
+    //     );
+    //   }
+    // });
   }
 
   onNavItemSelected(item: any) {
