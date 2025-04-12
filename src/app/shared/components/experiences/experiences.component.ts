@@ -11,8 +11,8 @@ import { Component } from '@angular/core';
 export class ExperiencesComponent {
   experiences = [
     {
-      company: 'MercaDatos',
-      time: 'Actuality',
+      company: 'Merca Datos SAS',
+      time: 'April 2025 - Present',
       logo: 'assets/mercadatos.jpg',
       positions: [
         {
@@ -23,7 +23,7 @@ export class ExperiencesComponent {
     },
     {
       company: 'Edutin Academy',
-      time: '10 Months',
+      time: 'April 2024 - December 2024 (9 Months)',
       logo: 'assets/logo-edutin.png',
       positions: [
         {
@@ -56,7 +56,7 @@ export class ExperiencesComponent {
 
     {
       company: 'Freelancer',
-      time: '2 years',
+      time: 'Present',
       logo: 'assets/free.png',
       positions: [
         {
@@ -67,7 +67,7 @@ export class ExperiencesComponent {
     },
     {
       company: 'Designer UI/UX Freelancer',
-      time: '2 years',
+      time: 'Present',
       logo: 'assets/designer.webp',
       positions: [
         {

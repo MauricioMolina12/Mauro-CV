@@ -27,7 +27,7 @@ export class NavBarComponent implements OnInit {
 
   @Output() redirectSection = new EventEmitter<string>();
 
-  items = ['home', 'about', 'Skills', 'Educations', 'Experience', 'Contact me'];
+  items = ['home', 'about', 'Skills', 'Projects','Educations', 'Experience', 'Contact me'];
 
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
