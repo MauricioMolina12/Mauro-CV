@@ -24,12 +24,14 @@ export class NavBarComponent implements OnInit {
   isActive = false;
   @ViewChildren('link') links!: QueryList<ElementRef>;
   @ViewChild('nav') nav!: ElementRef;
-  items = ['home', 'about', 'Skills', 'Educations','Experience', 'Contact me'];
+
   @Output() redirectSection = new EventEmitter<string>();
 
-  constructor(private el: ElementRef, private renderer: Renderer2) { }
+  items = ['home', 'about', 'Skills', 'Educations', 'Experience', 'Contact me'];
 
-  ngOnInit(): void { }
+  constructor(private el: ElementRef, private renderer: Renderer2) {}
+
+  ngOnInit(): void {}
 
   @HostListener('document:scroll', ['$event'])
   onScroll(event: Event) {
@@ -39,7 +41,6 @@ export class NavBarComponent implements OnInit {
 
   toggle() {
     this.isActive = !this.isActive;
-    const button = this.el.nativeElement.querySelector('.toggle-btn');
     const sideBar = this.el.nativeElement.querySelector('.nav-side_bar');
 
     if (this.isActive) {
@@ -59,35 +60,14 @@ export class NavBarComponent implements OnInit {
   }
 
   onNavItemClick(item: string) {
-    this.redirectSection.emit(item); 
-    
+    this.redirectSection.emit(item);
+    const sideBar = this.el.nativeElement.querySelector('.nav-side_bar');
+    const burgerButton = this.el.nativeElement.querySelector('.burger');
+    if(this.isActive){
+      this.renderer.removeClass(sideBar, 'active');
+      this.renderer.removeClass(burgerButton, 'active');
+      this.isActive = false;
+    }
   }
-
-  // getSection(e: Event) {
-  //   this.links.forEach((element: ElementRef, index: number) => {
-  //     const rect = document.body.getBoundingClientRect();
-  //     const threshold = this.getThresholdForElement(index);
-  //     if (this.isElementInView(rect, threshold)) {
-  //       this.renderer.addClass(element.nativeElement, 'active');
-  //     } else {
-  //       this.renderer.removeClass(element.nativeElement, 'active');
-  //     }
-  //   });
-  // }
-
-  // getThresholdForElement(index: number): number {
-  //   switch (index) {
-  //     case 0:
-  //       return 0;
-  //     case 1:
-  //       return -923.2000122070312;
-  //     default:
-  //       return 0;
-  //   }
-  // }
-
-  // isElementInView(rect: DOMRect, threshold: number): boolean {
-  //   return rect.top >= threshold;
-  // }
 
 }

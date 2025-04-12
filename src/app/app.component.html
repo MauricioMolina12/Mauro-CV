@@ -1,26 +1,28 @@
-<!-- <app-fade-in *ngIf="viewPresentation"></app-fade-in> -->
-<app-nav-bar (redirectSection)="onNavItemSelected($event)"></app-nav-bar>
+<app-fade-in *ngIf="viewPresentation && !showMainLayout"></app-fade-in>
+<app-nav-bar *ngIf="showMainLayout" (redirectSection)="onNavItemSelected($event)"></app-nav-bar>
 
-<section id="home">
-    <app-banner></app-banner>
-</section>
-<section id="about">
-    <app-whyme></app-whyme>
-</section>
-<section id="skills">
-    <app-specilizing [startScrolling]="start"></app-specilizing>
-</section>
-<section id="projects">
-    <app-projects></app-projects>
-</section>
-<section id="educations">
-    <app-educations></app-educations>
-</section>
-<section id="experience">
-    <app-experiences></app-experiences>
-</section>
-<section id="contact-me">
-    <app-contact></app-contact>
-</section>
+<ng-container *ngIf="showMainLayout">
+  <section id="home">
+      <app-banner></app-banner>
+  </section>
+  <section id="about">
+      <app-whyme></app-whyme>
+  </section>
+  <section id="skills">
+      <app-specilizing [startScrolling]="start"></app-specilizing>
+  </section>
+  <section id="projects">
+      <app-projects></app-projects>
+  </section>
+  <section id="educations">
+      <app-educations></app-educations>
+  </section>
+  <section id="experience">
+      <app-experiences></app-experiences>
+  </section>
+  <section id="contact-me">
+      <app-contact></app-contact>
+  </section>
+</ng-container>
 
-<router-outlet />
+<router-outlet></router-outlet>
