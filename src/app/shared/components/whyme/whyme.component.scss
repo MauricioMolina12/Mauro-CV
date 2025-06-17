@@ -5,8 +5,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  margin-block: 80px;
-  padding-top: 90px;
 
   .grid {
     width: 100%;
@@ -27,8 +25,7 @@
       "c2 c2 c2 c2 c2 c2"
       "c3 c3 c3 c3 c3 c3"
       "c3 c3 c3 c3 c3 c3"
-      "c3 c3 c3 c3 c3 c3"
-    ;
+      "c3 c3 c3 c3 c3 c3";
 
     .card {
       width: 100%;
@@ -48,12 +45,12 @@
       span {
         max-width: 40%;
       }
-      h2{
-        font-size: 1.2rem;
+      h2 {
+        font-size: 1rem;
       }
 
-      span{
-        font-size: .9rem;
+      span {
+        font-size: 0.7rem;
       }
     }
 
@@ -101,24 +98,35 @@
         flex-wrap: wrap;
         margin-top: 20px;
 
-        img {
-          width: 35px;
-          height: 35px;
-          object-fit: cover;
-          border-radius: 10px;
-          transition: all .5s ease;
+        .images-name {
           position: relative;
-          background-color: white;
-          clip-path: circle();
+          span {
+            position: absolute;
+            top: -100%;
+            display: none;
+          }
 
-          &:hover {
-            transform: translateY(-10px);
+          img {
+            width: 45px;
+            height: 45px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: all 0.5s ease;
+            position: relative;
+            background-color: white;
+            clip-path: circle();
+
+            &:hover {
+              transform: translateY(-10px);
+            }
+          }
+
+          img:hover + span {
+            display: block;
           }
         }
       }
     }
-
-
   }
 
   .title {
@@ -165,8 +173,7 @@
         "c1 c1 c1 c2 c2 c2"
         "c1 c1 c1 c2 c2 c2"
         "c3 c3 c3 c3 c3 c3"
-        "c3 c3 c3 c3 c3 c3"
-      ;
+        "c3 c3 c3 c3 c3 c3";
       margin-right: 20px;
 
       .card {
@@ -185,6 +192,14 @@
         h2,
         span {
           max-width: 42%;
+        }
+
+        h2 {
+          font-size: 1.2rem;
+        }
+
+        span {
+          font-size: 0.9rem;
         }
       }
 
@@ -211,8 +226,8 @@
         grid-area: c3;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
-
 
         h2,
         span {
@@ -222,7 +237,7 @@
 
         .images {
           width: 75%;
-          height: 50%;
+          height: 20%;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -234,7 +249,7 @@
             height: 50px;
             object-fit: cover;
             border-radius: 10px;
-            transition: all .5s ease;
+            transition: all 0.5s ease;
             position: relative;
 
             &:hover {
@@ -243,8 +258,6 @@
           }
         }
       }
-
-
     }
   }
 }

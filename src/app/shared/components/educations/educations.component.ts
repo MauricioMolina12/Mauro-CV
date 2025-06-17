@@ -17,7 +17,7 @@ export class EducationsComponent {
       link: 'https://www.linkedin.com/posts/william-insignares-4648a837_innovaciaejn-tecnologaeda-educaciaejn-activity-7199898714579030019-5BVV?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFIoueEBV4n9JK6BzpcJ6umsx_k_7uD4kck',
       positions: [
         {
-          title: 'METAVERSO Virtual Nursery Camp',
+          title: 'Campamento Virtual METAVERSO',
         },
       ]
     },
@@ -27,7 +27,7 @@ export class EducationsComponent {
       logo: 'assets/unilibre.png',
       positions: [
         {
-          title: 'Systems engineering'
+          title: 'Ingeniería de sistemas'
         },
       ]
     },
@@ -37,7 +37,7 @@ export class EducationsComponent {
       logo: 'assets/sena.png',
       positions: [
         {
-          title: 'Systems technician'
+          title: 'Tecnico de sistemas'
         },
       ]
     },
@@ -47,7 +47,7 @@ export class EducationsComponent {
       logo: 'assets/ietisa.jpg',
       positions: [
         {
-          title: 'Secondary'
+          title: 'Secundaria'
         },
       ]
     },

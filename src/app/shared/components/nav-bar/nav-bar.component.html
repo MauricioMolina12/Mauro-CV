@@ -13,8 +13,8 @@
   </div>
   <div class="nav-side_bar">
     <ul class="side-bar__list">
-        <li class="side-bar__item" *ngFor="let item of items"><a href="#" (click)="onNavItemClick(item); $event.preventDefault()">
-          {{item}}
+        <li class="side-bar__item" *ngFor="let item of items"><a href="#" (click)="onNavItemClick(item.path); $event.preventDefault()">
+          {{item.name}}
         </a></li>
     </ul>
   </div>

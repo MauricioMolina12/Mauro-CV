@@ -1,21 +1,24 @@
 <div class="wrapper">
     <h1 class="title" #title>
-        Why <span>Me?</span>
+        Por qué <span>yo?</span>
     </h1>
     <div class="grid">
         <div class="card-1 card">
-            <h2>User-Centric Design</h2>
-            <span>I create intuitive and accessible experiences for users.</span>
+            <h2>Diseño Centrado en el Usuario</h2>
+            <span>Creo experiencias intuitivas y accesibles para los usuarios.</span>
         </div>
         <div class="card-2 card">
-            <h2>Collaborative Work</h2>
-            <span>Experience in agile and multidisciplinary teams.</span>
+            <h2>Trabajo Colaborativo</h2>
+            <span>Experiencia en equipos ágiles y multidisciplinares.</span>
         </div>
         <div class="card-3 card">
-            <h2>Tools & Technology</h2>
-            <span>Management of modern frontend technologies</span>
+            <h2>Herramientas y tecnología</h2>
+            <span>Tecnologías frontend modernas</span>
             <div class="images">
-                <img *ngFor="let image of techs" [src]="image.icon" [alt]="image">
+                <div class="images-name" *ngFor="let image of techs">
+                    <img [src]="image.icon" [alt]="image">
+                    <span>{{image.name}}</span>
+                </div>
             </div>
         </div>
     </div>

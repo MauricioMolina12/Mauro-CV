@@ -78,18 +78,18 @@ export class SpecilizingComponent {
   }
   jobs = [
     {
-      title: 'Frontend Developer',
-      description: 'I transform ideas into interactive web experiences. With a focus on HTML, CSS, JavaScript and frameworks like Angular, React, Astro and Next.js I ensure that each page is functional, fast and visually appealing.',
+      title: 'Desarrollador Frontend',
+      description: 'Convierto ideas en experiencias web interactivas. Con especialización en HTML, CSS, JavaScript y frameworks como Angular, React, Astro y Next.js, me aseguro de que cada página sea funcional, rápida y visualmente atractiva.',
       pathImage: 'assets/front.webp',
     },
     {
-      title: 'Mobile Developer',
-      description: 'I develop native and cross-platform mobile applications using technologies such as React Native, Flutter and Ionic. My goal is to create intuitive and high-performance apps for iOS and Android.',
+      title: 'Desarrollador Móvil',
+      description: 'Desarrollo aplicaciones móviles nativas y multiplataforma utilizando tecnologías como React Native, Flutter e Ionic. Mi objetivo es crear aplicaciones intuitivas y de alto rendimiento para iOS y Android.',
       pathImage: 'assets/mobile.webp',
     },
     {
-      title: 'UI/UX Designer',
-      description: 'I create experience-focused user interfaces, using design principles to make apps not only aesthetically pleasing, but also easy to use. I work with tools like Figma, Sketch, and Adobe XD to design memorable experiences.',
+      title: 'Diseñador UI/UX',
+      description: 'Creo interfaces de usuario centradas en la experiencia, utilizando principios de diseño para que las aplicaciones sean estéticamente atractivas y fáciles de usar.',
       pathImage: 'assets/design.webp',
     },
   ];

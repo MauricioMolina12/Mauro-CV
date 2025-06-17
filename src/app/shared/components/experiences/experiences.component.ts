@@ -11,28 +11,33 @@ import { Component } from '@angular/core';
 export class ExperiencesComponent {
   experiences = [
     {
-      company: 'Merca Datos SAS',
+      company: 'Mercadatos SAS',
       time: 'April 2025 - Present',
       logo: 'assets/mercadatos.jpg',
       positions: [
         {
-          title: 'Systems Practitioner',
-          description: '',
+          title: 'Ingeniero de sistemas',
+          description: `          
+          Realicé mantenimiento preventivo de los equipos de cómputo de la empresa, mejorando su rendimiento y prolongando su vida útil y posteriormente laboré y documenté hojas de vida técnicas para cada equipo, registrando especificaciones, estado de hardware, software instalado y observaciones técnicas          `,
+        },
+        {
+          title: '',
+          description: 'Actualmente lidero el desarrollo del nuevo sitio web institucional utilizando Angular, con enfoque en diseño moderno, responsivo y centrado en la experiencia del usuario.          ',
         },
       ],
     },
     {
       company: 'Edutin Academy',
-      time: 'April 2024 - December 2024 (9 Months)',
+      time: 'Abril 2024 - Diciembre 2024 (9 Meses)',
       logo: 'assets/logo-edutin.png',
       positions: [
         {
-          title: 'Frontend & Mobile Android Developer',
-          description: `I designed and developed modern applications using Angular, Figma, and Ionic, ensuring high performance and adaptability across multiple devices. I built native features for Android using Kotlin as the primary language. I efficiently integrated REST and GraphQL APIs to optimize real-time data exchange, enhance scalability, and meet business objectives. I managed version control with Git, collaborating with cross-functional teams in agile environments to ensure timely and high-quality deliveries. Additionally, I implemented accessibility and optimization strategies to align products with current standards and improve the end-user experience.`,
+          title: 'Desarrollador frontend y Móvil Android',
+          description: `Diseñé y desarrollé aplicaciones modernas con Angular, Figma e Ionic, garantizando un alto rendimiento y adaptabilidad en múltiples dispositivos. Desarrollé funcionalidades nativas para Android utilizando Kotlin como lenguaje principal. Integré eficientemente las API REST y GraphQL para optimizar el intercambio de datos en tiempo real, mejorar la escalabilidad y cumplir los objetivos de negocio. Gestioné el control de versiones con Git, colaborando con equipos multidisciplinares en entornos ágiles para garantizar entregas puntuales y de alta calidad. Además, implementé estrategias de accesibilidad y optimización para alinear los productos con los estándares actuales y mejorar la experiencia del usuario final.`,
         },
         {
-          title: 'Teacher and course designer',
-          description: `I created, developed, and recorded new courses for Edutin Academy. I worked closely with cross-functional teams to design and develop interactive educational content. I provided activity review services and corrected issues in active courses.`,
+          title: 'Profesor y diseñador de cursos',
+          description: `Creé, desarrollé y grabé nuevos cursos para Edutin Academy. Trabajé en estrecha colaboración con equipos multidisciplinares para diseñar y desarrollar contenido educativo interactivo. Presté servicios de revisión de actividades y corregí errores en cursos activos.`,
           courses: [
             {
               title: 'Angular',
@@ -50,29 +55,6 @@ export class ExperiencesComponent {
               slug: 'https://edutin.com/curso-de-ionic',
             },
           ],
-        },
-      ],
-    },
-
-    {
-      company: 'Freelancer',
-      time: 'Present',
-      logo: 'assets/free.png',
-      positions: [
-        {
-          title: 'Frontend & Mobile Android Developer',
-          description: `I am a versatile, freelance frontend developer with experience building web and mobile applications using cutting-edge technologies such as Angular, React, React Native, Firebase, GraphQL, JavaScript, Ionic, Flutter and Node.js. My skills allow me to offer high-quality, customized solutions for a variety of industries, including education, startups and the technology sector.With a strong focus on user experience and design, I create intuitive and visually engaging interfaces that align with clients' goals. I also use tools like Figma to bring concepts to life, ensuring that functionality and aesthetics go hand in hand. As a freelancer, I pride myself on my adaptability, effective communication and timely delivery. Whether you need a responsive web app, a dynamic mobile solution, or expert guidance for your project, I'm here to help you make your vision a reality. Let's collaborate!`,
-        },
-      ],
-    },
-    {
-      company: 'Designer UI/UX Freelancer',
-      time: 'Present',
-      logo: 'assets/designer.webp',
-      positions: [
-        {
-          title: 'Designer',
-          description: `I am an experienced graphic designer with experience in creating attractive and effective visual solutions that communicate ideas and emotions in an impactful way. I master tools such as Adobe Photoshop, Illustrator and InDesign, which allows me to develop everything from visual identities to advertising pieces and digital content. My approach combines creativity, technique and attention to detail to transform concepts into designs that stand out. I specialize in the design of logos, flyers, banners and content for social networks, adapting to the specific needs of each project and client. Passionate about design and always learning, I am ready to help you bring your ideas to life and make your brand or project stand out. Let's connect and work together!"`,
         },
       ],
     },

@@ -130,6 +130,26 @@ export class WhymeComponent implements OnInit {
       popularProjects: ['Angular Material', 'Nx Monorepos', 'PrimeNG'],
     },
     {
+      name: 'Vue',
+      type: 'Framework frontend',
+      description: 'Framework de Google basado en TypeScript...',
+      icon: 'assets/vue.png',
+      officialUrl: 'https://angular.dev/',
+      learnMoreUrl: 'https://angular.dev/tutorials/first-app',
+      useCases: [
+        'Aplicaciones empresariales',
+        'Dashboards y paneles de administración',
+        'Sistemas de gestión complejos',
+      ],
+      newsApiQuery: 'angular',
+      community: {
+        discord: 'https://discord.com/invite/angular',
+        reddit: 'https://www.reddit.com/r/Angular2/',
+        stackOverflow: 'https://stackoverflow.com/questions/tagged/angular',
+      },
+      popularProjects: ['Angular Material', 'Nx Monorepos', 'PrimeNG'],
+    },
+    {
       name: 'React',
       type: 'Biblioteca frontend',
       description:
@@ -239,7 +259,7 @@ export class WhymeComponent implements OnInit {
       popularProjects: ['Ionic Angular', 'Ionic React', 'Capacitor'],
     },
     {
-      name: 'Tailwind CSS',
+      name: 'Tailwind',
       type: 'Framework de CSS utilitario',
       description:
         'Framework CSS para crear interfaces de usuario personalizadas de manera rápida...',

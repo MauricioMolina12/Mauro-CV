@@ -1,25 +1,31 @@
-<div class="contact-wrapper">
-    <div class="contact-information">
-        <h1>Contact me</h1>
-        <span class="message">Send an email, call or fill out the form to contact me so I can help you meet your goals.</span>
-        <span class="email">molinamau37gmail.com</span>
-        <span class="phone">3008236761</span>
+<div class="contact">
+    <h2 class="contact__title">Contáctame</h2>
+
+    <div class="contact--inner">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="contact__form">
+            <label class="contact__field">
+                <span>Tu nombre</span>
+                <input formControlName="from_name" type="text" placeholder="Ej: Juan Pérez" />
+            </label>
+
+            <label class="contact__field">
+                <span>Correo electrónico</span>
+                <input formControlName="from_email" type="email" placeholder="ejemplo@correo.com" />
+            </label>
+
+            <label class="contact__field">
+                <span>Mensaje</span>
+                <textarea formControlName="message" rows="5" placeholder="Escribe tu mensaje..."></textarea>
+            </label>
+
+            <button type="submit" class="contact__button">
+                <span *ngIf="!loading">Enviar mensaje</span>
+                <div *ngIf="loading" class="loader"></div>
+            </button>
+        </form>
+
+        <p *ngIf="success" class="contact__success">¡Gracias! Tu mensaje fue enviado con éxito.</p>
+        <p *ngIf="error" class="contact__error">Ocurrió un error al enviar el mensaje. Intenta más tarde.</p>
+
     </div>
-    <!-- <form action="" class="contact-form">
-        <h1>Get in Touch</h1>
-        <span>You can reach us anytime</span>
-        <div class="name">
-            <input type="text" placeholder="Name">
-            <input type="text" placeholder="Lastname">
-        </div>
-        <div class="email">
-            <input type="email" name="" id="" placeholder="Email">
-        </div>
-        <div class="message">
-            <textarea name="" id="" placeholder="How can we help?"></textarea>
-        </div>
-        <div class="submit">
-            <button type="submit">Send</button>
-        </div>
-    </form> -->
 </div>

@@ -27,7 +27,15 @@ export class NavBarComponent implements OnInit {
 
   @Output() redirectSection = new EventEmitter<string>();
 
-  items = ['home', 'about', 'Skills', 'Projects','Educations', 'Experience', 'Contact me'];
+  items = [
+    { name: 'Inicio', path: 'home' },
+    { name: 'Acerca de mi', path: 'about' },
+    { name: 'Habilidades', path: 'Skills' },
+    { name: 'Proyectos', path: 'Projects' },
+    { name: 'Educación', path: 'Educations' },
+    { name: 'Experiencia', path: 'Experience' },
+    { name: 'Contacto', path: 'Contact me' },
+  ];
 
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
@@ -63,11 +71,10 @@ export class NavBarComponent implements OnInit {
     this.redirectSection.emit(item);
     const sideBar = this.el.nativeElement.querySelector('.nav-side_bar');
     const burgerButton = this.el.nativeElement.querySelector('.burger');
-    if(this.isActive){
+    if (this.isActive) {
       this.renderer.removeClass(sideBar, 'active');
       this.renderer.removeClass(burgerButton, 'active');
       this.isActive = false;
     }
   }
-
 }

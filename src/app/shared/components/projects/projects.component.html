@@ -1,22 +1,33 @@
 <div class="carousel-container">
     <div class="carousel-header">
-        <h1 class="section-title">Projects</h1>
+        <h1 class="section-title">Proyectos</h1>
         <div class="arrows">
             <button class="arrow prev" (click)="scrollCarousel(-1)">&#10094;</button>
             <button class="arrow next" (click)="scrollCarousel(1)">&#10095;</button>
         </div>
     </div>
-    <div class="wrapper" #carouselWrapper>
-        <div class="card" *ngFor="let card of cards">
-            <!-- <div class="card-button-redirect">
+    <div class="wrapper">
+        <div class="tabs">
+            <span *ngFor="let tab of tabs" (click)="filterTypeProject(tab.filter)"
+                  [ngClass]="{'active' : tab.filter === typeProject}">{{tab.name}}</span>
+        </div>
+        <div class="slider" #carouselWrapper>
+            <div class="card" *ngFor="let card of cards" (click)="redirectProject(card?.url || '')">
+                <!-- <div class="card-button-redirect">
                 <button>&#10094;</button>
-            </div> -->
-            <div class="card-image">
-                <img [src]="card.image" alt="">
-            </div>
-            <div class="card-description">
-                <h2>{{card.title}}</h2>
-                <span>{{card.description}}</span>
+            </div> --> 
+                <div class="card-image">
+                    <img [src]="card.image" alt="">
+                </div>
+                <div class="card-description">
+                    <h2>{{card.title}}</h2>
+                    <span>{{card.description}}</span>
+                    <div class="card-tech">
+                        <figure *ngFor="let tech of card.techs">
+                            <img [src]="tech" alt="">
+                        </figure>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

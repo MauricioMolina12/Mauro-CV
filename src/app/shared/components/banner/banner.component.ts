@@ -18,11 +18,7 @@ export class BannerComponent {
   data = [
     {
       title: '1+',
-      subtitle: 'Years of Experience',
-    },
-    {
-      title: '100%',
-      subtitle: 'Success Rate',
+      subtitle: 'Año de experiencia',
     },
   ];
 }
