@@ -55,6 +55,7 @@ $border-color: #dcdcdc;
       position: absolute;
       top: 50%;
       left: 8px;
+      font-size: 20px;
       color: #858585;
     }
 
@@ -78,6 +79,17 @@ $border-color: #dcdcdc;
     align-items: center;
     justify-content: center;
     gap: 10px;
+
+    span{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      .material-icons{
+        font-size: 18px;
+      }
+    }
 
     .loader {
       width: 18px;
