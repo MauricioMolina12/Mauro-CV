@@ -1,6 +1,15 @@
 import { NgClass, NgFor } from '@angular/common';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  QueryList,
+  ViewChild,
+  ViewChildren,
+} from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { UtilsService } from '../../services/utils.service';
 
 @Component({
   selector: 'app-projects',
@@ -9,8 +18,11 @@ import { RouterLink } from '@angular/router';
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectsComponent implements OnInit, AfterViewInit {
   @ViewChild('carouselWrapper', { static: false }) carouselWrapper!: ElementRef;
+  @ViewChildren('card') cardsProject!: QueryList<ElementRef>;
+
+  constructor(private utilsService: UtilsService) {}
 
   cards = [
     {
@@ -18,7 +30,7 @@ export class ProjectsComponent implements OnInit {
       slug: 'app_edutin_academy',
       type: 'mobile',
       description:
-        'Fui parte de este proyecto, en el que construí varias características y módulos importantes de la aplicación.',
+        'Formé parte del equipo de desarrollo de la aplicación móvil de Edutin Academy, contribuyendo a la implementación de funcionalidades clave con tecnologías como Angular e Ionic. Trabajé en la creación de interfaces intuitivas, responsivas y alineadas con la experiencia web de la plataforma, asegurando una experiencia de usuario ',
       image: 'assets/appedutin.png',
       url: 'https://play.google.com/store/apps/details?id=com.edutin.app&hl=es_CO',
       techs: ['assets/ionic.png'],
@@ -130,13 +142,18 @@ export class ProjectsComponent implements OnInit {
     );
   }
 
+  ngAfterViewInit(): void {
+    this.utilsService.observeElements(this.cardsProject);
+  }
+
   allCards = [...this.cards];
   typeProject: string = '';
   filterTypeProject(type: string) {
     this.cards = this.allCards.filter((project) => project?.type === type);
     this.typeProject = type;
-    console.log(this.cards);
-    console.log(this.typeProject);
+    setTimeout(() => {
+      this.utilsService.observeElements(this.cardsProject);
+    });
   }
 
   redirectProject(slug: string) {

@@ -1,14 +1,25 @@
 import { NgFor, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  QueryList,
+  ViewChildren,
+} from '@angular/core';
+import { UtilsService } from '../../services/utils.service';
 
 @Component({
   selector: 'app-educations',
   standalone: true,
   imports: [NgFor, NgIf],
   templateUrl: './educations.component.html',
-  styleUrl: './educations.component.scss'
+  styleUrl: './educations.component.scss',
 })
-export class EducationsComponent {
+export class EducationsComponent implements AfterViewInit {
+  constructor(private utilsService: UtilsService) {}
+
+  @ViewChildren('item') items!: QueryList<ElementRef>;
+
   educations = [
     {
       education: 'Universidad de los Andes (Colombia)',
@@ -19,7 +30,7 @@ export class EducationsComponent {
         {
           title: 'Campamento Virtual METAVERSO',
         },
-      ]
+      ],
     },
     {
       education: 'Universidad Libre Seccional Barranquilla',
@@ -27,9 +38,9 @@ export class EducationsComponent {
       logo: 'assets/unilibre.png',
       positions: [
         {
-          title: 'Ingeniería de sistemas'
+          title: 'Ingeniería de sistemas',
         },
-      ]
+      ],
     },
     {
       education: 'SENA',
@@ -37,21 +48,23 @@ export class EducationsComponent {
       logo: 'assets/sena.png',
       positions: [
         {
-          title: 'Tecnico de sistemas'
+          title: 'Tecnico de sistemas',
         },
-      ]
+      ],
     },
-    {
-      education: 'Institución Educativa Tecnico Industrial De Sabanalarga, Atlantico (Colombia)',
-      time: '2015 - 2020',
-      logo: 'assets/ietisa.jpg',
-      positions: [
-        {
-          title: 'Secundaria'
-        },
-      ]
-    },
+    // {
+    //   education: 'Institución Educativa Tecnico Industrial De Sabanalarga, Atlantico (Colombia)',
+    //   time: '2015 - 2020',
+    //   logo: 'assets/ietisa.jpg',
+    //   positions: [
+    //     {
+    //       title: 'Secundaria'
+    //     },
+    //   ]
+    // },
+  ];
 
-
-  ]
+  ngAfterViewInit(): void {
+    this.utilsService.observeElements(this.items);
+  }
 }

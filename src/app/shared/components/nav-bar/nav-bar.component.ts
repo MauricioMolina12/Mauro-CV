@@ -44,6 +44,7 @@ export class NavBarComponent implements OnInit {
   @HostListener('document:scroll', ['$event'])
   onScroll(event: Event) {
     this.setBgColorNav(event);
+    this.activeItemForScroll();
     // this.getSection(event);
   }
 
@@ -68,9 +69,22 @@ export class NavBarComponent implements OnInit {
   }
 
   activeItemForScroll() {
-    const items = this.items;
-    for (let index = 0; index < items.length; index++) {
-      const element = document;
+    let activeIndex = -1;
+    for (let index = 0; index < this.items.length; index++) {
+      const element = document.getElementById(this.items[index].path);
+      if (element) {
+        const rect = element?.getBoundingClientRect();
+        if (rect.top <= 80 && rect?.bottom > 80) {
+          activeIndex = index;
+        }
+      }
+
+      this.links.forEach((link, idx) => {
+        const elementNative = link.nativeElement;
+        idx === activeIndex
+          ? this.renderer.addClass(elementNative, 'active-item')
+          : this.renderer.removeClass(elementNative, 'active-item');
+      });
     }
   }
 

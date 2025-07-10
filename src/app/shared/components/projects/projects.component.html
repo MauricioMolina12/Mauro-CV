@@ -9,13 +9,13 @@
     <div class="wrapper">
         <div class="tabs">
             <span *ngFor="let tab of tabs" (click)="filterTypeProject(tab.filter)"
-                  [ngClass]="{'active' : tab.filter === typeProject}">{{tab.name}}</span>
+                [ngClass]="{'active' : tab.filter === typeProject}">{{tab.name}}</span>
         </div>
         <div class="slider" #carouselWrapper>
-            <div class="card" *ngFor="let card of cards" (click)="redirectProject(card?.url || '')">
-                <!-- <div class="card-button-redirect">
-                <button>&#10094;</button>
-            </div> --> 
+            <div #card class="card" *ngFor="let card of cards">
+                <div class="card-button-redirect">
+                    <button (click)="redirectProject(card?.url || '')">&#10095;</button>
+                </div>
                 <div class="card-image">
                     <img [src]="card.image" alt="">
                 </div>

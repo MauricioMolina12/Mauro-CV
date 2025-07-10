@@ -19,5 +19,18 @@ body {
 
 .active {
   color: rgba(135, 116, 232, 1);
-  font-weight: 700;
+}
+
+.active-item {
+  box-sizing: border-box !important;
+  font-weight: 400 !important;
+  background-color: white;
+  color: rgba(135, 116, 232, 1) !important;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.parallax {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }

@@ -1,5 +1,12 @@
 import { NgFor } from '@angular/common';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
+import { UtilsService } from '../../services/utils.service';
 
 @Component({
   selector: 'app-whyme',
@@ -8,31 +15,14 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
   templateUrl: './whyme.component.html',
   styleUrls: ['./whyme.component.scss'],
 })
-export class WhymeComponent implements OnInit {
-  ngOnInit(): void {}
+export class WhymeComponent implements AfterViewInit {
+  constructor(private utilsService: UtilsService) {}
 
   observer!: IntersectionObserver;
   @ViewChild('title') title!: ElementRef;
 
   ngAfterViewInit() {
-    if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
-      this.observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('active');
-            }
-          });
-        },
-        { threshold: 0.2 }
-      );
-
-      if (this.title) {
-        this.observer.observe(this.title.nativeElement);
-      }
-    } else {
-      // this.handleScroll();
-    }
+    this.utilsService.observeElement(this.title.nativeElement, 'active', 0.2);
   }
 
   handleScroll = () => {

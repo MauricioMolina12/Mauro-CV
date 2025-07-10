@@ -102,8 +102,9 @@
           position: relative;
           span {
             position: absolute;
-            top: -100%;
+            top: 90%;
             display: none;
+            z-index: 1000;
           }
 
           img {

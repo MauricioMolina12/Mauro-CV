@@ -7,6 +7,7 @@ import {
   SimpleChanges,
   ViewChildren,
 } from '@angular/core';
+import { UtilsService } from '../../services/utils.service';
 
 @Component({
   selector: 'app-specilizing',
@@ -16,34 +17,14 @@ import {
   styleUrl: './specilizing.component.scss',
 })
 export class SpecilizingComponent {
-  constructor(private el: ElementRef) {}
+  constructor(private el: ElementRef, private utilsService: UtilsService) {}
 
   @ViewChildren('chart') chart!: QueryList<ElementRef>;
   observer!: IntersectionObserver;
   @Input() startScrolling: boolean = false;
 
   ngAfterViewInit() {
-    if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
-      this.observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('in-view');
-            } 
-          });
-        },
-        { threshold: 0.2 }
-      );
-    }
-
-    if (this.observer) {
-      this.chart.forEach((element) => {
-        this.observer.observe(element.nativeElement);
-      });
-    } else {
-      // this.handleScroll();
-      // window.addEventListener('scroll', this.handleScroll);
-    }
+    this.utilsService.observeElements(this.chart)
   }
 
   // handleScroll = () => {

@@ -35,6 +35,10 @@
             align-items: center;
             justify-content: end;
             margin-block: 30px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+
 
             &::after {
                 content: '';

@@ -1,5 +1,12 @@
 import { NgFor, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  QueryList,
+  ViewChildren,
+} from '@angular/core';
+import { UtilsService } from '../../services/utils.service';
 
 @Component({
   selector: 'app-experiences',
@@ -8,21 +15,27 @@ import { Component } from '@angular/core';
   templateUrl: './experiences.component.html',
   styleUrl: './experiences.component.scss',
 })
-export class ExperiencesComponent {
+export class ExperiencesComponent implements AfterViewInit {
+  @ViewChildren('item') items!: QueryList<ElementRef>;
+
+  constructor(private utilsService: UtilsService) {}
+
   experiences = [
     {
-      company: 'Mercadatos SAS',
+      company: 'Desarrollador Frontend | Ingeniero de sistemas',
       time: 'Enero 2025 - Junio 2025',
       logo: 'assets/mercadatos.jpg',
       positions: [
         {
-          title: 'Ingeniero de sistemas',
-          description: `          
-          Realicé mantenimiento preventivo de los equipos de cómputo de la empresa, mejorando su rendimiento y prolongando su vida útil y posteriormente laboré y documenté hojas de vida técnicas para cada equipo, registrando especificaciones, estado de hardware, software instalado y observaciones técnicas          `,
+          title: '',
+          description: `
+          Lideré la mejora y rediseño del sitio web corporativo de la empresa, optimizando su estructura, accesibilidad y rendimiento. Utilicé Angular para implementar una nueva version más rápida y moderna, y diseñé interfaces atractivas y funcionales en figma, alineadas con la identidad de marca.
+          `,
         },
         {
           title: '',
-          description: 'Actualmente lidero el desarrollo del nuevo sitio web institucional utilizando Angular, con enfoque en diseño moderno, responsivo y centrado en la experiencia del usuario.          ',
+          description:
+            'Adicionalmente, desarrollé un software interno en Angular que automatizó tareas claves y mejoró la eficiencia operative del equipo, aumentando la productividad y reduciendo tiempos de ejecución. Participé activamente en todas las etapas del desarrollo, desde la planificación hasta el despliegue, entregando soluciones escalables y orientadas a resultados.',
         },
       ],
     },
@@ -33,11 +46,28 @@ export class ExperiencesComponent {
       positions: [
         {
           title: 'Desarrollador frontend y Móvil Android',
-          description: `Diseñé y desarrollé aplicaciones modernas con Angular, Figma e Ionic, garantizando un alto rendimiento y adaptabilidad en múltiples dispositivos. Desarrollé funcionalidades nativas para Android utilizando Kotlin como lenguaje principal. Integré eficientemente las API REST y GraphQL para optimizar el intercambio de datos en tiempo real, mejorar la escalabilidad y cumplir los objetivos de negocio. Gestioné el control de versiones con Git, colaborando con equipos multidisciplinares en entornos ágiles para garantizar entregas puntuales y de alta calidad. Además, implementé estrategias de accesibilidad y optimización para alinear los productos con los estándares actuales y mejorar la experiencia del usuario final.`,
+          description: `Diseñé e implementé interfaces intuitivas y atractivas para aplicaciones web y móviles, aplicando principios sólidos de UX/UI y utilizando tecnologías como HTML, CSS, JavaScript y TypeScript. Desarrollé aplicaciones modernas con Angular, Ionic y Figma, garantizando alto rendimiento, adaptabilidad y una experiencia de usuario optimizada en distintos dispositivos.`,
+        },
+        {
+          title: '',
+          description:
+            'Contribuí activamente en el desarrollo de nuevas funcionalidades, tanto en tecnologías híbridas como en código nativo para Android con Kotlin, integrando eficientemente SDKs de terceros y asegurando una comunicación fluida con servicios backend a través de APIs REST y GraphQL. Utilicé servicios en la nube como AWS Amplify, S3, CloudFront CDN, Cognito y AppSync, optimizando la arquitectura de integración para mayor escalabilidad y seguridad.',
+        },
+        {
+          title: '',
+          description:
+            'Implementé pruebas unitarias con Jasmine y Karma, garantizando la calidad del código y la estabilidad de los componentes. Además, realicé seguimiento del rendimiento de features y métricas clave mediante reportes organizados en hojas de cálculo (Excel) para facilitar la toma de decisiones y priorización de mejoras.',
+        },
+        {
+          title: '',
+          description:
+            'Gestioné el control de versiones con Git, colaborando de manera efectiva en entornos ágiles (Scrum/Kanban), y apliqué prácticas de accesibilidad y optimización para cumplir con los estándares actuales y mejorar la experiencia general del usuario.',
         },
         {
           title: 'Profesor y diseñador de cursos',
-          description: `Creé, desarrollé y grabé nuevos cursos para Edutin Academy. Trabajé en estrecha colaboración con equipos multidisciplinares para diseñar y desarrollar contenido educativo interactivo. Presté servicios de revisión de actividades y corregí errores en cursos activos.`,
+          description: `
+          Diseñé, desarrollé y grabé cursos virtuales enfocados en temáticas tecnológicas, combinando conocimientos técnicos con estrategias pedagógicas para garantizar un aprendizaje efectivo. Colaboré estrechamente con equipos multidisciplinarios de diseño instruccional, edición audiovisual y revisión académica para producir contenido interactivo, dinámico y alineado con los estándares de calidad de la plataforma.          
+          `,
           courses: [
             {
               title: 'Angular',
@@ -56,7 +86,15 @@ export class ExperiencesComponent {
             },
           ],
         },
+        {
+          title: '',
+          description: 'Además, brindé soporte post-lanzamiento mediante la revisión de actividades, retroalimentación a estudiantes y corrección de errores en cursos habilitados, contribuyendo a la mejora continua de la experiencia educativa y la retención de estudiantes.'
+        }
       ],
     },
   ];
+
+  ngAfterViewInit(): void {
+    this.utilsService.observeElements(this.items);
+  }
 }
