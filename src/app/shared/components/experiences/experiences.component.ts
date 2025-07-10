@@ -12,7 +12,7 @@ export class ExperiencesComponent {
   experiences = [
     {
       company: 'Mercadatos SAS',
-      time: 'April 2025 - Present',
+      time: 'Enero 2025 - Junio 2025',
       logo: 'assets/mercadatos.jpg',
       positions: [
         {
@@ -28,7 +28,7 @@ export class ExperiencesComponent {
     },
     {
       company: 'Edutin Academy',
-      time: 'Abril 2024 - Diciembre 2024 (9 Meses)',
+      time: 'Enero 2023 - Diciembre 2024',
       logo: 'assets/logo-edutin.png',
       positions: [
         {
