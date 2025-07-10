@@ -24,7 +24,7 @@ export class EducationsComponent implements AfterViewInit {
     {
       education: 'Universidad de los Andes (Colombia)',
       time: '2024',
-      logo: 'assets/andes.svg',
+      logo: 'assets/uniandes.jpg',
       link: 'https://www.linkedin.com/posts/william-insignares-4648a837_innovaciaejn-tecnologaeda-educaciaejn-activity-7199898714579030019-5BVV?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFIoueEBV4n9JK6BzpcJ6umsx_k_7uD4kck',
       positions: [
         {
