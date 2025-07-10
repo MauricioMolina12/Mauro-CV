@@ -61,7 +61,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       type: 'web',
       description:
         'Este fue un proyecto universitario enfocado en el desarrollo de una plataforma para la gestión y administración de las actividades asignadas a los profesores, permitiendo llevar un control organizado de sus tareas, horarios y responsabilidades dentro de la institución.',
-      image: 'assets/unilibre.',
+      image: 'assets/unilibre.png',
       url: 'https://github.com/MauricioMolina12/ClassroomProject',
       techs: ['assets/html.webp', 'assets/css.png', 'assets/js.png'],
     },
