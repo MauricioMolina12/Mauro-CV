@@ -35,7 +35,7 @@ export class EducationsComponent implements AfterViewInit {
     {
       education: 'Universidad Libre Seccional Barranquilla',
       time: 'Feb 2021 - Actualidad',
-      logo: 'assets/unilibre.png',
+      logo: 'assets/unilibre.jpg',
       positions: [
         {
           title: 'Ingeniería de sistemas',
