@@ -24,7 +24,7 @@
                     <span>{{card.description}}</span>
                     <div class="card-tech">
                         <figure *ngFor="let tech of card.techs">
-                            <img [src]="tech" alt="">
+                            <img [src]="tech" [alt]="card.title" loading="lazy">
                         </figure>
                     </div>
                 </div>

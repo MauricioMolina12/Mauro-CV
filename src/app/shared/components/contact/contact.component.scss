@@ -25,6 +25,7 @@ $border-color: #dcdcdc;
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+    position: relative;
 
     span {
       font-weight: 500;
@@ -33,7 +34,7 @@ $border-color: #dcdcdc;
 
     input,
     textarea {
-      padding: 0.75rem 1rem;
+      padding: 0.75rem 2.5rem;
       border: 1px solid $border-color;
       border-radius: 8px;
       font-size: 1rem;
@@ -42,11 +43,24 @@ $border-color: #dcdcdc;
       color: black;
 
       &::placeholder {
-        color: rgb(45, 45, 45);
+        color: #858585;
       }
 
       &:focus {
         outline: none;
+      }
+    }
+
+    .material-icons {
+      position: absolute;
+      top: 50%;
+      left: 8px;
+      color: #858585;
+    }
+
+    &:last-of-type {
+      .material-icons {
+        top: 25%;
       }
     }
   }

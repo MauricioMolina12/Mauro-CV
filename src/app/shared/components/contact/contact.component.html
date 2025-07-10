@@ -5,16 +5,19 @@
         <form [formGroup]="form" (ngSubmit)="onSubmit()" class="contact__form">
             <label class="contact__field">
                 <span>Tu nombre</span>
+                <span class="material-icons" aria-hidden="true">person</span>
                 <input formControlName="from_name" type="text" placeholder="Ej: Juan Pérez" />
             </label>
-
+            
             <label class="contact__field">
                 <span>Correo electrónico</span>
+                <span class="material-icons" aria-hidden="true">email</span>
                 <input formControlName="from_email" type="email" placeholder="ejemplo@correo.com" />
             </label>
-
+            
             <label class="contact__field">
                 <span>Mensaje</span>
+                <span class="material-icons" aria-hidden="true">comment</span>
                 <textarea formControlName="message" rows="5" placeholder="Escribe tu mensaje..."></textarea>
             </label>
 
