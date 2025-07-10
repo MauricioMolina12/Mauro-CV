@@ -23,7 +23,7 @@ export class ExperiencesComponent implements AfterViewInit {
   experiences = [
     {
       company: 'Desarrollador Frontend | Ingeniero de sistemas',
-      time: 'Enero 2025 - Junio 2025',
+      time: `Enero 2025 - Junio 2025`,
       logo: 'assets/mercadatos.jpg',
       positions: [
         {
