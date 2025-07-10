@@ -11,20 +11,12 @@
       <h2>{{ item.title }}</h2>
       <span>{{ item.subtitle }}</span>
     </div>
+    <div class="buttons">
+      <button class="button-call-action" (click)="start()">Empezar</button>
+      <button class="button-call-action" (click)="downloadCVFile()">Descargar CV</button>
+    </div>
   </div>
   <div class="points">
     <div class="point" *ngFor="let point of [].constructor(100)"></div>
   </div>
-  <!-- <div class="banner-tech">
-    <div class="tech-slider">
-      <div class="tech-item">HTML5</div>
-      <div class="tech-item">CSS3</div>
-      <div class="tech-item">JavaScript</div>
-      <div class="tech-item">Angular</div>
-      <div class="tech-item">React</div>
-      <div class="tech-item">Node.js</div>
-      <div class="tech-item">SASS</div>
-      <div class="tech-item">Git</div>
-    </div>
-  </div> -->
 </div>

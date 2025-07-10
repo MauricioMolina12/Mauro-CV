@@ -68,7 +68,6 @@
         color: #8774e8;
         white-space: nowrap;
       }
-
     }
 
     p {
@@ -98,7 +97,28 @@
       }
     }
 
+    .buttons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
 
+      .button-call-action {
+        padding: 14px;
+        border: none;
+        box-sizing: border-box;
+        border-radius: 10px;
+        margin-top: 12px;
+        background-color: #8774e8;
+        color: white;
+        cursor: pointer;
+      
+      
+        &:last-of-type{
+          background-color: transparent;
+          border: 1px solid white;
+        }
+      }
+    }
   }
 
   .points {
@@ -113,7 +133,6 @@
     justify-items: center;
     align-items: center;
 
-
     .point {
       width: 3px;
       height: 3px;
@@ -121,7 +140,6 @@
       clip-path: circle();
     }
   }
-
 }
 
 @keyframes fadeIn {
@@ -212,7 +230,6 @@
         .job {
           font-size: inherit;
         }
-
       }
 
       p {
@@ -224,6 +241,5 @@
         align-items: start;
       }
     }
-
   }
 }
