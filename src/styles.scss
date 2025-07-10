@@ -1,13 +1,23 @@
 *,
 *::after,
-*::before{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', Arial;
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", Arial;
 }
 
-body{
-    overflow-x: hidden;
-    background: radial-gradient(circle at 50% 30%, rgba(135, 116, 232, 1) 0%, rgba(0,0,0, 1) 80%, #000000 80%);
+body {
+  overflow-x: hidden;
+  background: radial-gradient(
+    circle at 50% 30%,
+    rgba(135, 116, 232, 1) 0%,
+    rgba(0, 0, 0, 1) 80%,
+    #000000 80%
+  );
+}
+
+.active {
+  color: rgba(135, 116, 232, 1);
+  font-weight: 700;
 }

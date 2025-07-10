@@ -30,11 +30,11 @@ export class NavBarComponent implements OnInit {
   items = [
     { name: 'Inicio', path: 'home' },
     { name: 'Acerca de mi', path: 'about' },
-    { name: 'Habilidades', path: 'Skills' },
-    { name: 'Proyectos', path: 'Projects' },
-    { name: 'Educación', path: 'Educations' },
-    { name: 'Experiencia', path: 'Experience' },
-    { name: 'Contacto', path: 'Contact me' },
+    { name: 'Habilidades', path: 'skills' },
+    { name: 'Proyectos', path: 'projects' },
+    { name: 'Educación', path: 'educations' },
+    { name: 'Experiencia', path: 'experience' },
+    { name: 'Contacto', path: 'contact-me' },
   ];
 
   constructor(private el: ElementRef, private renderer: Renderer2) {}
@@ -64,6 +64,13 @@ export class NavBarComponent implements OnInit {
       this.renderer.addClass(this.nav.nativeElement, 'active');
     } else {
       this.renderer.removeClass(this.nav.nativeElement, 'active');
+    }
+  }
+
+  activeItemForScroll() {
+    const items = this.items;
+    for (let index = 0; index < items.length; index++) {
+      const element = document;
     }
   }
 

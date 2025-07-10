@@ -13,7 +13,6 @@
   margin-top: 90px;
   position: relative;
 
-
   .title {
     position: absolute;
     top: -20px;
@@ -46,7 +45,7 @@
       width: 90%;
       height: auto;
       max-height: max-content;
-      min-height: 400px;
+      min-height: 350px;
       background: linear-gradient(#251e47, #2a2447);
       border-radius: 15px;
       position: relative;
@@ -75,19 +74,21 @@
         justify-content: center;
       }
 
-
       .card-title {
         text-align: center;
         font-size: 1.4rem;
         font-weight: 600;
         color: #d9d1ff;
         font-weight: 700;
+        white-space: nowrap;
+        flex-grow: 1;
       }
 
       .card-description {
+        flex-grow: 1;
         max-width: 80%;
         color: rgb(203, 203, 203);
-        font-size: 1rem;
+        font-size: 0.8rem;
       }
     }
   }
@@ -112,7 +113,14 @@
       gap: 20px;
       justify-content: center;
       flex-direction: row;
+    }
+  }
+}
 
+@media (min-width: 1280px) {
+  .cards-wrapper {
+    .card {
+      width: 100%;
     }
   }
 }
