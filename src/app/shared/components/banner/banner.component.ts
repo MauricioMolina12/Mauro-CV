@@ -32,18 +32,4 @@ export class BannerComponent {
     });
   }
 
-  downloadCVFile() {
-    const blob = new Blob(['Default content.'], {
-      type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-    });
-    const url = window.URL.createObjectURL(blob);
-    const a = this.document.createElement('a');
-    a.href = url;
-    a.download = 'assets/CV - MAURICIO MOLINA.docx';
-    this.document.body.appendChild(a);
-    a.click();
-    this.document.body.removeChild(a);
-    window.URL.revokeObjectURL(url);
-  }
-
 }
