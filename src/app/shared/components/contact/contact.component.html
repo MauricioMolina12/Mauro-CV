@@ -1,36 +1,118 @@
 <div class="contact">
-    <h2 class="contact__title">Contáctame</h2>
+    <div class="contact__head">
+        <span class="eyebrow">CONTACTO</span>
+        <h2 class="contact__title">¿Trabajamos juntos?</h2>
+        <p class="contact__subtitle">Cuéntame sobre tu proyecto y te responderé lo antes posible.</p>
+    </div>
 
-    <div class="contact--inner">
+    <div class="contact__grid">
+        <!-- Información de contacto -->
+        <aside class="contact__info">
+            <h3>Información de contacto</h3>
+            <p class="info-text">
+                Disponible para proyectos freelance, colaboraciones y nuevas
+                oportunidades profesionales.
+            </p>
+
+            <ul class="info-list">
+                <li>
+                    <a href="mailto:ingmauro8@gmail.com">
+                        <span class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
+                                <path d="M3 7l9 6l9 -6" />
+                            </svg>
+                        </span>
+                        Email
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/mauricio-molina-p/" target="_blank" rel="noopener">
+                        <span class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" />
+                                <path d="M8 11l0 5" />
+                                <path d="M8 8l0 .01" />
+                                <path d="M12 16l0 -5" />
+                                <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+                            </svg>
+                        </span>
+                        LinkedIn
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/MauricioMolina12" target="_blank" rel="noopener">
+                        <span class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+                            </svg>
+                        </span>
+                        GitHub
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Formulario -->
         <form [formGroup]="form" (ngSubmit)="onSubmit()" class="contact__form">
-            <label class="contact__field">
-                <span>Tu nombre</span>
-                <span class="material-icons" aria-hidden="true">person</span>
-                <input formControlName="from_name" type="text" placeholder="Ej: Juan Pérez" />
+            <div class="form-row">
+                <label class="field">
+                    <span class="field-label">Nombre</span>
+                    <input formControlName="from_name" type="text" placeholder="Tu nombre" />
+                </label>
+                <label class="field">
+                    <span class="field-label">Email</span>
+                    <input formControlName="from_email" type="email" placeholder="tucorreo@email.com" />
+                </label>
+            </div>
+
+            <label class="field">
+                <span class="field-label">Asunto</span>
+                <input formControlName="subject" type="text" placeholder="Asunto del mensaje" />
             </label>
 
-            <label class="contact__field">
-                <span>Correo electrónico</span>
-                <span class="material-icons" aria-hidden="true">email</span>
-                <input formControlName="from_email" type="email" placeholder="ejemplo@correo.com" />
+            <label class="field">
+                <span class="field-label">Mensaje</span>
+                <textarea formControlName="message" rows="5" placeholder="Cuéntame sobre tu proyecto…"></textarea>
             </label>
 
-            <label class="contact__field">
-                <span>Mensaje</span>
-                <span class="material-icons" aria-hidden="true">comment</span>
-                <textarea formControlName="message" rows="5" placeholder="Escribe tu mensaje..."></textarea>
-            </label>
-
-            <button type="submit" class="contact__button">
-                <span *ngIf="!loading">Enviar mensaje <span class="material-icons">
-                        send
-                    </span></span>
+            <button type="submit" class="contact__button" [disabled]="loading">
+                <ng-container *ngIf="!loading">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M10 14l11 -11" />
+                        <path d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5" />
+                    </svg>
+                    Enviar mensaje
+                </ng-container>
                 <div *ngIf="loading" class="loader"></div>
             </button>
         </form>
+    </div>
 
-        <p *ngIf="success" class="contact__success">¡Gracias! Tu mensaje fue enviado con éxito.</p>
-        <p *ngIf="error" class="contact__error">Ocurrió un error al enviar el mensaje. Intenta más tarde.</p>
-
+    <div class="toast" *ngIf="toast.show" [class.toast--success]="toast.type === 'success'"
+        [class.toast--error]="toast.type === 'error'">
+        <span class="toast__icon">
+            <svg *ngIf="toast.type === 'success'" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M5 12l5 5l10 -10" />
+            </svg>
+            <svg *ngIf="toast.type === 'error'" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M12 9v4" />
+                <path d="M12 16v.01" />
+                <path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z" />
+            </svg>
+        </span>
+        <p>{{ toast.message }}</p>
     </div>
 </div>

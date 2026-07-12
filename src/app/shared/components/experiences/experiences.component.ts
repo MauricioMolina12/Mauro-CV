@@ -22,52 +22,61 @@ export class ExperiencesComponent implements AfterViewInit {
 
   experiences = [
     {
-      company: 'Desarrollador Frontend',
-      time: `Enero 2025 - Junio 2025`,
-      logo: 'assets/mercadatos.jpg',
+      company: 'Edutin Academy',
+      role: 'Frontend Developer',
+      time: 'Junio 2025 - Julio 2026',
+      logo: 'assets/logo-edutin.png',
       positions: [
         {
           title: '',
-          description: `
-          Lideré la mejora y rediseño del sitio web corporativo de la empresa, optimizando su estructura, accesibilidad y rendimiento. Utilicé Angular para implementar una nueva version más rápida y moderna, y diseñé interfaces atractivas y funcionales en figma, alineadas con la identidad de marca.
-          `,
+          description:
+            'Desarrollo y mantenimiento de interfaces web modernas con Angular, optimizando el rendimiento, la accesibilidad y la experiencia de usuario en producción.',
         },
         {
           title: '',
           description:
-            'Adicionalmente, desarrollé un software interno en Angular que automatizó tareas claves y mejoró la eficiencia operative del equipo, aumentando la productividad y reduciendo tiempos de ejecución. Participé activamente en todas las etapas del desarrollo, desde la planificación hasta el despliegue, entregando soluciones escalables y orientadas a resultados.',
+            'Colaboración en equipos ágiles para lanzar nuevas funcionalidades y mejorar de forma continua la plataforma educativa.',
+        },
+      ],
+    },
+    {
+      company: 'Mercadatos',
+      role: 'Desarrollador Frontend',
+      time: 'Enero 2025 - Junio 2025',
+      logo: 'assets/mercadatos.jpg',
+      positions: [
+        {
+          title: '',
+          description:
+            'Lideré el rediseño del sitio corporativo con Angular y Figma, mejorando su estructura, rendimiento y accesibilidad.',
+        },
+        {
+          title: '',
+          description:
+            'Desarrollé un software interno que automatizó tareas clave y aumentó la eficiencia operativa del equipo.',
         },
       ],
     },
     {
       company: 'Edutin Academy',
+      role: 'Frontend & Mobile Developer · Instructor',
       time: 'Enero 2023 - Diciembre 2024',
       logo: 'assets/logo-edutin.png',
       positions: [
         {
-          title: 'Desarrollador frontend y Móvil Android',
-          description: `Diseñé e implementé interfaces intuitivas y atractivas para aplicaciones web y móviles, aplicando principios sólidos de UX/UI y utilizando tecnologías como HTML, CSS, JavaScript y TypeScript. Desarrollé aplicaciones modernas con Angular, Ionic y Figma, garantizando alto rendimiento, adaptabilidad y una experiencia de usuario optimizada en distintos dispositivos.`,
+          title: '',
+          description:
+            'Construí interfaces web y móviles con Angular, Ionic y Kotlin, integrando APIs REST/GraphQL y servicios de AWS (Amplify, S3, Cognito, AppSync).',
         },
         {
           title: '',
           description:
-            'Contribuí activamente en el desarrollo de nuevas funcionalidades, tanto en tecnologías híbridas como en código nativo para Android con Kotlin, integrando eficientemente SDKs de terceros y asegurando una comunicación fluida con servicios backend a través de APIs REST y GraphQL. Utilicé servicios en la nube como AWS Amplify, S3, CloudFront CDN, Cognito y AppSync, optimizando la arquitectura de integración para mayor escalabilidad y seguridad.',
+            'Implementé pruebas unitarias con Jasmine y Karma, trabajando con Git en entornos ágiles (Scrum/Kanban).',
         },
         {
-          title: '',
+          title: 'Instructor y diseñador de cursos',
           description:
-            'Implementé pruebas unitarias con Jasmine y Karma, garantizando la calidad del código y la estabilidad de los componentes. Además, realicé seguimiento del rendimiento de features y métricas clave mediante reportes organizados en hojas de cálculo (Excel) para facilitar la toma de decisiones y priorización de mejoras.',
-        },
-        {
-          title: '',
-          description:
-            'Gestioné el control de versiones con Git, colaborando de manera efectiva en entornos ágiles (Scrum/Kanban), y apliqué prácticas de accesibilidad y optimización para cumplir con los estándares actuales y mejorar la experiencia general del usuario.',
-        },
-        {
-          title: 'Profesor y diseñador de cursos',
-          description: `
-          Diseñé, desarrollé y grabé cursos virtuales enfocados en temáticas tecnológicas, combinando conocimientos técnicos con estrategias pedagógicas para garantizar un aprendizaje efectivo. Colaboré estrechamente con equipos multidisciplinarios de diseño instruccional, edición audiovisual y revisión académica para producir contenido interactivo, dinámico y alineado con los estándares de calidad de la plataforma.          
-          `,
+            'Diseñé y grabé cursos virtuales de tecnología junto a equipos multidisciplinarios de diseño instruccional y edición.',
           courses: [
             {
               title: 'Angular',
@@ -86,10 +95,6 @@ export class ExperiencesComponent implements AfterViewInit {
             },
           ],
         },
-        {
-          title: '',
-          description: 'Además, brindé soporte post-lanzamiento mediante la revisión de actividades, retroalimentación a estudiantes y corrección de errores en cursos habilitados, contribuyendo a la mejora continua de la experiencia educativa y la retención de estudiantes.'
-        }
       ],
     },
   ];

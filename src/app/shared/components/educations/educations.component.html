@@ -1,22 +1,29 @@
 <div class="educations-wrapper">
-    <h2>Educaciones & Certificaciones</h2>
-    <div class="educations">
-        <div class="education" #item *ngFor="let education of educations">
-            <div class="education-company">
-                <img [src]="education.logo" alt="">
-                <div class="education-name">
-                    <h4>{{education.education}}</h4>
-                    <span>{{education.time}}</span>
+    <div class="section-head">
+        <span class="eyebrow">FORMACIÓN</span>
+        <h2>Educación &amp; Certificaciones</h2>
+    </div>
+
+    <div class="educations-grid">
+        <div class="edu-card" #item *ngFor="let education of educations">
+            <div class="edu-card__top">
+                <div class="logo">
+                    <img [src]="education.logo" [alt]="education.education">
                 </div>
+                <span class="year">{{ education.time }}</span>
             </div>
-            <div class="education-information">
-                <ul class="list">
-                    <li class="item" *ngFor="let item of education.positions">
-                        <h2>{{item.title}}</h2>
-                        <a *ngIf="education.link != undefined" target="_blank" [href]="education.link">Ver</a>
-                    </li>
-                </ul>
-            </div>
+
+            <h3 class="degree" *ngFor="let item of education.positions">{{ item.title }}</h3>
+            <p class="institution">{{ education.education }}</p>
+
+            <a class="edu-link" *ngIf="education.link" [href]="education.link" target="_blank">
+                Ver credencial
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 15l6 -6" />
+                    <path d="M11 6h5a1 1 0 0 1 1 1v5" />
+                </svg>
+            </a>
         </div>
     </div>
 </div>

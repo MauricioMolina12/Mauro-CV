@@ -36,8 +36,9 @@
     border-radius: 500px 0 0 500px;
     background-image: url(../../../../../public/assets/banner2.png);
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    background-position: center -30px;
+    background-size: cover;
+    background-blend-mode: hard-light;
   }
 
   .banner-title {
@@ -54,26 +55,45 @@
 
     span {
       color: rgb(203, 203, 203);
+      font-size: clamp(0.95rem, 3.6vw, 1.3rem);
     }
 
     h1 {
       color: #d9d1ff;
       display: flex;
       flex-direction: column;
+      font-size: clamp(1.9rem, 8vw, 3rem);
+      line-height: 1.15;
 
-      .job::after {
-        content: "";
+      .job {
         display: inline-block;
-        animation: changeJob 4s ease infinite;
-        color: #8774e8;
         white-space: nowrap;
+        font-size: inherit;
+        background: linear-gradient(120deg, #8774e8, #b3a5f7);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        border-right: 2px solid #8774e8;
+        padding-right: 4px;
+        opacity: 1;
+        transform: translateY(0);
+        transition:
+          opacity 0.4s ease,
+          transform 0.4s ease;
+        animation: caretBlink 1s steps(1) infinite;
+
+        &.is-hidden {
+          opacity: 0;
+          transform: translateY(10px);
+        }
       }
     }
 
     p {
       margin-top: 15px;
       max-width: 90%;
-      font-size: 1rem;
+      font-size: clamp(0.9rem, 3.4vw, 1.05rem);
+      line-height: 1.6;
       color: rgb(203, 203, 203);
     }
 
@@ -83,16 +103,16 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 6px;
       margin-top: 20px;
 
       h2 {
-        font-size: 1.3rem;
+        font-size: clamp(1.1rem, 4.5vw, 1.4rem);
         color: #8774e8;
       }
 
       span {
-        font-size: 1rem;
+        font-size: clamp(0.85rem, 3.2vw, 1rem);
         color: rgb(203, 203, 203);
       }
     }
@@ -112,9 +132,8 @@
         color: white;
         cursor: pointer;
         text-decoration: none;
-      
-      
-        &:last-of-type{
+
+        &:last-of-type {
           background-color: transparent;
           border: 1px solid white;
         }
@@ -155,17 +174,13 @@
   }
 }
 
-@keyframes changeJob {
-  0% {
-    content: "Desarrollador Frontend";
-  }
-
-  50% {
-    content: "Diseñador UI/UX";
-  }
-
+@keyframes caretBlink {
+  0%,
   100% {
-    content: "Desarrollador Móvil";
+    border-color: #8774e8;
+  }
+  50% {
+    border-color: transparent;
   }
 }
 
@@ -203,8 +218,9 @@
       border-radius: 500px 0 0 500px;
       background-image: url(../../../../../public/assets/banner2.png);
       background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
+      background-position: center -100px;
+      background-size: cover;
+      background-blend-mode: hard-light;
 
       img {
         position: absolute;
@@ -224,13 +240,8 @@
       }
 
       h1 {
-        font-size: 2.8rem;
         max-width: 60%;
         color: #d9d1ff;
-
-        .job {
-          font-size: inherit;
-        }
       }
 
       p {

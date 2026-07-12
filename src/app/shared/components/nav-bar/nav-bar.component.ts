@@ -54,8 +54,10 @@ export class NavBarComponent implements OnInit {
 
     if (this.isActive) {
       this.renderer.addClass(sideBar, 'active');
+      this.renderer.setStyle(document.body, 'overflow', 'hidden');
     } else {
       this.renderer.removeClass(sideBar, 'active');
+      this.renderer.removeStyle(document.body, 'overflow');
     }
   }
 
@@ -95,6 +97,7 @@ export class NavBarComponent implements OnInit {
     if (this.isActive) {
       this.renderer.removeClass(sideBar, 'active');
       this.renderer.removeClass(burgerButton, 'active');
+      this.renderer.removeStyle(document.body, 'overflow');
       this.isActive = false;
     }
   }

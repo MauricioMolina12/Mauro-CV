@@ -1,4 +1,4 @@
-import { NgFor, NgStyle } from '@angular/common';
+import { NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import {
   Component,
   ElementRef,
@@ -12,7 +12,7 @@ import { UtilsService } from '../../services/utils.service';
 @Component({
   selector: 'app-specilizing',
   standalone: true,
-  imports: [NgFor, NgStyle],
+  imports: [NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault],
   templateUrl: './specilizing.component.html',
   styleUrl: './specilizing.component.scss',
 })
@@ -59,19 +59,25 @@ export class SpecilizingComponent {
   }
   jobs = [
     {
+      key: 'frontend',
       title: 'Desarrollador Frontend',
-      description: 'Convierto ideas en experiencias web interactivas. Con especialización en HTML, CSS, JavaScript y frameworks como Angular, React, Astro y Next.js, me aseguro de que cada página sea funcional, rápida y visualmente atractiva.',
-      pathImage: 'assets/front.webp',
+      description:
+        'Convierto ideas en experiencias web interactivas con HTML, CSS, JavaScript y frameworks como Angular, React, Astro y Next.js: rápidas, accesibles y visualmente atractivas.',
+      tags: ['Angular', 'React', 'Next.js', 'TypeScript'],
     },
     {
+      key: 'mobile',
       title: 'Desarrollador Móvil',
-      description: 'Desarrollo aplicaciones móviles nativas y multiplataforma utilizando tecnologías como React Native, Flutter e Ionic. Mi objetivo es crear aplicaciones intuitivas y de alto rendimiento para iOS y Android.',
-      pathImage: 'assets/mobile.webp',
+      description:
+        'Desarrollo apps nativas y multiplataforma con Flutter, Ionic y React Native, enfocadas en rendimiento y una experiencia fluida en iOS y Android.',
+      tags: ['Flutter', 'Ionic', 'Kotlin'],
     },
     {
+      key: 'design',
       title: 'Diseñador UI/UX',
-      description: 'Creo interfaces de usuario centradas en la experiencia, utilizando principios de diseño para que las aplicaciones sean estéticamente atractivas y fáciles de usar.',
-      pathImage: 'assets/design.webp',
+      description:
+        'Diseño interfaces centradas en el usuario, aplicando principios de diseño para que los productos sean atractivos, coherentes y fáciles de usar.',
+      tags: ['Figma', 'Prototipado', 'Design System'],
     },
   ];
 }

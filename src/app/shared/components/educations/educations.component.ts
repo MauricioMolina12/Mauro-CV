@@ -22,6 +22,16 @@ export class EducationsComponent implements AfterViewInit {
 
   educations = [
     {
+      education: 'Universidad Libre Seccional Barranquilla',
+      time: 'Feb 2021 - Mar 2026',
+      logo: 'assets/unilibre.jpg',
+      positions: [
+        {
+          title: 'Ingeniería de sistemas',
+        },
+      ],
+    },
+    {
       education: 'Universidad de los Andes (Colombia)',
       time: '2024',
       logo: 'assets/uniandes.jpg',
@@ -29,16 +39,6 @@ export class EducationsComponent implements AfterViewInit {
       positions: [
         {
           title: 'Campamento Virtual METAVERSO',
-        },
-      ],
-    },
-    {
-      education: 'Universidad Libre Seccional Barranquilla',
-      time: 'Feb 2021 - Actualidad',
-      logo: 'assets/unilibre.jpg',
-      positions: [
-        {
-          title: 'Ingeniería de sistemas',
         },
       ],
     },

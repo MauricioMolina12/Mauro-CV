@@ -1,262 +1,200 @@
+$primary: #8774e8;
+$primary-light: #a897f2;
+
 .wrapper {
   width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 30px;
+
+  .title {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: #3a2f70;
+    max-width: 100%;
+    text-align: center;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+      opacity 0.9s ease,
+      transform 0.9s ease;
+
+    span {
+      display: block;
+      font-size: 3rem;
+      color: #d9d1ff;
+      font-weight: 800;
+      word-break: break-word;
+    }
+
+    &.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
   .grid {
     width: 100%;
-    height: auto;
-    min-height: 80%;
-    max-height: min-content;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(9, 1fr);
-    gap: 10px;
-    padding: 10px;
-    grid-template-areas:
-      "c1 c1 c1 c1 c1 c1"
-      "c1 c1 c1 c1 c1 c1"
-      "c1 c1 c1 c1 c1 c1"
-      "c2 c2 c2 c2 c2 c2"
-      "c2 c2 c2 c2 c2 c2"
-      "c2 c2 c2 c2 c2 c2"
-      "c3 c3 c3 c3 c3 c3"
-      "c3 c3 c3 c3 c3 c3"
-      "c3 c3 c3 c3 c3 c3";
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 
     .card {
       width: 100%;
-      height: 100%;
       border-radius: 20px;
-      background-color: #8774e8;
+      background-color: $primary;
       display: flex;
       flex-direction: column;
-      align-items: start;
+      align-items: flex-start;
       justify-content: center;
-      gap: 4px;
+      gap: 6px;
       color: white;
-      padding: 10px;
+      padding: 20px;
       background-repeat: no-repeat;
 
-      h2,
-      span {
-        max-width: 40%;
-      }
       h2 {
-        font-size: 1rem;
+        font-size: 1.1rem;
       }
 
       span {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
+      }
+    }
+
+    .card-1,
+    .card-2 {
+      min-height: 150px;
+      h2,
+      span {
+        max-width: 55%;
       }
     }
 
     .card-1 {
       background-image: url(../../../../../public/assets/ux.png);
-      grid-area: c1;
+      background-size: cover;
     }
 
     .card-2 {
-      grid-area: c2;
       background-image: url(../../../../../public/assets/whyme.png);
-      background-size: contain;
-      background-repeat: no-repeat;
-      display: flex;
-      align-items: end;
-
-      h2,
-      span {
-        max-width: 40%;
-      }
+      background-size: cover;
+      background-position: center -150px;
     }
 
     .card-3 {
-      grid-area: c3;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: max-content;
-      max-height: max-content;
-      padding-block: 15px;
+      background: linear-gradient(160deg, #251e47, #1b1636);
+      border: 1px solid rgba(135, 116, 232, 0.18);
+      gap: 22px;
 
-      h2,
-      span {
-        text-align: center;
-        max-width: 80%;
+      .mindset-head {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        h2 {
+          font-size: 1.15rem;
+          color: #f2f0ff;
+        }
+
+        span {
+          font-size: 0.82rem;
+          color: rgb(180, 180, 195);
+        }
       }
 
-      .images {
+      .mindset-grid {
         width: 100%;
-        height: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
 
-        .images-name {
-          position: relative;
-          span {
-            position: absolute;
-            top: 90%;
-            display: none;
-            z-index: 1000;
-          }
+        .trait {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          padding: 16px;
+          border-radius: 14px;
+          background: rgba(135, 116, 232, 0.08);
+          border: 1px solid rgba(135, 116, 232, 0.16);
+          transition:
+            border-color 0.3s ease,
+            transform 0.3s ease;
 
-          img {
-            width: 45px;
-            height: 45px;
-            object-fit: cover;
-            border-radius: 10px;
-            transition: all 0.5s ease;
-            position: relative;
-            background-color: white;
-            clip-path: circle();
+          &:hover {
+            border-color: rgba(135, 116, 232, 0.4);
+            transform: translateY(-3px);
 
-            &:hover {
-              transform: translateY(-10px);
+            .trait-icon {
+              transform: scale(1.08);
             }
           }
 
-          img:hover + span {
-            display: block;
+          .trait-icon {
+            display: grid;
+            place-items: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            color: #ffffff;
+            background: linear-gradient(135deg, $primary, $primary-light);
+            transition: transform 0.3s ease;
+          }
+
+          h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #f2f0ff;
+          }
+
+          p {
+            font-size: 0.8rem;
+            line-height: 1.5;
+            color: rgb(190, 190, 205);
           }
         }
       }
-    }
-  }
-
-  .title {
-    font-size: 2.6rem;
-    color: #3a2f70;
-    max-width: 60%;
-    text-align: center;
-    transform: translateX(-100%);
-    transition: transform 1s ease;
-
-    span {
-      font-size: 6rem;
-      color: #d9d1ff;
-      font-weight: 800;
-    }
-
-    &.active {
-      transform: translateX(0);
     }
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .wrapper {
-    flex-direction: row;
-
     .title {
-      transform: translateX(-50%);
-      font-size: 4rem;
+      font-size: 2.2rem;
 
       span {
-        font-size: 8rem;
+        display: inline;
+        font-size: 4rem;
       }
     }
 
     .grid {
-      width: 70%;
-      height: 80%;
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      grid-template-rows: repeat(4, 1fr);
-      gap: 10px;
+      grid-template-columns: 1fr 1fr;
       grid-template-areas:
-        "c1 c1 c1 c2 c2 c2"
-        "c1 c1 c1 c2 c2 c2"
-        "c3 c3 c3 c3 c3 c3"
-        "c3 c3 c3 c3 c3 c3";
-      margin-right: 20px;
-
-      .card {
-        width: 100%;
-        height: 100%;
-        border-radius: 20px;
-        background-color: #8774e8;
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        justify-content: center;
-        gap: 4px;
-        color: white;
-        padding: 10px;
-
-        h2,
-        span {
-          max-width: 42%;
-        }
-
-        h2 {
-          font-size: 1.2rem;
-        }
-
-        span {
-          font-size: 0.9rem;
-        }
-      }
+        "c1 c2"
+        "c3 c3";
+      gap: 16px;
 
       .card-1 {
-        background-image: url(../../../../../public/assets/ux.png);
         grid-area: c1;
       }
 
       .card-2 {
         grid-area: c2;
-        background-image: url(../../../../../public/assets/whyme.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        display: flex;
-        align-items: end;
-
-        h2,
-        span {
-          max-width: 40%;
-        }
+        background-position: center -280px;
       }
 
       .card-3 {
         grid-area: c3;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
 
-        h2,
-        span {
-          text-align: center;
-          max-width: 40%;
-        }
-
-        .images {
-          width: 75%;
-          height: 20%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 20px;
-          flex-wrap: nowrap;
-
-          img {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-            border-radius: 10px;
-            transition: all 0.5s ease;
-            position: relative;
-
-            &:hover {
-              transform: translateY(-10px);
-            }
-          }
+        .mindset-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 16px;
         }
       }
     }

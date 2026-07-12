@@ -19,6 +19,7 @@ import { ExperiencesComponent } from './shared/components/experiences/experience
 import { ContactComponent } from './shared/components/contact/contact.component';
 import { EducationsComponent } from './shared/components/educations/educations.component';
 import { ProjectDetailsComponent } from './pages/project-details/project-details.component';
+import { TechnologiesComponent } from './shared/components/technologies/technologies.component';
 
 @Component({
   selector: 'app-root',
@@ -36,6 +37,7 @@ import { ProjectDetailsComponent } from './pages/project-details/project-details
     ContactComponent,
     EducationsComponent,
     ProjectDetailsComponent,
+    TechnologiesComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

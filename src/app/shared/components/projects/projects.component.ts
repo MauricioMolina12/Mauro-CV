@@ -1,4 +1,4 @@
-import { NgClass, NgFor } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 import {
   AfterViewInit,
   Component,
@@ -11,10 +11,21 @@ import {
 import { RouterLink } from '@angular/router';
 import { UtilsService } from '../../services/utils.service';
 
+interface Project {
+  title: string;
+  slug: string;
+  type: string;
+  description: string;
+  image: string;
+  techs: string[];
+  demo?: string;
+  repo?: string;
+}
+
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [NgFor, NgClass],
+  imports: [NgFor, NgClass, NgIf],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
 })
@@ -24,15 +35,15 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
 
   constructor(private utilsService: UtilsService) {}
 
-  cards = [
+  cards: Project[] = [
     {
       title: 'App Edutin Academy',
       slug: 'app_edutin_academy',
       type: 'mobile',
       description:
-        'Formé parte del equipo de desarrollo de la aplicación móvil de Edutin Academy, contribuyendo a la implementación de funcionalidades clave con tecnologías como Angular e Ionic. Trabajé en la creación de interfaces intuitivas, responsivas y alineadas con la experiencia web de la plataforma, asegurando una experiencia de usuario ',
+        'Aplicación móvil de Edutin Academy desarrollada con Angular e Ionic. Trabajé en interfaces intuitivas y responsivas, alineadas con la experiencia web de la plataforma.',
       image: 'assets/appedutin.png',
-      url: 'https://play.google.com/store/apps/details?id=com.edutin.app&hl=es_CO',
+      demo: 'https://play.google.com/store/apps/details?id=com.edutin.app&hl=es_CO',
       techs: ['assets/ionic.png'],
     },
     {
@@ -40,9 +51,9 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       slug: 'mercadatos',
       type: 'web',
       description:
-        'Actualmente lidero el desarrollo de la página web de Mercadatos, encargándome de la planificación, implementación de funcionalidades clave y coordinación del equipo técnico.',
+        'Lideré el desarrollo del sitio web de Mercadatos: planificación, implementación de funcionalidades clave y coordinación del equipo técnico.',
       image: 'assets/mercadatos.png',
-      url: 'https://github.com/MauricioMolina12/mercadatos',
+      repo: 'https://github.com/MauricioMolina12/mercadatos',
       techs: ['assets/angular.png'],
     },
     {
@@ -50,9 +61,9 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       slug: 'renta_go',
       type: 'web',
       description:
-        'Este fue un proyecto universitario, el cual trata de rentar autos, donde cada auto tieneEste fue un proyecto universitario que consiste en un sistema de renta de autos, donde cada vehículo cuenta con sus propias características y disponibilidad.',
+        'Proyecto universitario: sistema de renta de autos donde cada vehículo cuenta con sus propias características y disponibilidad.',
       image: 'assets/rentago.jpg',
-      url: 'https://github.com/Samue2408/Reserva_Vehiculos',
+      repo: 'https://github.com/Samue2408/Reserva_Vehiculos',
       techs: ['assets/angular.png', 'assets/node.png'],
     },
     {
@@ -60,9 +71,9 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       slug: 'unilibre',
       type: 'web',
       description:
-        'Este fue un proyecto universitario enfocado en el desarrollo de una plataforma para la gestión y administración de las actividades asignadas a los profesores, permitiendo llevar un control organizado de sus tareas, horarios y responsabilidades dentro de la institución.',
+        'Plataforma universitaria para la gestión de las actividades de los profesores, con control de tareas, horarios y responsabilidades.',
       image: 'assets/unilibre.png',
-      url: 'https://github.com/MauricioMolina12/ClassroomProject',
+      repo: 'https://github.com/MauricioMolina12/ClassroomProject',
       techs: ['assets/html.webp', 'assets/css.png', 'assets/js.png'],
     },
     {
@@ -70,9 +81,9 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       slug: 'pl-software',
       type: 'web',
       description:
-        'Proyecto universitario para crear un software que implementa el método simplex, permitiendo resolver problemas de programación lineal de forma práctica y guiada, mostrando paso a paso la solución óptima.',
+        'Software que implementa el método simplex para resolver problemas de programación lineal, mostrando paso a paso la solución óptima.',
       image: 'assets/PL-software.png',
-      url: 'https://github.com/MauricioMolina12/metodo-simplex',
+      repo: 'https://github.com/MauricioMolina12/metodo-simplex',
       techs: ['assets/vue.png'],
     },
     {
@@ -80,9 +91,9 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       slug: 'my_security',
       type: 'mobile',
       description:
-        'Proyecto universitario enfocado en el desarrollo de una aplicación móvil para mejorar la seguridad de la ciudad de Barranquilla, incorporando funciones como alertas en tiempo real y seguimiento de ubicación para brindar mayor protección a los usuarios. ',
+        'App móvil para mejorar la seguridad en Barranquilla, con alertas en tiempo real y seguimiento de ubicación para proteger a los usuarios.',
       image: 'assets/mysecurity.jpg',
-      url: 'https://github.com/Blaskevorsz/FPD-Jhoan',
+      repo: 'https://github.com/Blaskevorsz/FPD-Jhoan',
       techs: ['assets/flutter.png'],
     },
     {
@@ -90,15 +101,16 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       slug: '',
       type: 'web',
       description:
-        'Este es mi portafolio personal, donde presento una selección de proyectos realizados, mostrando mis habilidades técnicas, creatividad y experiencia en desarrollo web y diseño.',
+        'Mi portafolio personal, donde presento una selección de proyectos, mostrando mis habilidades técnicas y experiencia en desarrollo y diseño.',
       image: 'assets/cv.png',
+      repo: 'https://github.com/MauricioMolina12',
       techs: ['assets/angular.png'],
     },
     {
       title: 'M&M Cake Shop',
       slug: '',
       type: 'design',
-      description: '',
+      description: 'Diseño UI/UX de una tienda de repostería, creado en Figma.',
       image: 'assets/m&m.png',
       techs: ['assets/figma.png'],
     },
@@ -106,7 +118,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       title: 'Vehicle care',
       slug: '',
       type: 'design',
-      description: '',
+      description: 'Concepto de app para el cuidado y mantenimiento de vehículos, diseñado en Figma.',
       image: 'assets/vehicleCare.png',
       techs: ['assets/figma.png'],
     },
@@ -114,7 +126,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       title: 'Food app',
       slug: '',
       type: 'design',
-      description: '',
+      description: 'Diseño de una app de comida a domicilio, prototipado en Figma.',
       image: 'assets/food.png',
       techs: ['assets/figma.png'],
     },

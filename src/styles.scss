@@ -1,3 +1,8 @@
+html {
+  /* Base tipográfica fluida: todo el texto en rem escala con el viewport */
+  font-size: clamp(14px, 13px + 0.35vw, 17px);
+}
+
 *,
 *::after,
 *::before {

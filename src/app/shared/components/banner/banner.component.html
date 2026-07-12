@@ -3,7 +3,7 @@
   </div>
   <div class="banner-title">
     <span> Hola, Bienvenido </span>
-    <h1>Soy Mauricio un <span class="job"></span></h1>
+    <h1>Soy Mauricio un <span class="job" [class.is-hidden]="!jobVisible">{{ currentJob }}</span></h1>
     <p>
       No soy un robot… pero soy una máquina cuando se trata de crear interfaces UI/UX y código frontend de alto nivel.
     </p>
@@ -16,7 +16,7 @@
       <a download href="assets/CVMAURICIO.pdf" class="button-call-action">Descargar CV</a>
     </div>
   </div>
-  <div class="points">
+  <!-- <div class="points">
     <div class="point" *ngFor="let point of [].constructor(100)"></div>
-  </div>
+  </div> -->
 </div>

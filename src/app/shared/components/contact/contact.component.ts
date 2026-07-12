@@ -17,21 +17,34 @@ import emailjs from '@emailjs/browser';
 })
 export class ContactComponent {
   form: FormGroup;
-  loading: boolean = false;
-  success: boolean = false;
-  error: boolean = false;
+  loading = false;
+
+  toast: { show: boolean; type: 'success' | 'error'; message: string } = {
+    show: false,
+    type: 'success',
+    message: '',
+  };
+
+  private toastTimer: any;
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
       from_name: ['', Validators.required],
       from_email: ['', [Validators.required, Validators.email]],
+      subject: [''],
       message: ['', Validators.required],
     });
   }
 
   onSubmit(): void {
-    if (this.form.invalid) return;
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+      this.showToast('error', 'Por favor completa todos los campos requeridos.');
+      return;
+    }
+
     this.loading = true;
+
     emailjs
       .send(
         'service_sygd4sk',
@@ -40,21 +53,23 @@ export class ContactComponent {
         'VPj63xUtAafjdJ2s5'
       )
       .then(() => {
-        this.loading = false;
-        this.success = true;
-        this.error = false;
         this.form.reset();
-        setTimeout(() => (this.success = false), 3000);
+        this.showToast('success', '¡Mensaje enviado! Te responderé muy pronto.');
       })
       .catch(() => {
-        this.loading = false;
-        this.success = false;
-        this.error = true;
-        setTimeout(() => (this.error = false), 3000);
+        this.showToast(
+          'error',
+          'Ocurrió un error al enviar el mensaje. Intenta más tarde.'
+        );
       })
       .finally(() => {
         this.loading = false;
-        this.error = false;
       });
+  }
+
+  private showToast(type: 'success' | 'error', message: string): void {
+    this.toast = { show: true, type, message };
+    clearTimeout(this.toastTimer);
+    this.toastTimer = setTimeout(() => (this.toast.show = false), 4500);
   }
 }
