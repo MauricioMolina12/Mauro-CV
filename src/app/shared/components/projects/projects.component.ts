@@ -37,24 +37,42 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
 
   cards: Project[] = [
     {
+      title: 'Star Grow Studio',
+      slug: 'opera_website',
+      type: 'web',
+      description: 'Diseño y desarrollo de un sitio web corporativo para una empresa de desarrollo de software, diseño y asesoría empresarial, con un enfoque en transmitir profesionalismo, destacar sus servicios y fortalecer su presencia digital.',
+      image: 'assets/projects/stargrowstudio.png',
+      demo: 'https://stargrowstudio.com',
+      techs: ['assets/tech/next.svg', 'assets/tech/sanity.svg'],
+    },
+    {
+      title: 'Opera',
+      slug: 'opera_website',
+      type: 'web',
+      description: 'Desarrollo integral de identidad digital para una empresa multiservicios, incluyendo branding, diseño de propuesta comercial y desarrollo de un sitio web corporativo moderno y orientado a la captación de clientes.',
+      image: 'assets/projects/opera.png',
+      demo: 'https://operawebsite.vercel.app/',
+      techs: ['assets/tech/next.svg'],
+    },
+
+    {
       title: 'App Edutin Academy',
       slug: 'app_edutin_academy',
       type: 'mobile',
       description:
         'Aplicación móvil de Edutin Academy desarrollada con Angular e Ionic. Trabajé en interfaces intuitivas y responsivas, alineadas con la experiencia web de la plataforma.',
-      image: 'assets/appedutin.png',
+      image: 'assets/projects/appedutin.png',
       demo: 'https://play.google.com/store/apps/details?id=com.edutin.app&hl=es_CO',
-      techs: ['assets/ionic.png'],
+      techs: ['assets/tech/ionic.svg'],
     },
     {
       title: 'Mercadatos',
       slug: 'mercadatos',
       type: 'web',
-      description:
-        'Lideré el desarrollo del sitio web de Mercadatos: planificación, implementación de funcionalidades clave y coordinación del equipo técnico.',
-      image: 'assets/mercadatos.png',
+      description: 'Desarrollo de un sitio web corporativo durante mi etapa de prácticas profesionales, enfocado en fortalecer la presencia digital de la empresa. El proyecto incluyó el diseño y desarrollo de una plataforma moderna, optimizada para presentar sus servicios, mejorar la experiencia de navegación y proyectar una imagen profesional de la marca.',
+      image: 'assets/projects/mercadatos.png',
       repo: 'https://github.com/MauricioMolina12/mercadatos',
-      techs: ['assets/angular.png'],
+      techs: ['assets/tech/angular.svg'],
     },
     {
       title: 'Renta GO',
@@ -62,9 +80,9 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       type: 'web',
       description:
         'Proyecto universitario: sistema de renta de autos donde cada vehículo cuenta con sus propias características y disponibilidad.',
-      image: 'assets/rentago.jpg',
+      image: 'assets/projects/rentago.jpg',
       repo: 'https://github.com/Samue2408/Reserva_Vehiculos',
-      techs: ['assets/angular.png', 'assets/node.png'],
+      techs: ['assets/tech/angular.svg', 'assets/tech/nodejs.svg'],
     },
     {
       title: 'Unilibre',
@@ -72,9 +90,13 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       type: 'web',
       description:
         'Plataforma universitaria para la gestión de las actividades de los profesores, con control de tareas, horarios y responsabilidades.',
-      image: 'assets/unilibre.png',
+      image: 'assets/projects/unilibre.png',
       repo: 'https://github.com/MauricioMolina12/ClassroomProject',
-      techs: ['assets/html.webp', 'assets/css.png', 'assets/js.png'],
+      techs: [
+        'assets/tech/html5.svg',
+        'assets/tech/css3.svg',
+        'assets/tech/javascript.svg',
+      ],
     },
     {
       title: 'Software método simplex',
@@ -82,9 +104,9 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       type: 'web',
       description:
         'Software que implementa el método simplex para resolver problemas de programación lineal, mostrando paso a paso la solución óptima.',
-      image: 'assets/PL-software.png',
+      image: 'assets/projects/PL-software.png',
       repo: 'https://github.com/MauricioMolina12/metodo-simplex',
-      techs: ['assets/vue.png'],
+      techs: ['assets/tech/vue.svg'],
     },
     {
       title: 'My Security',
@@ -92,43 +114,35 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       type: 'mobile',
       description:
         'App móvil para mejorar la seguridad en Barranquilla, con alertas en tiempo real y seguimiento de ubicación para proteger a los usuarios.',
-      image: 'assets/mysecurity.jpg',
+      image: 'assets/projects/mysecurity.jpg',
       repo: 'https://github.com/Blaskevorsz/FPD-Jhoan',
-      techs: ['assets/flutter.png'],
-    },
-    {
-      title: 'Mi portafolio',
-      slug: '',
-      type: 'web',
-      description:
-        'Mi portafolio personal, donde presento una selección de proyectos, mostrando mis habilidades técnicas y experiencia en desarrollo y diseño.',
-      image: 'assets/cv.png',
-      repo: 'https://github.com/MauricioMolina12',
-      techs: ['assets/angular.png'],
+      techs: ['assets/tech/flutter.svg'],
     },
     {
       title: 'M&M Cake Shop',
       slug: '',
       type: 'design',
       description: 'Diseño UI/UX de una tienda de repostería, creado en Figma.',
-      image: 'assets/m&m.png',
-      techs: ['assets/figma.png'],
+      image: 'assets/projects/m&m.png',
+      techs: ['assets/tech/figma.svg'],
     },
     {
       title: 'Vehicle care',
       slug: '',
       type: 'design',
-      description: 'Concepto de app para el cuidado y mantenimiento de vehículos, diseñado en Figma.',
-      image: 'assets/vehicleCare.png',
-      techs: ['assets/figma.png'],
+      description:
+        'Concepto de app para el cuidado y mantenimiento de vehículos, diseñado en Figma.',
+      image: 'assets/projects/vehicleCare.png',
+      techs: ['assets/tech/figma.svg'],
     },
     {
       title: 'Food app',
       slug: '',
       type: 'design',
-      description: 'Diseño de una app de comida a domicilio, prototipado en Figma.',
-      image: 'assets/food.png',
-      techs: ['assets/figma.png'],
+      description:
+        'Diseño de una app de comida a domicilio, prototipado en Figma.',
+      image: 'assets/projects/food.png',
+      techs: ['assets/tech/figma.svg'],
     },
   ];
 
@@ -150,7 +164,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.typeProject = 'web';
     this.cards = this.cards.filter(
-      (project) => project.type === this.typeProject
+      (project) => project.type === this.typeProject,
     );
   }
 

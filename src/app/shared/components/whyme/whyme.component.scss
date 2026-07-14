@@ -75,8 +75,9 @@ $primary-light: #a897f2;
     }
 
     .card-1 {
-      background-image: url(../../../../../public/assets/ux.png);
+      background-image: url(../../../../../public/assets/ux.jpg);
       background-size: cover;
+      background-blend-mode: soft-light;
     }
 
     .card-2 {

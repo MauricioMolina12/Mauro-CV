@@ -65,6 +65,7 @@ export class TechnologiesComponent implements AfterViewInit {
       techs: [
         { name: 'VS Code', icon: 'assets/tech/vscode.svg' },
         { name: 'Git', icon: 'assets/tech/git.svg' },
+        { name: 'Sanity Headless', icon: 'assets/tech/sanity.svg' },
         { name: 'GitHub', icon: 'assets/tech/github.svg' },
         { name: 'Node.js', icon: 'assets/tech/nodejs.svg' },
         { name: 'Firebase', icon: 'assets/tech/firebase.svg' },
