@@ -21,7 +21,7 @@ export class BannerComponent implements OnInit, OnDestroy {
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: Object,
   ) {}
 
   jobs = ['Desarrollador Frontend', 'Diseñador UI/UX', 'Desarrollador Móvil'];

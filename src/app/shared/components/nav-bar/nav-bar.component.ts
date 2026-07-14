@@ -31,6 +31,7 @@ export class NavBarComponent implements OnInit {
     { name: 'Inicio', path: 'home' },
     { name: 'Acerca de mi', path: 'about' },
     { name: 'Habilidades', path: 'skills' },
+    { name: 'Tecnologías', path: 'techs' },
     { name: 'Proyectos', path: 'projects' },
     { name: 'Educación', path: 'educations' },
     { name: 'Experiencia', path: 'experience' },

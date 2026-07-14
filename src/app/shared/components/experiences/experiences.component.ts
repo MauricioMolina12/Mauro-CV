@@ -29,14 +29,8 @@ export class ExperiencesComponent implements AfterViewInit {
       positions: [
         {
           title: '',
-          description:
-            'Desarrollo y mantenimiento de interfaces web modernas con Angular, optimizando el rendimiento, la accesibilidad y la experiencia de usuario en producción.',
-        },
-        {
-          title: '',
-          description:
-            'Colaboración en equipos ágiles para lanzar nuevas funcionalidades y mejorar de forma continua la plataforma educativa.',
-        },
+          description: 'Lideré el desarrollo, mantenimiento y evolución de Edutin Business, Edutin Affiliate y Edutin Institutions, implementando nuevas funcionalidades y optimizaciones enfocadas en el rendimiento, la escalabilidad y la experiencia de usuario. Integré arquitecturas basadas en microfrontends con módulos desarrollados por otros equipos y gestioné la comunicación con servicios mediante APIs REST y GraphQL. Además, trabajé de forma colaborativa con los equipos de Diseño UI/UX, Comercial, Project Management y Backend para convertir requerimientos de negocio en soluciones técnicas de alta calidad, aplicando buenas prácticas de desarrollo y asegurando la evolución continua de las plataformas en producción.'
+        }
       ],
     },
     {
@@ -47,31 +41,19 @@ export class ExperiencesComponent implements AfterViewInit {
       positions: [
         {
           title: '',
-          description:
-            'Lideré el rediseño del sitio corporativo con Angular y Figma, mejorando su estructura, rendimiento y accesibilidad.',
-        },
-        {
-          title: '',
-          description:
-            'Desarrollé un software interno que automatizó tareas clave y aumentó la eficiencia operativa del equipo.',
+          description: 'Diseñé y desarrollé un nuevo sitio web corporativo de extremo a extremo, definiendo la experiencia e interfaz de usuario en Figma, validando propuestas con los equipos de marketing y dirección, e implementando la solución con Angular bajo una metodología Scrum, logrando una plataforma moderna, optimizada y alineada con los objetivos de negocio.'
         },
       ],
     },
     {
       company: 'Edutin Academy',
       role: 'Frontend & Mobile Developer · Instructor',
-      time: 'Enero 2023 - Diciembre 2024',
+      time: 'Mayo 2024  - Diciembre 2024',
       logo: 'assets/logo-edutin.png',
       positions: [
         {
           title: '',
-          description:
-            'Construí interfaces web y móviles con Angular, Ionic y Kotlin, integrando APIs REST/GraphQL y servicios de AWS (Amplify, S3, Cognito, AppSync).',
-        },
-        {
-          title: '',
-          description:
-            'Implementé pruebas unitarias con Jasmine y Karma, trabajando con Git en entornos ágiles (Scrum/Kanban).',
+          description: 'Participé en el desarrollo y evolución de la aplicación móvil de Edutin utilizando Angular, Ionic y Kotlin, implementando nuevas funcionalidades que formaron parte de importantes lanzamientos del producto. Integré servicios mediante APIs REST y GraphQL, así como servicios de AWS, colaborando estrechamente con un equipo multidisciplinario bajo metodologías ágiles para entregar soluciones de alta calidad que contribuyeron a la mejora continua de la experiencia del usuario y al crecimiento de la plataforma.'
         },
         {
           title: 'Instructor y diseñador de cursos',
@@ -80,17 +62,17 @@ export class ExperiencesComponent implements AfterViewInit {
           courses: [
             {
               title: 'Angular',
-              image: 'assets/angular.png',
+              image: 'assets/tech/angular.svg',
               slug: 'https://edutin.com/curso-de-angular',
             },
             {
               title: 'CSS',
-              image: 'assets/css.png',
+              image: 'assets/tech/css3.svg',
               slug: 'https://edutin.com/curso-de-css3',
             },
             {
               title: 'Ionic',
-              image: 'assets/ionic.png',
+              image: 'assets/tech/ionic.svg',
               slug: 'https://edutin.com/curso-de-ionic',
             },
           ],

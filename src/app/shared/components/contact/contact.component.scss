@@ -214,12 +214,11 @@ $primary-light: #a897f2;
     align-items: center;
     gap: 12px;
     padding: 14px 18px;
-    border-radius: 14px;
+    border-radius: 20px;
     color: #f2f0ff;
     background: rgba(28, 23, 54, 0.96);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(135, 116, 232, 0.3);
-    border-left-width: 4px;
     animation: toastIn 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 
     .toast__icon {
@@ -239,7 +238,6 @@ $primary-light: #a897f2;
     }
 
     &.toast--success {
-      border-left-color: #2ecc71;
 
       .toast__icon {
         background: rgba(46, 204, 113, 0.2);
@@ -248,7 +246,6 @@ $primary-light: #a897f2;
     }
 
     &.toast--error {
-      border-left-color: #ff5a6a;
 
       .toast__icon {
         background: rgba(255, 90, 106, 0.2);
