@@ -128,6 +128,35 @@ $border: rgba(135, 116, 232, 0.16);
     }
   }
 
+  .hero-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    background: rgba(111, 207, 151, 0.08);
+    border: 1px solid rgba(111, 207, 151, 0.2);
+
+    svg {
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: #6fcf97;
+    }
+
+    p {
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: #c5f0d5;
+      margin: 0;
+
+      strong {
+        color: #ffffff;
+        font-weight: 700;
+      }
+    }
+  }
+
   .hero-actions {
     display: flex;
     flex-wrap: wrap;
@@ -205,6 +234,7 @@ $border: rgba(135, 116, 232, 0.16);
   .techs {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 10px;
 
     figure {

@@ -13,7 +13,7 @@ $primary-light: #a897f2;
   top: 0;
   z-index: 10000;
   transition: background-color 0.35s ease, backdrop-filter 0.35s ease,
-    border-color 0.35s ease;
+    border-color 0.35s ease, box-shadow 0.35s ease;
   border-bottom: 1px solid transparent;
 
   &.active {
@@ -21,6 +21,7 @@ $primary-light: #a897f2;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(135, 116, 232, 0.28);
+    box-shadow: 0 1px 20px rgba(135, 116, 232, 0.08);
   }
 
   /* ---------- Logo ---------- */
@@ -120,9 +121,9 @@ $primary-light: #a897f2;
     position: fixed;
     top: 0;
     left: 0;
-    background: rgba(34, 25, 78, 0.96);
-    backdrop-filter: blur(22px);
-    -webkit-backdrop-filter: blur(22px);
+    background: rgba(25, 18, 60, 0.97);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
     z-index: 10;
     display: flex;
     flex-direction: column;
@@ -140,11 +141,12 @@ $primary-light: #a897f2;
 
     .side-bar__list {
       margin: 0;
-      padding: 0 34px;
+      padding: 0 40px;
       width: 100%;
+      max-width: 480px;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 2px;
       list-style: none;
 
       .side-bar__item {
@@ -158,40 +160,49 @@ $primary-light: #a897f2;
           display: flex;
           align-items: baseline;
           gap: 16px;
-          padding: 18px 8px;
-          color: #e9e6ff;
+          padding: 20px 12px;
+          color: #ffffff;
           text-decoration: none;
           border-radius: 12px;
           position: relative;
-          transition: background 0.3s ease, padding-left 0.3s ease, color 0.3s ease;
+          transition: background 0.3s ease, padding-left 0.3s ease;
 
           .idx {
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 700;
             color: $primary-light;
-            opacity: 0.7;
+            opacity: 0.6;
             min-width: 28px;
+            transition: opacity 0.25s ease;
           }
 
           .label {
-            font-size: 1.7rem;
+            font-size: 1.6rem;
             font-weight: 700;
             letter-spacing: 0.5px;
+            color: #ffffff;
           }
 
-          &:hover,
-          &.active-item {
-            background: rgba(135, 116, 232, 0.12) !important;
-            padding-left: 18px !important;
-            color: #ffffff !important;
+          &:hover {
+            background: rgba(135, 116, 232, 0.1);
+            padding-left: 22px;
 
             .idx {
               opacity: 1;
             }
           }
 
-          &.active-item .label {
-            color: $primary-light;
+          &.active-item {
+            background: rgba(135, 116, 232, 0.15);
+            padding-left: 22px;
+
+            .idx {
+              opacity: 1;
+            }
+
+            .label {
+              color: $primary-light;
+            }
           }
         }
       }
@@ -222,12 +233,14 @@ $primary-light: #a897f2;
         padding: 0;
         flex-direction: row;
         align-items: center;
-        gap: 6px;
+        gap: 2px;
+        max-width: none;
 
         .side-bar__item {
           font-size: 0.95rem;
           opacity: 1;
           transform: none;
+          border-bottom: none;
 
           a {
             display: block;
@@ -246,60 +259,62 @@ $primary-light: #a897f2;
               font-size: 0.95rem;
               font-weight: 500;
               letter-spacing: normal;
-            }
-
-            &::after {
-              left: 14px;
-              bottom: 4px;
-              background: linear-gradient(90deg, $primary, $primary-light);
+              color: #cfc9ee;
+              transition: color 0.25s ease;
             }
 
             &:hover {
-              background: transparent !important;
-              padding-left: 14px !important;
+              background: rgba(135, 116, 232, 0.08);
               color: #ffffff;
+              padding-left: 14px;
 
-              &::after {
-                width: calc(100% - 28px);
+              .label {
+                color: #ffffff;
               }
             }
 
             &.active-item {
-              background: transparent !important;
-              color: $primary-light !important;
-              padding: 8px 14px !important;
+              background: transparent;
+              color: $primary-light;
+              padding: 8px 14px;
 
               .label {
                 font-weight: 600;
                 color: $primary-light;
-              }
-
-              &::after {
-                width: calc(100% - 28px);
               }
             }
           }
 
           /* CTA — último item (Contacto) */
           &:last-of-type a {
-            margin-left: 8px;
-            padding: 9px 18px;
+            margin-left: 12px;
+            padding: 9px 20px;
             border-radius: 10px;
             color: #ffffff;
             font-weight: 600;
             background: linear-gradient(135deg, $primary, $primary-light);
+            will-change: transform, box-shadow;
+            transition: transform 0.25s ease, box-shadow 0.25s ease,
+              opacity 0.25s ease;
 
-            &::after {
-              display: none;
+            .label {
+              color: #ffffff;
             }
 
             &:hover {
-              transform: translateY(-2px);
+              transform: translateY(-1px);
+              box-shadow: 0 4px 16px rgba(135, 116, 232, 0.35);
+            }
+
+            &:active {
+              transform: translateY(0);
+              box-shadow: 0 2px 8px rgba(135, 116, 232, 0.2);
             }
 
             &.active-item {
-              background: linear-gradient(135deg, $primary, $primary-light) !important;
-              color: #ffffff !important;
+              background: linear-gradient(135deg, $primary, $primary-light);
+              color: #ffffff;
+              padding: 9px 20px;
 
               .label {
                 color: #ffffff;

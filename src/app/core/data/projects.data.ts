@@ -13,6 +13,13 @@ export const TECHS: Record<string, Tech> = {
   vue: { icon: 'assets/tech/vue.svg', name: 'Vue' },
   flutter: { icon: 'assets/tech/flutter.svg', name: 'Flutter' },
   figma: { icon: 'assets/tech/figma.svg', name: 'Figma' },
+  typescript: { icon: 'assets/tech/typescript.svg', name: 'TypeScript' },
+  rxjs: { icon: 'assets/tech/rxjs.svg', name: 'RxJS' },
+  ngrx: { icon: 'assets/tech/ngrx.svg', name: 'NgRx' },
+  sass: { icon: 'assets/tech/sass.svg', name: 'SCSS' },
+  git: { icon: 'assets/tech/git.svg', name: 'Git' },
+  graphql: { icon: 'assets/tech/graphql.svg', name: 'GraphQL' },
+  aws: { icon: 'assets/tech/aws.svg', name: 'AWS' },
 };
 
 export const PROJECTS: Project[] = [
@@ -119,7 +126,7 @@ export const PROJECTS: Project[] = [
     description:
       'Desarrollo integral de identidad digital para una empresa multiservicios, incluyendo branding, diseño de propuesta comercial y desarrollo de un sitio web corporativo moderno y orientado a la captación de clientes.',
     image: 'assets/projects/opera/opera.png',
-    demo: 'https://operawebsite.vercel.app/',
+    demo: 'https://operasas.com',
     techs: [TECHS['next']],
     story: {
       year: '2026',
@@ -159,6 +166,119 @@ export const PROJECTS: Project[] = [
   },
   
   {
+    title: 'Edutin Business',
+    slug: 'edutin-business',
+    type: 'web',
+    description:
+      'Plataforma corporativa de capacitación empresarial desarrollada con microfrontends en Angular, integrando autenticación centralizada, catálogo de cursos, gestión de grupos y reportes analíticos sobre AWS.',
+    image: 'assets/projects/edutin_b/edutin_b.png',
+    techs: [
+      TECHS['angular'],
+      TECHS['typescript'],
+      TECHS['rxjs'],
+      TECHS['ngrx'],
+      TECHS['sass'],
+      TECHS['aws'],
+      TECHS['git'],
+    ],
+    demo: 'https://business.edutin.com',
+    ownership: 'professional',
+    story: {
+      year: '2025 — 2026',
+      role: 'Frontend Developer',
+      client: 'Edutin Academy',
+      cover: 'assets/projects/edutin_b/edutin_b.png',
+      context:
+        'Edutin Academy es una plataforma educativa con miles de estudiantes activos. Como parte de su evolución, la compañía identificó la necesidad de una solución independiente para el segmento corporativo: un producto que permitiera a empresas e instituciones gestionar programas de capacitación para sus equipos. El proyecto comenzó como un MVP y, durante mi participación, creció hasta convertirse en un módulo de producto con arquitectura propia dentro del ecosistema de Edutin.',
+      challenge:
+        'El reto técnico principal era construir una plataforma empresarial desde cero sobre una base que ya operaba con alta disponibilidad. Necesitábamos convivir con el ecosistema existente sin comprometer su estabilidad, manteniendo la autonomía del nuevo producto. Además, la plataforma requería un sistema de autenticación robusto, consumo de datos a través de GraphQL, una interfaz responsiva para distintos perfiles de usuario (administradores, instructores, estudiantes) y la capacidad de integrar reportes analíticos en tiempo real.',
+      solution:
+        'Implementé la solución utilizando Angular con una arquitectura de microfrontends basada en Module Federation, lo que permitió que Edutin Business evolucionara como un módulo independiente pero conectado al shell principal de Edutin. Diseñé y desarrollé los módulos de catálogo de cursos, gestión de usuarios y grupos, sistema de roles y permisos, reportes analíticos con visualización de datos desde GraphQL y una interfaz responsiva adaptada a los flujos corporativos. La autenticación se integró con AWS Cognito, el almacenamiento multimedia con S3, y la capa de datos se consumió desde AWS AppSync. Para el estado global de la aplicación utilicé NgRx, garantizando consistencia en los flujos de datos entre microfrontends.',
+      features: [
+        'Microfrontends con Module Federation para convivir con el shell principal de Edutin.',
+        'Catálogo de cursos corporativos con búsqueda, filtros y asignación masiva.',
+        'Gestión de usuarios, grupos empresariales y roles con permisos granularizados.',
+        'Sistema de autenticación y autorización integrado con AWS Cognito.',
+        'Consumo de datos en tiempo real mediante GraphQL y AWS AppSync.',
+        'Dashboard analítico con visualización de progreso, completitud y rendimiento.',
+        'Almacenamiento y distribución de contenido multimedia con AWS S3 + CloudFront.',
+        'Estado global centralizado con NgRx para consistencia entre microfrontends.',
+        'Interfaz responsiva diseñada para escritorio y tablet en entornos corporativos.',
+        'Componentes reutilizables con Angular CDK como base del Design System interno.',
+      ],
+      gallery: [
+        'assets/projects/edutin_b/edutin_b.png',
+        'assets/projects/edutin_b/catalog.png',
+        'assets/projects/edutin_b/groups.png',
+        'assets/projects/edutin_b/users.png',
+        'assets/projects/edutin_b/reports.png',
+      ],
+      results: [
+        'Arquitectura modular que permitió al equipo escalar el producto sin reescribir el shell principal.',
+        'Reducción del tiempo de carga inicial gracias a lazy loading y estrategias de caché en GraphQL.',
+        'Autenticación unificada entre Edutin Academy y Edutin Business mediante AWS Cognito.',
+        'Componentes reutilizables adoptados por otros equipos como base del Design System interno.',
+        'Interfaz responsiva validada con administradores corporativos en sesiones de testing.',
+      ],
+    },
+  },
+  {
+    title: 'Edutin Affiliate',
+    slug: 'edutin-affiliate',
+    type: 'web',
+    description:
+      'Sistema de afiliación para Edutin Academy que permite a usuarios promocionar cursos, gestionar comisiones y acceder a métricas de rendimiento en tiempo real mediante una arquitectura Angular con microfrontends.',
+    image: 'assets/projects/edutin_a/edutin_a.png',
+    techs: [
+      TECHS['angular'],
+      TECHS['typescript'],
+      TECHS['rxjs'],
+      TECHS['ngrx'],
+      TECHS['sass'],
+      TECHS['aws'],
+      TECHS['git'],
+    ],
+    demo: 'https://affiliate.edutin.com',
+    ownership: 'professional',
+    story: {
+      year: '2025 — 2026',
+      role: 'Frontend Developer',
+      client: 'Edutin Academy',
+      cover: 'assets/projects/edutin_a/edutin_a.png',
+      context:
+        'Edutin Academy necesitaba un canal de crecimiento orientado a afiliados: personas que promocionan cursos a cambio de comisiones por cada inscripción generada. El producto exigía una plataforma autónoma con panel de control, estadísticas en tiempo real y gestión de pagos, todo integrado al ecosistema principal de Edutin sin afectar su operación. Me incorporé al equipo para desarrollar los módulos core del frontend desde las primeras etapas del proyecto.',
+      challenge:
+        'El principal desafío era construir una experiencia de dashboard rica en datos, que incluyera gráficas interactivas, filtros dinámicos, búsqueda optimizada y actualización en tiempo real de métricas de comisiones, manteniendo un rendimiento fluido incluso con volúmenes crecientes de datos. Además, la plataforma debía compartir la identidad visual y el sistema de autenticación de Edutin Academy, pero operar como un microfrontend independiente con su propio ciclo de despliegue y mantenimiento.',
+      solution:
+        'Desarrollé la plataforma con Angular, implementando microfrontends mediante Module Federation para mantener la independencia del módulo de afiliados dentro del shell de Edutin. Diseñé y programé los módulos de dashboard ejecutivo con gráficas de rendimiento, sistema de búsqueda y filtros con debounce y caché local, gestión de comisiones con historial y desglose por periodo, panel de analytics con métricas de clics, conversiones e ingresos, y un sistema de rutas con lazy loading para optimizar la carga inicial. El estado global se manejó con NgRx, garantizando predictibilidad en los flujos de datos, y el consumo de APIs se realizó mediante GraphQL con AWS AppSync, implementando estrategias de caché y normalización para minimizar las consultas repetitivas.',
+      features: [
+        'Dashboard ejecutivo con gráficas de rendimiento, conversiones e ingresos en tiempo real.',
+        'Sistema de búsqueda y filtros con debounce, paginación y caché local para listados de gran volumen.',
+        'Gestión de comisiones con historial completo, desglose por periodo y exportación de datos.',
+        'Panel de analytics con métricas de clics, conversiones, ingresos generados y TOP cursos.',
+        'Microfrontend independiente con Module Federation, lazy loading y despliegue autónomo.',
+        'Navegación con Angular Router, lazy loading de módulos y precarga estratégica.',
+        'Estado global centralizado con NgRx para consistencia entre microfrontends.',
+        'Componentes reutilizables de tabla, gráfica, tarjeta de métrica y formulario de filtros.',
+        'Autenticación integrada con AWS Cognito compartiendo sesión con el shell principal.',
+        'Optimización de rendimiento con ChangeDetectionStrategy OnPush y trackBy en listados.',
+      ],
+      gallery: [
+        'assets/projects/edutin_a/edutin_a.png',
+        'assets/projects/edutin_a/metrics.png',
+        'assets/projects/edutin_a/request.png',
+        'assets/projects/edutin_a/resources.png',
+      ],
+      results: [
+        'Plataforma autónoma de afiliados operando como microfrontend sin afectar el shell principal de Edutin.',
+        'Dashboard con tiempos de carga reducidos gracias a lazy loading, caché GraphQL y ChangeDetection OnPush.',
+        'Componentes reutilizables (tablas, gráficas, tarjetas de métrica) que aceleraron el desarrollo de nuevos features.',
+        'Autenticación unificada con AWS Cognito que permitió a los afiliados usar su cuenta existente de Edutin.',
+        'Arquitectura preparada para escalar horizontalmente con nuevos módulos sin reestructurar el código base.',
+      ],
+    },
+  },
+  {
     title: 'App Edutin Academy',
     slug: 'app-edutin-academy',
     type: 'mobile',
@@ -177,6 +297,7 @@ export const PROJECTS: Project[] = [
     image: 'assets/projects/mercadatos.png',
     repo: 'https://github.com/MauricioMolina12/mercadatos',
     techs: [TECHS['angular']],
+    demo: 'https://mercadatos.vercel.app/'
   },
   {
     title: 'Renta GO',
@@ -208,40 +329,40 @@ export const PROJECTS: Project[] = [
     repo: 'https://github.com/MauricioMolina12/metodo-simplex',
     techs: [TECHS['vue']],
   },
-  {
-    title: 'My Security',
-    slug: 'my-security',
-    type: 'mobile',
-    description:
-      'App móvil para mejorar la seguridad en Barranquilla, con alertas en tiempo real y seguimiento de ubicación para proteger a los usuarios.',
-    image: 'assets/projects/mysecurity.jpg',
-    repo: 'https://github.com/Blaskevorsz/FPD-Jhoan',
-    techs: [TECHS['flutter']],
-  },
-  {
-    title: 'M&M Cake Shop',
-    slug: 'mm-cake-shop',
-    type: 'design',
-    description: 'Diseño UI/UX de una tienda de repostería, creado en Figma.',
-    image: 'assets/projects/m&m.png',
-    techs: [TECHS['figma']],
-  },
-  {
-    title: 'Vehicle care',
-    slug: 'vehicle-care',
-    type: 'design',
-    description:
-      'Concepto de app para el cuidado y mantenimiento de vehículos, diseñado en Figma.',
-    image: 'assets/projects/vehicleCare.png',
-    techs: [TECHS['figma']],
-  },
-  {
-    title: 'Food app',
-    slug: 'food-app',
-    type: 'design',
-    description:
-      'Diseño de una app de comida a domicilio, prototipado en Figma.',
-    image: 'assets/projects/food.png',
-    techs: [TECHS['figma']],
-  },
+  // {
+  //   title: 'My Security',
+  //   slug: 'my-security',
+  //   type: 'mobile',
+  //   description:
+  //     'App móvil para mejorar la seguridad en Barranquilla, con alertas en tiempo real y seguimiento de ubicación para proteger a los usuarios.',
+  //   image: 'assets/projects/mysecurity.jpg',
+  //   repo: 'https://github.com/Blaskevorsz/FPD-Jhoan',
+  //   techs: [TECHS['flutter']],
+  // },
+  // {
+  //   title: 'M&M Cake Shop',
+  //   slug: 'mm-cake-shop',
+  //   type: 'design',
+  //   description: 'Diseño UI/UX de una tienda de repostería, creado en Figma.',
+  //   image: 'assets/projects/m&m.png',
+  //   techs: [TECHS['figma']],
+  // },
+  // {
+  //   title: 'Vehicle care',
+  //   slug: 'vehicle-care',
+  //   type: 'design',
+  //   description:
+  //     'Concepto de app para el cuidado y mantenimiento de vehículos, diseñado en Figma.',
+  //   image: 'assets/projects/vehicleCare.png',
+  //   techs: [TECHS['figma']],
+  // },
+  // {
+  //   title: 'Food app',
+  //   slug: 'food-app',
+  //   type: 'design',
+  //   description:
+  //     'Diseño de una app de comida a domicilio, prototipado en Figma.',
+  //   image: 'assets/projects/food.png',
+  //   techs: [TECHS['figma']],
+  // },
 ];

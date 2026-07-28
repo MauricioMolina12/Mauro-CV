@@ -150,10 +150,8 @@ $primary-light: #a897f2;
           backdrop-filter: blur(6px);
         }
 
-        .card-dev {
+        .card-badge {
           position: absolute;
-          right: 12px;
-          top: 12px;
           z-index: 2;
           display: inline-flex;
           align-items: center;
@@ -162,18 +160,34 @@ $primary-light: #a897f2;
           font-weight: 700;
           letter-spacing: 0.5px;
           text-transform: uppercase;
-          color: #ffd27a;
           padding: 4px 10px;
           border-radius: 20px;
           background: rgba(14, 11, 31, 0.55);
           backdrop-filter: blur(6px);
 
-          &::before {
-            content: "";
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: #ffc53d;
+          &.card-dev {
+            right: 12px;
+            top: 12px;
+            color: #ffd27a;
+
+            &::before {
+              content: "";
+              width: 6px;
+              height: 6px;
+              border-radius: 50%;
+              background: #ffc53d;
+            }
+          }
+
+          &.card-professional {
+            right: 12px;
+            top: 12px;
+            color: #6fcf97;
+            border: 1px solid rgba(111, 207, 151, 0.3);
+
+            svg {
+              flex-shrink: 0;
+            }
           }
         }
       }

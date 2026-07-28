@@ -47,7 +47,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
   }
 
   filterTypeProject(type: string) {
-    this.cards = this.projectsService.getByType(type);
+    this.cards = this.projectsService.getAll();
     this.typeProject = type;
     setTimeout(() => {
       this.utilsService.observeElements(this.cardsProject);

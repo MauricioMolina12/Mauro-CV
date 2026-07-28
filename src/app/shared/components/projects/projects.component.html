@@ -11,17 +11,22 @@
     </div>
 
     <div class="wrapper">
-        <div class="tabs">
+        <!-- <div class="tabs">
             <span *ngFor="let tab of tabs" (click)="filterTypeProject(tab.filter)"
                 [ngClass]="{'active' : tab.filter === typeProject}">{{ tab.name }}</span>
-        </div>
+        </div> -->
 
         <div class="slider" #carouselWrapper>
             <div #card class="card" *ngFor="let card of cards">
                 <div class="card-media">
                     <img [src]="card.image" [alt]="card.title" loading="lazy">
                     <span class="card-type">{{ card.type }}</span>
-                    <span class="card-dev" *ngIf="card.devMode">En desarrollo</span>
+                    <span class="card-badge card-dev" *ngIf="card.devMode">En desarrollo</span>
+                    <span class="card-badge card-professional" *ngIf="card.ownership === 'professional'"
+                          title="Proyecto desarrollado como parte de mi experiencia profesional">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                      Desarrollado
+                    </span>
                 </div>
 
                 <div class="card-body">

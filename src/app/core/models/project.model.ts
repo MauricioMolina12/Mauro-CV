@@ -42,6 +42,8 @@ export interface ProjectStory {
   links?: ProjectLink[];
 }
 
+export type Ownership = 'personal' | 'client' | 'professional';
+
 export interface Project {
   title: string;
   slug: string;
@@ -56,4 +58,6 @@ export interface Project {
   /** Si existe, la card enlaza a la vista de detalle. */
   story?: ProjectStory;
   devMode?: boolean;
+  /** Relación del desarrollador con el proyecto. */
+  ownership?: Ownership;
 }

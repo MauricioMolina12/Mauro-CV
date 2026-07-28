@@ -1,0 +1,35 @@
+[33m❯[39m Building...
+[32m✔[39m Building...
+[35mBrowser bundles[39m        
+[1mInitial chunk files[22m    [2m | [22m[1mNames[22m              [2m | [22m [1mRaw size[22m[2m | [22m[1mEstimated transfer size[22m
+[32mmain-MULDDVLM.js[39m       [2m | [22m[2mmain[22m               [2m | [22m[36m412.61 kB[39m[2m | [22m               [36m97.21 kB[39m
+[32mpolyfills-FFHMD2TL.js[39m  [2m | [22m[2mpolyfills[22m          [2m | [22m [36m34.52 kB[39m[2m | [22m               [36m11.28 kB[39m
+[32mstyles-DB63E7DC.css[39m    [2m | [22m[2mstyles[22m             [2m | [22m[36m339 bytes[39m[2m | [22m              [36m339 bytes[39m
+
+[1m [22m                      [2m | [22m[1mInitial total[22m      [2m | [22m[1m447.47 kB[22m[2m | [22m              [1m108.83 kB[22m
+
+
+[35mServer bundles[39m         
+[1mInitial chunk files[22m    [2m | [22m[1mNames[22m              [2m | [22m [1mRaw size[22m
+[32mserver.mjs[39m             [2m | [22m[2mserver[22m             [2m | [22m  [36m1.11 MB[39m[2m | [22m                       
+[32mchunk-DDXHEV74.mjs[39m     [2m | [22m[2m-[22m                  [2m | [22m[36m567.36 kB[39m[2m | [22m                       
+[32mpolyfills.server.mjs[39m   [2m | [22m[2mpolyfills.server[22m   [2m | [22m[36m268.60 kB[39m[2m | [22m                       
+[32mchunk-2FIJQNUB.mjs[39m     [2m | [22m[2m-[22m                  [2m | [22m[36m162.88 kB[39m[2m | [22m                       
+[32mchunk-5XUXGTUW.mjs[39m     [2m | [22m[2m-[22m                  [2m | [22m  [36m2.55 kB[39m[2m | [22m                       
+[32mrender-utils.server.mjs[39m[2m | [22m[2mrender-utils.server[22m[2m | [22m  [36m1.47 kB[39m[2m | [22m                       
+[32mmain.server.mjs[39m        [2m | [22m[2mmain.server[22m        [2m | [22m[36m149 bytes[39m[2m | [22m                       
+
+[1mLazy chunk files[22m       [2m | [22m[1mNames[22m              [2m | [22m [1mRaw size[22m
+[32mchunk-VCVCHJZV.mjs[39m     [2m | [22m[2mxhr2[22m               [2m | [22m [36m12.07 kB[39m[2m | [22m                       
+
+[35mPrerendered 1 static route.[39m
+Application bundle generation complete. [22.230 seconds]
+
+[1m[33m[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mModule 'intersection-observer' used by 'src/main.ts' is not ESM[0m
+
+  CommonJS or AMD dependencies can cause optimization bailouts.
+  For more information see: [4mhttps://angular.dev/tools/cli/build#configuring-commonjs-dependencies[0m
+
+[39m[22m
+Output location: c:\Users\DELL\Desktop\Mauro-CV\dist\cv
+
