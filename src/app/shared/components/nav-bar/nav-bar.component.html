@@ -7,7 +7,7 @@
     </h1>
   </div>
 
-  <button class="burger" [class.active]="isActive" (click)="toggle()" aria-label="Abrir menú">
+  <button class="burger" [class.active]="isActive" (click)="toggle()" [attr.aria-label]="'nav.openMenu' | translate">
     <span></span>
     <span></span>
     <span></span>
@@ -19,18 +19,38 @@
         <li class="side-bar__item" [class.cta]="item.path === 'contact-me'" [style.--i]="i">
           <a #link href="#" (click)="onNavItemClick(item.path); $event.preventDefault()">
             <span class="idx">0{{ i + 1 }}</span>
-            <span class="label">{{ item.name }}</span>
+            <span class="label">{{ item.name | translate }}</span>
           </a>
         </li>
       }
-      <!-- Toggle de tema: aria-label estático (sin mismatch de hidratación);
-           el icono visible se alterna por CSS según data-theme. -->
+      <!-- Selector de idioma ES/EN -->
+      <li class="side-bar__lang">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button
+            type="button"
+            class="lang-switch__btn"
+            [class.active]="languageService.isSpanish()"
+            (click)="languageService.setLanguage('es')"
+            aria-label="Español"
+          >ES</button>
+          <span class="lang-switch__divider" aria-hidden="true"></span>
+          <button
+            type="button"
+            class="lang-switch__btn"
+            [class.active]="languageService.isEnglish()"
+            (click)="languageService.setLanguage('en')"
+            aria-label="English"
+          >EN</button>
+        </div>
+      </li>
+      <!-- Toggle de tema: aria-label traducido (el idioma inicial coincide con el
+           SSR, sin mismatch); el icono se alterna por CSS según data-theme. -->
       <li class="side-bar__theme">
         <button
           type="button"
           class="theme-toggle"
-          aria-label="Cambiar entre modo claro y oscuro"
-          title="Cambiar entre modo claro y oscuro"
+          [attr.aria-label]="'nav.themeToggle' | translate"
+          [attr.title]="'nav.themeToggle' | translate"
           (click)="themeService.toggle()"
         >
           <!-- Sol → visible en modo oscuro (pulsar para pasar a claro) -->

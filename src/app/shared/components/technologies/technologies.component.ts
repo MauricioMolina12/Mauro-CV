@@ -6,6 +6,7 @@ import {
   QueryList,
   ViewChildren,
 } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { UtilsService } from '../../services/utils.service';
 
 interface Tech {
@@ -22,7 +23,7 @@ interface TechCategory {
 @Component({
   selector: 'app-technologies',
   standalone: true,
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './technologies.component.html',
   styleUrl: './technologies.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -34,7 +35,7 @@ export class TechnologiesComponent implements AfterViewInit {
 
   categories: TechCategory[] = [
     {
-      title: 'Frontend Core',
+      title: 'tech.frontend',
       size: 'wide',
       techs: [
         { name: 'Angular', icon: 'assets/tech/angular.svg' },
@@ -47,7 +48,7 @@ export class TechnologiesComponent implements AfterViewInit {
       ],
     },
     {
-      title: 'Backend & APIs',
+      title: 'tech.backend',
       size: 'wide',
       techs: [
         { name: 'Java', icon: 'assets/tech/java.svg' },
@@ -60,7 +61,7 @@ export class TechnologiesComponent implements AfterViewInit {
       ],
     },
     {
-      title: 'Bases de Datos',
+      title: 'tech.databases',
       size: 'normal',
       techs: [
         { name: 'PostgreSQL', icon: 'assets/tech/postgresql.svg' },
@@ -68,7 +69,7 @@ export class TechnologiesComponent implements AfterViewInit {
       ],
     },
     {
-      title: 'Ecosistema Angular',
+      title: 'tech.angularEco',
       size: 'normal',
       techs: [
         { name: 'RxJS', icon: 'assets/tech/rxjs.svg' },
@@ -77,7 +78,7 @@ export class TechnologiesComponent implements AfterViewInit {
       ],
     },
     {
-      title: 'DevOps & Tools',
+      title: 'tech.devops',
       size: 'wide',
       techs: [
         { name: 'Docker', icon: 'assets/tech/docker.svg' },
@@ -90,7 +91,7 @@ export class TechnologiesComponent implements AfterViewInit {
       ],
     },
     {
-      title: 'UI / UX',
+      title: 'tech.uiux',
       size: 'normal',
       techs: [
         { name: 'Figma', icon: 'assets/tech/figma.svg' },
@@ -99,7 +100,7 @@ export class TechnologiesComponent implements AfterViewInit {
       ],
     },
     {
-      title: 'CMS & Contenido',
+      title: 'tech.cms',
       size: 'normal',
       techs: [
         { name: 'Sanity', icon: 'assets/tech/sanity.svg' },
@@ -107,7 +108,7 @@ export class TechnologiesComponent implements AfterViewInit {
       ],
     },
     {
-      title: 'Otras Tecnologías',
+      title: 'tech.others',
       size: 'wide',
       techs: [
         { name: 'React', icon: 'assets/tech/react.svg' },

@@ -1,14 +1,14 @@
 <div class="tech-wrapper">
   <div class="section-head">
-    <span class="eyebrow">STACK</span>
-    <h2>Stack tecnológico</h2>
-    <p>Un vistazo a las herramientas y tecnologías con las que construyo productos digitales.</p>
+    <span class="eyebrow">{{ 'tech.eyebrow' | translate }}</span>
+    <h2>{{ 'tech.title' | translate }}</h2>
+    <p>{{ 'tech.subtitle' | translate }}</p>
   </div>
 
   <div class="bento">
     @for (category of categories; track category.title) {
       <div class="tech-cat" #cat [class.wide]="category.size === 'wide'">
-        <h3>{{ category.title }}</h3>
+        <h3>{{ category.title | translate }}</h3>
         <div class="tech-grid">
           @for (tech of category.techs; track tech.name) {
             <div class="tech">

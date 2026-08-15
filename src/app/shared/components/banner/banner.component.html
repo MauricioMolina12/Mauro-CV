@@ -2,20 +2,20 @@
   <div class="banner-profile">
   </div>
   <div class="banner-title">
-    <span> Hola, Bienvenido </span>
-    <h1>Soy Mauricio un <span class="job" [class.is-hidden]="!jobVisible">{{ currentJob }}</span></h1>
+    <span>{{ 'hero.welcome' | translate }}</span>
+    <h1>{{ 'hero.greeting' | translate }} <span class="job" [class.is-hidden]="!jobVisible">{{ currentJob | translate }}</span></h1>
     <p>
-      No soy un robot… pero soy una máquina cuando se trata de crear interfaces UI/UX y escribir código de alto nivel.
+      {{ 'hero.intro' | translate }}
     </p>
     <div class="item">
       @for (item of data; track item.title) {
         <h2>{{ item.title }}</h2>
-        <span>{{ item.subtitle }}</span>
+        <span>{{ item.subtitle | translate }}</span>
       }
     </div>
     <div class="buttons">
-      <a class="button-call-action" (click)="start()">Empezar</a>
-      <a download href="assets/CVMAURICIO.pdf" class="button-call-action">Descargar CV</a>
+      <a class="button-call-action" (click)="start()">{{ 'hero.start' | translate }}</a>
+      <a download href="assets/CVMAURICIO.pdf" class="button-call-action">{{ 'hero.downloadCv' | translate }}</a>
     </div>
   </div>
   <!-- <div class="points">

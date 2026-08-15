@@ -6,13 +6,14 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf],
+  imports: [ReactiveFormsModule, NgIf, TranslatePipe],
 })
 export class ContactComponent {
   form: FormGroup;
@@ -26,7 +27,10 @@ export class ContactComponent {
 
   private toastTimer: any;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private translate: TranslateService
+  ) {
     this.form = this.fb.group({
       from_name: ['', Validators.required],
       from_email: ['', [Validators.required, Validators.email]],
@@ -38,7 +42,7 @@ export class ContactComponent {
   async onSubmit(): Promise<void> {
     if (this.form.invalid) {
       this.form.markAllAsTouched();
-      this.showToast('error', 'Por favor completa todos los campos requeridos.');
+      this.showToast('error', 'contact.toastRequired');
       return;
     }
 
@@ -56,21 +60,19 @@ export class ContactComponent {
       )
       .then(() => {
         this.form.reset();
-        this.showToast('success', '¡Mensaje enviado! Te responderé muy pronto.');
+        this.showToast('success', 'contact.toastSuccess');
       })
       .catch(() => {
-        this.showToast(
-          'error',
-          'Ocurrió un error al enviar el mensaje. Intenta más tarde.'
-        );
+        this.showToast('error', 'contact.toastError');
       })
       .finally(() => {
         this.loading = false;
       });
   }
 
-  private showToast(type: 'success' | 'error', message: string): void {
-    this.toast = { show: true, type, message };
+  private showToast(type: 'success' | 'error', messageKey: string): void {
+    // messageKey se traduce en el template (permite re-traducir toasts abiertos).
+    this.toast = { show: true, type, message: messageKey };
     clearTimeout(this.toastTimer);
     this.toastTimer = setTimeout(() => (this.toast.show = false), 4500);
   }

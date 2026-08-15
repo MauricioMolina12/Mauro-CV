@@ -2,13 +2,14 @@ import { NgClass, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input, OnChanges } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router, RouterLink } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 import { Project } from '../../core/models/project.model';
 import { ProjectsService } from '../../core/services/projects.service';
 
 @Component({
   selector: 'app-project-details',
   standalone: true,
-  imports: [NgIf, NgClass, RouterLink],
+  imports: [NgIf, NgClass, RouterLink, TranslatePipe],
   templateUrl: './project-details.component.html',
   styleUrl: './project-details.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

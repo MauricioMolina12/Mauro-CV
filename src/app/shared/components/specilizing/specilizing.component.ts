@@ -6,12 +6,13 @@ import {
   QueryList,
   ViewChildren,
 } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { UtilsService } from '../../services/utils.service';
 
 @Component({
   selector: 'app-specilizing',
   standalone: true,
-  imports: [NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault],
+  imports: [NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault, TranslatePipe],
   templateUrl: './specilizing.component.html',
   styleUrl: './specilizing.component.scss',
 })
@@ -27,23 +28,20 @@ export class SpecilizingComponent implements AfterViewInit {
   jobs = [
     {
       key: 'fullstack',
-      title: 'Desarrollador Full Stack',
-      description:
-        'Desarrollo aplicaciones web completas, desde interfaces modernas y accesibles hasta APIs, lógica de negocio, bases de datos y despliegues reproducibles.',
+      title: 'skills.fullstack',
+      description: 'skills.fullstackDesc',
       tags: ['Angular', 'Java', 'Spring Boot', 'Docker'],
     },
     {
       key: 'mobile',
-      title: 'Desarrollador Móvil',
-      description:
-        'Desarrollo aplicaciones móviles multiplataforma y nativas con Flutter, Ionic y Kotlin, enfocadas en rendimiento y una experiencia fluida en iOS y Android.',
+      title: 'skills.mobile',
+      description: 'skills.mobileDesc',
       tags: ['Flutter', 'Ionic', 'Kotlin'],
     },
     {
       key: 'design',
-      title: 'Diseñador UI/UX',
-      description:
-        'Diseño interfaces centradas en el usuario, aplicando principios de diseño para que los productos sean atractivos, coherentes y fáciles de usar.',
+      title: 'skills.design',
+      description: 'skills.designDesc',
       tags: ['Figma', 'Prototipado', 'Design System'],
     },
   ];

@@ -10,6 +10,7 @@ import {
   ViewChildren,
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 import { UtilsService } from '../../services/utils.service';
 import { ProjectsService } from '../../../core/services/projects.service';
 import { Project } from '../../../core/models/project.model';
@@ -17,7 +18,7 @@ import { Project } from '../../../core/models/project.model';
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [NgClass, NgIf, RouterLink],
+  imports: [NgClass, NgIf, RouterLink, TranslatePipe],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -1,10 +1,9 @@
 <div class="wrapper">
   <div class="section-head">
-    <span class="eyebrow">HABILIDADES</span>
-    <h1 class="title">Áreas de Especialización</h1>
+    <span class="eyebrow">{{ 'skills.eyebrow' | translate }}</span>
+    <h1 class="title">{{ 'skills.title' | translate }}</h1>
     <p class="subtitle">
-      Combino desarrollo y diseño para construir productos digitales completos:
-      rápidos, escalables y centrados en las personas.
+      {{ 'skills.subtitle' | translate }}
     </p>
   </div>
 
@@ -37,8 +36,8 @@
           <path d="M16.5 10.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
         </svg>
       </div>
-      <h2 class="card-title">{{ job.title }}</h2>
-      <p class="card-description">{{ job.description }}</p>
+      <h2 class="card-title">{{ job.title | translate }}</h2>
+      <p class="card-description">{{ job.description | translate }}</p>
       <div class="card-tags">
         <span *ngFor="let tag of job.tags">{{ tag }}</span>
       </div>

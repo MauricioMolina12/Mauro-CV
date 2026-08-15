@@ -1,10 +1,11 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-banner',
   standalone: true,
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './banner.component.html',
   styleUrl: './banner.component.scss',
 })
@@ -12,9 +13,9 @@ export class BannerComponent implements OnInit, OnDestroy {
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   jobs = [
-    'Desarrollador Full Stack',
-    'Diseñador UI/UX',
-    'Desarrollador Móvil',
+    'hero.job.fullstack',
+    'hero.job.design',
+    'hero.job.mobile',
   ];
   currentJob = this.jobs[0];
   jobVisible = true;
@@ -25,7 +26,7 @@ export class BannerComponent implements OnInit, OnDestroy {
   data = [
     {
       title: '3+',
-      subtitle: 'Año de experiencia',
+      subtitle: 'hero.exp',
     },
   ];
 

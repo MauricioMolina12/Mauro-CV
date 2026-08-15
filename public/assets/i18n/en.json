@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "about": "About me",
+    "skills": "Skills",
+    "techs": "Technologies",
+    "projects": "Projects",
+    "education": "Education",
+    "experience": "Experience",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "themeToggle": "Switch between light and dark mode"
+  },
+  "hero": {
+    "welcome": "Hello, welcome",
+    "greeting": "I'm Mauricio, a",
+    "job": {
+      "fullstack": "Full Stack Developer",
+      "design": "UI/UX Designer",
+      "mobile": "Mobile Developer"
+    },
+    "intro": "I'm not a robot… but I'm a machine when it comes to building UI/UX interfaces and writing high-quality code.",
+    "exp": "Year of experience",
+    "start": "Start",
+    "downloadCv": "Download CV"
+  },
+  "whyme": {
+    "title": "WHAT",
+    "titleAccent": "DEFINES ME",
+    "card1Title": "User-Centered Design",
+    "card1Text": "I build intuitive and accessible experiences for users.",
+    "card2Title": "Collaborative Work",
+    "card2Text": "Experience in agile, multidisciplinary teams.",
+    "card3Title": "How I work",
+    "card3Text": "The principles behind every project I build.",
+    "trait1": "Continuous learning",
+    "trait1Text": "Always exploring new technologies and best practices.",
+    "trait2": "Results-driven",
+    "trait2Text": "I prioritize solutions that bring real business value.",
+    "trait3": "Attention to detail",
+    "trait3Text": "I care about every detail of the interface and the experience."
+  },
+  "skills": {
+    "eyebrow": "SKILLS",
+    "title": "Areas of Specialization",
+    "subtitle": "I combine development and design to build complete digital products: fast, scalable, and people-centered.",
+    "fullstack": "Full Stack Developer",
+    "fullstackDesc": "I build complete web applications, from modern, accessible interfaces to APIs, business logic, databases, and reproducible deployments.",
+    "mobile": "Mobile Developer",
+    "mobileDesc": "I build cross-platform and native mobile apps with Flutter, Ionic, and Kotlin, focused on performance and a smooth iOS and Android experience.",
+    "design": "UI/UX Designer",
+    "designDesc": "I design user-centered interfaces, applying design principles so products are attractive, coherent, and easy to use."
+  },
+  "tech": {
+    "eyebrow": "STACK",
+    "title": "Tech Stack",
+    "subtitle": "A look at the tools and technologies I use to build digital products.",
+    "frontend": "Frontend Core",
+    "backend": "Backend & APIs",
+    "databases": "Databases",
+    "angularEco": "Angular Ecosystem",
+    "devops": "DevOps & Tools",
+    "uiux": "UI / UX",
+    "cms": "CMS & Content",
+    "others": "Other Technologies"
+  },
+  "projects": {
+    "eyebrow": "PORTFOLIO",
+    "title": "Featured Projects",
+    "inDevelopment": "In development",
+    "professionalBadge": "Developed",
+    "professionalTitle": "Project developed as part of my professional experience",
+    "viewCase": "View case",
+    "demo": "Demo",
+    "code": "Code",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "education": {
+    "eyebrow": "EDUCATION",
+    "title": "Education & Certifications",
+    "credential": "View credential"
+  },
+  "experience": {
+    "eyebrow": "CAREER",
+    "title": "Professional Experience"
+  },
+  "contact": {
+    "eyebrow": "CONTACT",
+    "title": "Let's work together?",
+    "subtitle": "Tell me about your project and I'll get back to you as soon as possible.",
+    "infoTitle": "Contact information",
+    "infoText": "Available for freelance projects, collaborations, and new professional opportunities.",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "emailField": "Email",
+    "emailPlaceholder": "youremail@email.com",
+    "subject": "Subject",
+    "subjectPlaceholder": "Message subject",
+    "message": "Message",
+    "messagePlaceholder": "Tell me about your project…",
+    "send": "Send message",
+    "toastRequired": "Please fill in all required fields.",
+    "toastSuccess": "Message sent! I'll get back to you soon.",
+    "toastError": "Something went wrong sending your message. Please try again later."
+  },
+  "projectDetail": {
+    "back": "Back to projects",
+    "inDevelopment": "In development",
+    "metaYear": "Year",
+    "metaRole": "Role",
+    "metaClient": "Client",
+    "notice": "I worked as a <strong>Frontend Developer</strong> on this product during my professional period at <strong>Edutin Academy</strong>. The intellectual property and brand belong to the company.",
+    "techs": "Technologies",
+    "story1": "The starting point",
+    "story2": "The challenge",
+    "story3": "The solution",
+    "story4": "What I built",
+    "gallery": "Gallery",
+    "results": "Results",
+    "prev": "← Previous",
+    "next": "Next →",
+    "viewLive": "View live",
+    "code": "Code"
+  },
+  "seo": {
+    "title": "Mauricio Molina · Portfolio",
+    "description": "Mauricio Molina's portfolio: Full Stack Developer, UI/UX Designer, and Mobile Developer. Projects, experience, and contact."
+  }
+}

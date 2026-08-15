@@ -1,10 +1,11 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { UtilsService } from '../../services/utils.service';
 
 @Component({
   selector: 'app-whyme',
   standalone: true,
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './whyme.component.html',
   styleUrls: ['./whyme.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

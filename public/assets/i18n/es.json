@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "about": "Acerca de mi",
+    "skills": "Habilidades",
+    "techs": "Tecnologías",
+    "projects": "Proyectos",
+    "education": "Educación",
+    "experience": "Experiencia",
+    "contact": "Contacto",
+    "openMenu": "Abrir menú",
+    "themeToggle": "Cambiar entre modo claro y oscuro"
+  },
+  "hero": {
+    "welcome": "Hola, Bienvenido",
+    "greeting": "Soy Mauricio un",
+    "job": {
+      "fullstack": "Desarrollador Full Stack",
+      "design": "Diseñador UI/UX",
+      "mobile": "Desarrollador Móvil"
+    },
+    "intro": "No soy un robot… pero soy una máquina cuando se trata de crear interfaces UI/UX y escribir código de alto nivel.",
+    "exp": "Año de experiencia",
+    "start": "Empezar",
+    "downloadCv": "Descargar CV"
+  },
+  "whyme": {
+    "title": "LO QUE ME",
+    "titleAccent": "DEFINE",
+    "card1Title": "Diseño Centrado en el Usuario",
+    "card1Text": "Creo experiencias intuitivas y accesibles para los usuarios.",
+    "card2Title": "Trabajo Colaborativo",
+    "card2Text": "Experiencia en equipos ágiles y multidisciplinares.",
+    "card3Title": "Mi forma de trabajar",
+    "card3Text": "Los principios que guían cada proyecto que construyo.",
+    "trait1": "Aprendizaje continuo",
+    "trait1Text": "Siempre explorando nuevas tecnologías y mejores prácticas.",
+    "trait2": "Orientado a resultados",
+    "trait2Text": "Priorizo soluciones que aporten valor real al negocio.",
+    "trait3": "Atención al detalle",
+    "trait3Text": "Cuido cada detalle de la interfaz y la experiencia."
+  },
+  "skills": {
+    "eyebrow": "HABILIDADES",
+    "title": "Áreas de Especialización",
+    "subtitle": "Combino desarrollo y diseño para construir productos digitales completos: rápidos, escalables y centrados en las personas.",
+    "fullstack": "Desarrollador Full Stack",
+    "fullstackDesc": "Desarrollo aplicaciones web completas, desde interfaces modernas y accesibles hasta APIs, lógica de negocio, bases de datos y despliegues reproducibles.",
+    "mobile": "Desarrollador Móvil",
+    "mobileDesc": "Desarrollo aplicaciones móviles multiplataforma y nativas con Flutter, Ionic y Kotlin, enfocadas en rendimiento y una experiencia fluida en iOS y Android.",
+    "design": "Diseñador UI/UX",
+    "designDesc": "Diseño interfaces centradas en el usuario, aplicando principios de diseño para que los productos sean atractivos, coherentes y fáciles de usar."
+  },
+  "tech": {
+    "eyebrow": "STACK",
+    "title": "Stack tecnológico",
+    "subtitle": "Un vistazo a las herramientas y tecnologías con las que construyo productos digitales.",
+    "frontend": "Frontend Core",
+    "backend": "Backend & APIs",
+    "databases": "Bases de Datos",
+    "angularEco": "Ecosistema Angular",
+    "devops": "DevOps & Tools",
+    "uiux": "UI / UX",
+    "cms": "CMS & Contenido",
+    "others": "Otras Tecnologías"
+  },
+  "projects": {
+    "eyebrow": "PORTAFOLIO",
+    "title": "Proyectos Destacados",
+    "inDevelopment": "En desarrollo",
+    "professionalBadge": "Desarrollado",
+    "professionalTitle": "Proyecto desarrollado como parte de mi experiencia profesional",
+    "viewCase": "Ver caso",
+    "demo": "Demo",
+    "code": "Código",
+    "prev": "Anterior",
+    "next": "Siguiente"
+  },
+  "education": {
+    "eyebrow": "FORMACIÓN",
+    "title": "Educación & Certificaciones",
+    "credential": "Ver credencial"
+  },
+  "experience": {
+    "eyebrow": "TRAYECTORIA",
+    "title": "Experiencia Profesional"
+  },
+  "contact": {
+    "eyebrow": "CONTACTO",
+    "title": "¿Trabajamos juntos?",
+    "subtitle": "Cuéntame sobre tu proyecto y te responderé lo antes posible.",
+    "infoTitle": "Información de contacto",
+    "infoText": "Disponible para proyectos freelance, colaboraciones y nuevas oportunidades profesionales.",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "name": "Nombre",
+    "namePlaceholder": "Tu nombre",
+    "emailField": "Email",
+    "emailPlaceholder": "tucorreo@email.com",
+    "subject": "Asunto",
+    "subjectPlaceholder": "Asunto del mensaje",
+    "message": "Mensaje",
+    "messagePlaceholder": "Cuéntame sobre tu proyecto…",
+    "send": "Enviar mensaje",
+    "toastRequired": "Por favor completa todos los campos requeridos.",
+    "toastSuccess": "¡Mensaje enviado! Te responderé muy pronto.",
+    "toastError": "Ocurrió un error al enviar el mensaje. Intenta más tarde."
+  },
+  "projectDetail": {
+    "back": "Volver a proyectos",
+    "inDevelopment": "En desarrollo",
+    "metaYear": "Año",
+    "metaRole": "Rol",
+    "metaClient": "Cliente",
+    "notice": "Participé como <strong>Frontend Developer</strong> en el desarrollo de este producto durante mi etapa profesional en <strong>Edutin Academy</strong>. La propiedad intelectual y la marca pertenecen a la empresa.",
+    "techs": "Tecnologías",
+    "story1": "El punto de partida",
+    "story2": "El reto",
+    "story3": "La solución",
+    "story4": "Lo que construí",
+    "gallery": "Galería",
+    "results": "Resultados",
+    "prev": "← Anterior",
+    "next": "Siguiente →",
+    "viewLive": "Ver en vivo",
+    "code": "Código"
+  },
+  "seo": {
+    "title": "Mauricio Molina · Portafolio",
+    "description": "Portafolio de Mauricio Molina: Desarrollador Full Stack, Diseñador UI/UX y Desarrollador Móvil. Proyectos, experiencia y contacto."
+  }
+}

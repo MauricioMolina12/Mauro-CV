@@ -7,12 +7,13 @@ import {
   QueryList,
   ViewChildren,
 } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { UtilsService } from '../../services/utils.service';
 
 @Component({
   selector: 'app-educations',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf, TranslatePipe],
   templateUrl: './educations.component.html',
   styleUrl: './educations.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

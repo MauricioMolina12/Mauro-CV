@@ -1,7 +1,7 @@
 <div class="educations-wrapper">
     <div class="section-head">
-        <span class="eyebrow">FORMACIÓN</span>
-        <h2>Educación &amp; Certificaciones</h2>
+        <span class="eyebrow">{{ 'education.eyebrow' | translate }}</span>
+        <h2>{{ 'education.title' | translate }}</h2>
     </div>
 
     <div class="educations-grid">
@@ -20,7 +20,7 @@
                 <p class="institution">{{ education.education }}</p>
 
                 <a class="edu-link" *ngIf="education.link" [href]="education.link" target="_blank" rel="noopener">
-                    Ver credencial
+                    {{ 'education.credential' | translate }}
                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M9 15l6 -6" />

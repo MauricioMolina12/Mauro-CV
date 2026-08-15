@@ -14,14 +14,16 @@ import {
   ViewChildren,
 } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { ThemeService } from '../../services/theme.service';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -34,16 +36,19 @@ export class NavBarComponent implements AfterViewInit, OnDestroy {
   /** Servicio de tema expuesto al template para el toggle. */
   readonly themeService = inject(ThemeService);
 
+  /** Servicio de idioma expuesto al template para el selector ES/EN. */
+  readonly languageService = inject(LanguageService);
+
   @Output() redirectSection = new EventEmitter<string>();
 
   items = [
-    { name: 'Acerca de mi', path: 'about' },
-    { name: 'Habilidades', path: 'skills' },
-    { name: 'Tecnologías', path: 'techs' },
-    { name: 'Proyectos', path: 'projects' },
-    { name: 'Educación', path: 'educations' },
-    { name: 'Experiencia', path: 'experience' },
-    { name: 'Contacto', path: 'contact-me' },
+    { name: 'nav.about', path: 'about' },
+    { name: 'nav.skills', path: 'skills' },
+    { name: 'nav.techs', path: 'techs' },
+    { name: 'nav.projects', path: 'projects' },
+    { name: 'nav.education', path: 'educations' },
+    { name: 'nav.experience', path: 'experience' },
+    { name: 'nav.contact', path: 'contact-me' },
   ];
 
   private scrollRafId = 0;
