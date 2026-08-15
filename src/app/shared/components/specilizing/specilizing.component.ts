@@ -1,10 +1,9 @@
 import { NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import {
+  AfterViewInit,
   Component,
   ElementRef,
-  Input,
   QueryList,
-  SimpleChanges,
   ViewChildren,
 } from '@angular/core';
 import { UtilsService } from '../../services/utils.service';
@@ -16,60 +15,28 @@ import { UtilsService } from '../../services/utils.service';
   templateUrl: './specilizing.component.html',
   styleUrl: './specilizing.component.scss',
 })
-export class SpecilizingComponent {
-  constructor(private el: ElementRef, private utilsService: UtilsService) {}
+export class SpecilizingComponent implements AfterViewInit {
+  constructor(private utilsService: UtilsService) {}
 
   @ViewChildren('chart') chart!: QueryList<ElementRef>;
-  observer!: IntersectionObserver;
-  @Input() startScrolling: boolean = false;
 
   ngAfterViewInit() {
-    this.utilsService.observeElements(this.chart)
+    this.utilsService.observeElements(this.chart);
   }
 
-  // handleScroll = () => {
-  //   this.chart.forEach((element) => {
-  //     if (element?.nativeElement instanceof HTMLElement) {
-  //       const rect = element.nativeElement.getBoundingClientRect();
-  //       const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-
-  //       if (isVisible) {
-  //         element.nativeElement.classList.add('in-view');
-  //       } else {
-  //         element.nativeElement.classList.remove('in-view');
-  //       }
-  //     }
-  //   });
-  // };
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['startScrolling'] && this.startScrolling) {
-      this.scrollToWrapper();
-    }
-  }
-
-  scrollToWrapper() {
-    const wrapperElement = document.querySelector('.wrapper');
-    if (wrapperElement) {
-      wrapperElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'end',
-      });
-    }
-  }
   jobs = [
     {
-      key: 'frontend',
-      title: 'Desarrollador Frontend',
+      key: 'fullstack',
+      title: 'Desarrollador Full Stack',
       description:
-        'Convierto ideas en experiencias web interactivas con HTML, CSS, JavaScript y frameworks como Angular, React, Astro y Next.js: rápidas, accesibles y visualmente atractivas.',
-      tags: ['Angular', 'React', 'Next.js', 'TypeScript'],
+        'Desarrollo aplicaciones web completas, desde interfaces modernas y accesibles hasta APIs, lógica de negocio, bases de datos y despliegues reproducibles.',
+      tags: ['Angular', 'Java', 'Spring Boot', 'Docker'],
     },
     {
       key: 'mobile',
       title: 'Desarrollador Móvil',
       description:
-        'Desarrollo apps nativas y multiplataforma con Flutter, Ionic y React Native, enfocadas en rendimiento y una experiencia fluida en iOS y Android.',
+        'Desarrollo aplicaciones móviles multiplataforma y nativas con Flutter, Ionic y Kotlin, enfocadas en rendimiento y una experiencia fluida en iOS y Android.',
       tags: ['Flutter', 'Ionic', 'Kotlin'],
     },
     {

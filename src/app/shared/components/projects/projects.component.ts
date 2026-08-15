@@ -1,6 +1,7 @@
-import { NgClass, NgFor, NgIf } from '@angular/common';
+import { NgClass, NgIf } from '@angular/common';
 import {
   AfterViewInit,
+  ChangeDetectionStrategy,
   Component,
   ElementRef,
   OnInit,
@@ -16,9 +17,10 @@ import { Project } from '../../../core/models/project.model';
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [NgFor, NgClass, NgIf, RouterLink],
+  imports: [NgClass, NgIf, RouterLink],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectsComponent implements OnInit, AfterViewInit {
   @ViewChild('carouselWrapper', { static: false }) carouselWrapper!: ElementRef;
@@ -30,32 +32,17 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
   ) {}
 
   cards: Project[] = [];
-  typeProject = '';
-
-  tabs = [
-    { name: 'web', filter: 'web' },
-    { name: 'Apps Móviles', filter: 'mobile' },
-    { name: 'Diseños', filter: 'design' },
-  ];
 
   ngOnInit(): void {
-    this.filterTypeProject('web');
+    this.cards = this.projectsService.getAll();
   }
 
   ngAfterViewInit(): void {
     this.utilsService.observeElements(this.cardsProject);
   }
 
-  filterTypeProject(type: string) {
-    this.cards = this.projectsService.getAll();
-    this.typeProject = type;
-    setTimeout(() => {
-      this.utilsService.observeElements(this.cardsProject);
-    });
-  }
-
   openExternal(url: string) {
-    window.open(url, '_blank');
+    window.open(url, '_blank', 'noopener,noreferrer');
   }
 
   scrollCarousel(direction: number) {

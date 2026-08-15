@@ -5,25 +5,29 @@
     </div>
 
     <div class="educations-grid">
-        <div class="edu-card" #item *ngFor="let education of educations">
-            <div class="edu-card__top">
-                <div class="logo">
-                    <img [src]="education.logo" [alt]="education.education">
+        @for (education of educations; track education.education) {
+            <div class="edu-card" #item>
+                <div class="edu-card__top">
+                    <div class="logo">
+                        <img [src]="education.logo" [alt]="education.education" loading="lazy" decoding="async">
+                    </div>
+                    <span class="year">{{ education.time }}</span>
                 </div>
-                <span class="year">{{ education.time }}</span>
+
+                @for (position of education.positions; track position.title) {
+                    <h3 class="degree">{{ position.title }}</h3>
+                }
+                <p class="institution">{{ education.education }}</p>
+
+                <a class="edu-link" *ngIf="education.link" [href]="education.link" target="_blank" rel="noopener">
+                    Ver credencial
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 15l6 -6" />
+                        <path d="M11 6h5a1 1 0 0 1 1 1v5" />
+                    </svg>
+                </a>
             </div>
-
-            <h3 class="degree" *ngFor="let item of education.positions">{{ item.title }}</h3>
-            <p class="institution">{{ education.education }}</p>
-
-            <a class="edu-link" *ngIf="education.link" [href]="education.link" target="_blank">
-                Ver credencial
-                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M9 15l6 -6" />
-                    <path d="M11 6h5a1 1 0 0 1 1 1v5" />
-                </svg>
-            </a>
-        </div>
+        }
     </div>
 </div>

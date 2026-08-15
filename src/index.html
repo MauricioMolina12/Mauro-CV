@@ -1,20 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" data-theme="light">
   <head>
     <meta charset="utf-8" />
-    <title>MAURO</title>
+    <!-- Inicialización temprana del tema (anti-FOUC): se ejecuta antes del
+         primer paint. Prioridad: preferencia guardada → sistema → light. -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var theme =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : window.matchMedia &&
+                  window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light';
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
+    <title>Mauricio Molina · Portafolio</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="logo.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=La+Belle+Aurore&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+AU+SA:wght@100..400&family=Playwrite+IS:wght@100..400&family=Righteous&display=swap"
-      rel="stylesheet"
+    <meta
+      name="description"
+      content="Portafolio de Mauricio Molina: Desarrollador Full Stack, Diseñador UI/UX y Desarrollador Móvil. Proyectos, experiencia y contacto."
     />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" type="image/png" href="logo.png" />
+    <!-- Fuente self-hosted (variable, subset latin) → sin CSS render-blocking externo. -->
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/assets/fonts/montserrat-variable.woff2"
+      crossorigin
+    />
+    <!-- LCP del hero (background CSS): se descubre antes de parsear la hoja de estilos. -->
+    <link rel="preload" as="image" href="/assets/banner2.webp" fetchpriority="high" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Mauricio Molina · Portafolio" />
+    <meta
+      property="og:description"
+      content="Desarrollador Full Stack, Diseñador UI/UX y Desarrollador Móvil. Proyectos, experiencia y contacto."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- TODO: añade el dominio real en rel="canonical" y og:url cuando despliegues. -->
   </head>
-  <body class="theme-1">
+  <body>
     <app-root></app-root>
   </body>
 </html>

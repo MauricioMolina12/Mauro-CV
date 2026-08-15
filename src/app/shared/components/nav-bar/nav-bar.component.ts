@@ -1,34 +1,42 @@
-import { NgFor } from '@angular/common';
 import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
   Component,
   ElementRef,
   EventEmitter,
   HostListener,
-  OnInit,
+  inject,
+  OnDestroy,
   Output,
   QueryList,
   Renderer2,
   ViewChild,
   ViewChildren,
 } from '@angular/core';
-import { Event } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { filter } from 'rxjs/operators';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
-  imports: [NgFor],
+  imports: [],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NavBarComponent implements OnInit {
+export class NavBarComponent implements AfterViewInit, OnDestroy {
   isActive = false;
   @ViewChildren('link') links!: QueryList<ElementRef>;
   @ViewChild('nav') nav!: ElementRef;
 
+  /** Servicio de tema expuesto al template para el toggle. */
+  readonly themeService = inject(ThemeService);
+
   @Output() redirectSection = new EventEmitter<string>();
 
   items = [
-    { name: 'Inicio', path: 'home' },
     { name: 'Acerca de mi', path: 'about' },
     { name: 'Habilidades', path: 'skills' },
     { name: 'Tecnologías', path: 'techs' },
@@ -38,15 +46,109 @@ export class NavBarComponent implements OnInit {
     { name: 'Contacto', path: 'contact-me' },
   ];
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  private scrollRafId = 0;
+  private scrollspy?: IntersectionObserver;
+  private routerSubscription?: Subscription;
 
-  ngOnInit(): void {}
+  constructor(
+    private el: ElementRef,
+    private renderer: Renderer2,
+    private router: Router
+  ) {}
 
-  @HostListener('document:scroll', ['$event'])
-  onScroll(event: Event) {
-    this.setBgColorNav(event);
-    this.activeItemForScroll();
-    // this.getSection(event);
+  ngAfterViewInit(): void {
+    this.setupScrollspy();
+
+    // Al navegar entre rutas las secciones del home se recrean: se re-observan.
+    this.routerSubscription = this.router.events
+      .pipe(
+        filter((event): event is NavigationEnd => event instanceof NavigationEnd)
+      )
+      .subscribe(() => {
+        this.disconnectScrollspy();
+        // En SSR (prerender) no hay requestAnimationFrame: se re-observa directo.
+        if (typeof requestAnimationFrame !== 'undefined') {
+          requestAnimationFrame(() => this.setupScrollspy());
+        } else {
+          this.setupScrollspy();
+        }
+      });
+  }
+
+  ngOnDestroy(): void {
+    if (this.scrollRafId) cancelAnimationFrame(this.scrollRafId);
+    this.disconnectScrollspy();
+    this.routerSubscription?.unsubscribe();
+  }
+
+  /**
+   * Scroll: a lo sumo una actualización por frame (throttle con rAF).
+   * El scrollspy usa IntersectionObserver (reacciona por cruce de umbral,
+   * no por evento) → trabajo mínimo en main thread.
+   */
+  @HostListener('document:scroll')
+  onScroll(): void {
+    if (this.scrollRafId) return;
+    this.scrollRafId = requestAnimationFrame(() => {
+      this.scrollRafId = 0;
+      this.updateNavBackground();
+    });
+  }
+
+  private updateNavBackground(): void {
+    const navEl = this.nav?.nativeElement;
+    if (!navEl) return;
+    // window.scrollY no fuerza reflow (getBoundingClientRect del body sí).
+    const scrolled = (window.scrollY || document.documentElement.scrollTop) > 20;
+    this.renderer[scrolled ? 'addClass' : 'removeClass'](navEl, 'active');
+  }
+
+  private setupScrollspy(): void {
+    if (typeof IntersectionObserver === 'undefined') return;
+
+    const sections = this.items
+      .map((item) => document.getElementById(item.path))
+      .filter((section): section is HTMLElement => section !== null);
+
+    if (!sections.length) return;
+
+    this.scrollspy = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            const index = this.items.findIndex(
+              (item) => item.path === (entry.target as HTMLElement).id
+            );
+            this.setActiveItem(index);
+          }
+        }
+      },
+      // Banda horizontal cerca del top: solo la sección que la cruza queda activa.
+      { rootMargin: '-15% 0px -75% 0px', threshold: 0 }
+    );
+
+    sections.forEach((section) => this.scrollspy!.observe(section));
+  }
+
+  private disconnectScrollspy(): void {
+    this.scrollspy?.disconnect();
+    this.scrollspy = undefined;
+    this.clearActiveItems();
+  }
+
+  private setActiveItem(index: number): void {
+    this.links?.forEach((link, i) => {
+      this.renderer[i === index ? 'addClass' : 'removeClass'](
+        link.nativeElement,
+        'active-item'
+      );
+    });
+  }
+
+  private clearActiveItems(): void {
+    this.links?.forEach((link) => {
+      this.renderer.removeClass(link.nativeElement, 'active-item');
+    });
   }
 
   toggle() {
@@ -59,35 +161,6 @@ export class NavBarComponent implements OnInit {
     } else {
       this.renderer.removeClass(sideBar, 'active');
       this.renderer.removeStyle(document.body, 'overflow');
-    }
-  }
-
-  setBgColorNav(e: Event) {
-    const rect = document.body.getBoundingClientRect();
-    if (rect.top < 20) {
-      this.renderer.addClass(this.nav.nativeElement, 'active');
-    } else {
-      this.renderer.removeClass(this.nav.nativeElement, 'active');
-    }
-  }
-
-  activeItemForScroll() {
-    let activeIndex = -1;
-    for (let index = 0; index < this.items.length; index++) {
-      const element = document.getElementById(this.items[index].path);
-      if (element) {
-        const rect = element?.getBoundingClientRect();
-        if (rect.top <= 80 && rect?.bottom > 80) {
-          activeIndex = index;
-        }
-      }
-
-      this.links.forEach((link, idx) => {
-        const elementNative = link.nativeElement;
-        idx === activeIndex
-          ? this.renderer.addClass(elementNative, 'active-item')
-          : this.renderer.removeClass(elementNative, 'active-item');
-      });
     }
   }
 

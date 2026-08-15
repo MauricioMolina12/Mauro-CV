@@ -5,34 +5,42 @@
     </div>
 
     <div class="timeline">
-        <div class="experience" #item *ngFor="let experience of experiences">
-            <span class="marker"></span>
+        @for (experience of experiences; track $index) {
+            <div class="experience" #item>
+                <span class="marker"></span>
 
-            <div class="experience-card">
-                <div class="experience-head">
-                    <div class="logo">
-                        <img [src]="experience.logo" [alt]="experience.company">
-                    </div>
-                    <div class="head-info">
-                        <h3 class="role">{{ experience.role }}</h3>
-                        <span class="company">{{ experience.company }}</span>
-                    </div>
-                    <span class="time">{{ experience.time }}</span>
-                </div>
-
-                <ul class="list">
-                    <li class="item" *ngFor="let job of experience.positions">
-                        <h4 *ngIf="job.title">{{ job.title }}</h4>
-                        <p>{{ job.description }}</p>
-                        <div class="courses" *ngIf="job.courses">
-                            <a class="course" *ngFor="let course of job.courses" [href]="course.slug" target="_blank">
-                                <img [src]="course.image" [alt]="course.title">
-                                <span>{{ course.title }}</span>
-                            </a>
+                <div class="experience-card">
+                    <div class="experience-head">
+                        <div class="logo">
+                            <img [src]="experience.logo" [alt]="experience.company" loading="lazy" decoding="async">
                         </div>
-                    </li>
-                </ul>
+                        <div class="head-info">
+                            <h3 class="role">{{ experience.role }}</h3>
+                            <span class="company">{{ experience.company }}</span>
+                        </div>
+                        <span class="time">{{ experience.time }}</span>
+                    </div>
+
+                    <ul class="list">
+                        @for (job of experience.positions; track $index) {
+                            <li class="item">
+                                <h4 *ngIf="job.title">{{ job.title }}</h4>
+                                <p>{{ job.description }}</p>
+                                @if (job.courses) {
+                                    <div class="courses">
+                                        @for (course of job.courses; track course.slug) {
+                                            <a class="course" [href]="course.slug" target="_blank" rel="noopener">
+                                                <img [src]="course.image" [alt]="course.title" loading="lazy" decoding="async">
+                                                <span>{{ course.title }}</span>
+                                            </a>
+                                        }
+                                    </div>
+                                }
+                            </li>
+                        }
+                    </ul>
+                </div>
             </div>
-        </div>
+        }
     </div>
 </div>

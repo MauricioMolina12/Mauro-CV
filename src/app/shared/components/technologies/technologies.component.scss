@@ -1,5 +1,5 @@
-$primary: #8774e8;
-$primary-light: #a897f2;
+$primary: var(--color-primary);
+$primary-light: var(--color-primary-text);
 
 .tech-wrapper {
   width: 100%;
@@ -18,17 +18,17 @@ $primary-light: #a897f2;
       font-size: 0.8rem;
       font-weight: 700;
       letter-spacing: 3px;
-      color: $primary-light;
+      color: var(--color-primary-text);
     }
 
     h2 {
-      color: #f2f0ff;
+      color: var(--color-text-primary);
       font-size: 2rem;
       font-weight: 800;
     }
 
     p {
-      color: rgb(180, 180, 195);
+      color: var(--color-text-muted);
       font-size: 0.95rem;
       line-height: 1.6;
       max-width: 560px;
@@ -41,8 +41,8 @@ $primary-light: #a897f2;
     gap: 16px;
 
     .tech-cat {
-      background: linear-gradient(160deg, #251e47, #1b1636);
-      border: 1px solid rgba(135, 116, 232, 0.18);
+      background: var(--gradient-card);
+      border: 1px solid var(--color-border-subtle);
       border-radius: 18px;
       padding: 22px;
       display: flex;
@@ -57,7 +57,7 @@ $primary-light: #a897f2;
       }
 
       &:hover {
-        border-color: rgba(135, 116, 232, 0.4);
+        border-color: var(--color-border-strong);
       }
 
       h3 {
@@ -65,7 +65,7 @@ $primary-light: #a897f2;
         font-weight: 700;
         letter-spacing: 2px;
         text-transform: uppercase;
-        color: $primary-light;
+        color: var(--color-primary-text);
       }
 
       .tech-grid {
@@ -86,8 +86,8 @@ $primary-light: #a897f2;
             width: 52px;
             height: 52px;
             border-radius: 50%;
-            background: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            background: var(--color-logo-surface);
+            border: 1px solid var(--color-logo-border);
             transition: transform 0.25s ease;
 
             img {
@@ -99,7 +99,7 @@ $primary-light: #a897f2;
 
           .tech-name {
             font-size: 0.72rem;
-            color: #d5d1ea;
+            color: var(--color-text-secondary);
             text-align: center;
             line-height: 1.2;
           }
@@ -113,7 +113,26 @@ $primary-light: #a897f2;
   }
 }
 
-@media (min-width: 720px) {
+/* Tablet: 2 columnas (las cards "wide" ocupan la fila completa). */
+@media (min-width: 720px) and (max-width: 1023px) {
+  .tech-wrapper {
+    .section-head h2 {
+      font-size: 2.4rem;
+    }
+
+    .bento {
+      grid-template-columns: repeat(2, 1fr);
+
+      .tech-cat.wide {
+        grid-column: span 2;
+      }
+    }
+  }
+}
+
+/* Desktop: 4 columnas con layout asimétrico equilibrado
+   (wide = 2 columnas, normal = 1 columna). */
+@media (min-width: 1024px) {
   .tech-wrapper {
     .section-head h2 {
       font-size: 2.4rem;

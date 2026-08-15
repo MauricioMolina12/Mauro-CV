@@ -1,5 +1,5 @@
-$primary: #8774e8;
-$primary-light: #a897f2;
+$primary: var(--color-primary);
+$primary-light: var(--color-primary-text);
 
 .contact {
   width: 100%;
@@ -14,17 +14,17 @@ $primary-light: #a897f2;
       font-size: 0.8rem;
       font-weight: 700;
       letter-spacing: 3px;
-      color: $primary-light;
+      color: var(--color-primary-text);
     }
 
     .contact__title {
       font-size: 2.2rem;
       font-weight: 800;
-      color: #f2f0ff;
+      color: var(--color-text-primary);
     }
 
     .contact__subtitle {
-      color: rgb(180, 180, 195);
+      color: var(--color-text-muted);
       font-size: 0.95rem;
       line-height: 1.6;
     }
@@ -38,20 +38,21 @@ $primary-light: #a897f2;
 
   /* ---------- Info card ---------- */
   .contact__info {
-    background: linear-gradient(160deg, #251e47, #1b1636);
-    border: 1px solid rgba(135, 116, 232, 0.16);
+    background: var(--gradient-card);
+    border: 1px solid var(--color-border-subtle);
     border-radius: 18px;
     padding: 28px 24px;
+    height: 100%;
 
     h3 {
-      color: #f2f0ff;
+      color: var(--color-text-primary);
       font-size: 1.2rem;
       font-weight: 700;
       margin-bottom: 12px;
     }
 
     .info-text {
-      color: rgb(180, 180, 195);
+      color: var(--color-text-muted);
       font-size: 0.88rem;
       line-height: 1.6;
       margin-bottom: 24px;
@@ -72,19 +73,19 @@ $primary-light: #a897f2;
         padding: 10px 8px;
         border-radius: 12px;
         text-decoration: none;
-        color: #e3e0f5;
+        color: var(--color-text-secondary);
         font-size: 0.9rem;
         word-break: break-all;
         overflow-wrap: anywhere;
         transition: background 0.25s ease, transform 0.25s ease;
 
         &:hover {
-          background: rgba(135, 116, 232, 0.12);
+          background: var(--color-primary-muted);
           transform: translateX(3px);
 
           .info-icon {
-            background: linear-gradient(135deg, $primary, $primary-light);
-            color: #ffffff;
+            background: var(--gradient-primary);
+            color: var(--color-primary-foreground);
           }
         }
 
@@ -95,9 +96,9 @@ $primary-light: #a897f2;
           height: 38px;
           border-radius: 10px;
           flex-shrink: 0;
-          color: $primary-light;
-          background: rgba(135, 116, 232, 0.14);
-          border: 1px solid rgba(135, 116, 232, 0.22);
+          color: var(--color-primary-text);
+          background: var(--color-primary-muted);
+          border: 1px solid var(--color-border);
           transition: background 0.25s ease, color 0.25s ease;
         }
       }
@@ -106,8 +107,8 @@ $primary-light: #a897f2;
 
   /* ---------- Form ---------- */
   .contact__form {
-    background: linear-gradient(160deg, #221c42, #191430);
-    border: 1px solid rgba(135, 116, 232, 0.16);
+    background: var(--gradient-card-form);
+    border: 1px solid var(--color-border-subtle);
     border-radius: 18px;
     padding: 28px 24px;
     display: flex;
@@ -128,7 +129,7 @@ $primary-light: #a897f2;
       .field-label {
         font-size: 0.85rem;
         font-weight: 600;
-        color: #d9d1ff;
+        color: var(--color-text-secondary);
       }
 
       input,
@@ -136,20 +137,20 @@ $primary-light: #a897f2;
         width: 100%;
         padding: 12px 14px;
         border-radius: 10px;
-        border: 1px solid rgba(135, 116, 232, 0.22);
-        background: rgba(255, 255, 255, 0.04);
-        color: #f2f0ff;
+        border: 1px solid var(--color-border);
+        background: var(--color-input-bg);
+        color: var(--color-text-primary);
         font-size: 0.9rem;
         transition: border-color 0.25s ease, background 0.25s ease;
 
         &::placeholder {
-          color: #7d7896;
+          color: var(--color-text-disabled);
         }
 
         &:focus {
           outline: none;
-          border-color: $primary;
-          background: rgba(135, 116, 232, 0.08);
+          border-color: var(--color-focus);
+          background: var(--color-primary-muted);
         }
       }
 
@@ -162,11 +163,11 @@ $primary-light: #a897f2;
 
   .contact__button {
     align-self: flex-start;
-    color: white;
+    color: var(--color-primary-foreground);
     font-weight: 600;
     font-size: 0.92rem;
     padding: 12px 22px;
-    background: linear-gradient(135deg, $primary, $primary-light);
+    background: var(--gradient-primary);
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -215,10 +216,10 @@ $primary-light: #a897f2;
     gap: 12px;
     padding: 14px 18px;
     border-radius: 20px;
-    color: #f2f0ff;
-    background: rgba(28, 23, 54, 0.96);
+    color: var(--color-text-primary);
+    background: var(--color-toast-bg);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(135, 116, 232, 0.3);
+    border: 1px solid var(--color-border-strong);
     animation: toastIn 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 
     .toast__icon {
@@ -228,7 +229,7 @@ $primary-light: #a897f2;
       height: 34px;
       flex-shrink: 0;
       border-radius: 10px;
-      color: #ffffff;
+      color: var(--color-text-inverse);
     }
 
     p {
@@ -240,16 +241,16 @@ $primary-light: #a897f2;
     &.toast--success {
 
       .toast__icon {
-        background: rgba(46, 204, 113, 0.2);
-        color: #52e08d;
+        background: var(--color-success-soft);
+        color: var(--color-success);
       }
     }
 
     &.toast--error {
 
       .toast__icon {
-        background: rgba(255, 90, 106, 0.2);
-        color: #ff8a95;
+        background: var(--color-error-soft);
+        color: var(--color-error);
       }
     }
   }

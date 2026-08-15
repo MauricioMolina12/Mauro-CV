@@ -1,7 +1,239 @@
-:root{
-    --primary: #8774e8;
+/* ==========================================================================
+   DESIGN TOKENS — Mauro-CV
+   Arquitectura:  Primitive Tokens → Semantic Tokens → Components
+   El tema se controla con el atributo data-theme en <html> (light | dark).
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. PRIMITIVE TOKENS (independientes del tema)
+   -------------------------------------------------------------------------- */
+:root {
+  color-scheme: dark;
+
+  /* Brand — escala morada (primary-500 = color de marca actual #8774e8) */
+  --color-primary-50: #f4f2fd;
+  --color-primary-100: #eae6fb;
+  --color-primary-200: #d5cdf8;
+  --color-primary-300: #b6a9f4;
+  --color-primary-400: #9a8aee;
+  --color-primary-500: #8774e8;
+  --color-primary-600: #7059dc;
+  --color-primary-700: #5d48c2;
+  --color-primary-800: #4c3a9c;
+  --color-primary-900: #3f317d;
+  --color-primary-950: #251b52;
+
+  /* Neutral */
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #f8f8fb;
+  --color-neutral-100: #f1f1f6;
+  --color-neutral-200: #e4e4ec;
+  --color-neutral-300: #c9c9d6;
+  --color-neutral-400: #a3a3b4;
+  --color-neutral-500: #838393;
+  --color-neutral-600: #636372;
+  --color-neutral-700: #484857;
+  --color-neutral-800: #2d2d3b;
+  --color-neutral-900: #1a1a26;
+  --color-neutral-950: #0f0f18;
+
+  /* Estados semánticos (primitivos, se afinan por tema) */
+  --color-success: #52e08d;
+  --color-warning: #ffd27a;
+  --color-error: #ff8a95;
+  --color-info: #8ab8ff;
+
+  /* Radii */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-full: 999px;
 }
 
-.theme-1{
-    --primary: #000;
+/* --------------------------------------------------------------------------
+   2. SEMANTIC TOKENS — DARK THEME (valor por defecto, identidad actual)
+   -------------------------------------------------------------------------- */
+:root,
+:root[data-theme="dark"] {
+  /* Superficies */
+  --color-background: #0e0b1e;
+  --color-background-secondary: #161130;
+  --color-surface: #221b45;
+  --color-surface-elevated: #2a2254;
+  --color-surface-muted: #1c1735;
+
+  /* Texto */
+  --color-text-primary: #f2f0ff;
+  --color-text-secondary: #d9d1ff;
+  --color-text-tertiary: #cfc9ee;
+  --color-text-muted: #bcbccb;
+  --color-text-disabled: #7d7896;
+  --color-text-inverse: #ffffff;
+
+  /* Borders */
+  --color-border: rgba(135, 116, 232, 0.28);
+  --color-border-subtle: rgba(135, 116, 232, 0.16);
+  --color-border-strong: rgba(135, 116, 232, 0.5);
+
+  /* Marca */
+  --color-primary: #8774e8;
+  --color-primary-hover: #a897f2;
+  --color-primary-active: #7059dc;
+  --color-primary-deep: #443880;
+  --color-primary-muted: rgba(135, 116, 232, 0.12);
+  --color-primary-soft: rgba(168, 151, 242, 0.25);
+  --color-primary-text: #a897f2;
+  --color-primary-foreground: #ffffff;
+  --color-focus: #b6a9f4;
+
+  /* Estados interactivos */
+  --color-hover: rgba(135, 116, 232, 0.2);
+  --color-active: rgba(135, 116, 232, 0.32);
+  --color-disabled: rgba(135, 116, 232, 0.4);
+
+  /* Componentes específicos */
+  --color-nav-glass: rgba(58, 47, 112, 0.55);
+  --color-nav-bg: rgba(25, 18, 60, 0.97);
+  --color-logo-surface: #ffffff;
+  --color-logo-border: rgba(255, 255, 255, 0.6);
+  --color-input-bg: rgba(255, 255, 255, 0.04);
+  --color-toast-bg: rgba(28, 23, 54, 0.96);
+  --color-overlay-badge: rgba(14, 11, 31, 0.55);
+  --color-cta-outline: #ffffff;
+  --color-banner-deco: #3a2f70;
+  --color-hero-panel: #8774e8;
+  --color-hero-panel-deep: #443880;
+  /* Fundido del retrato del banner: solo en modo oscuro. */
+  --hero-blend-mode: hard-light;
+
+  /* Estados semánticos (detallados) */
+  --color-success-text: #c5f0d5;
+  --color-success-border: rgba(111, 207, 151, 0.3);
+  --color-success-soft: rgba(111, 207, 151, 0.1);
+  --color-warning-soft: rgba(255, 197, 61, 0.12);
+  --color-warning-border: rgba(255, 197, 61, 0.35);
+  --color-error-soft: rgba(255, 90, 106, 0.2);
+  --color-info-soft: rgba(138, 184, 255, 0.14);
+
+  /* Gradientes */
+  --gradient-hero: radial-gradient(
+    circle at 50% 30%,
+    rgb(96, 79, 184) 0%,
+    rgba(0, 0, 0, 1) 80%,
+    #000000 80%
+  );
+  --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-primary-text));
+  --gradient-accent: linear-gradient(120deg, var(--color-primary), var(--color-primary-text));
+  --gradient-card: linear-gradient(160deg, #251e47, #1b1636);
+  --gradient-card-form: linear-gradient(160deg, #221c42, #191430);
+  --gradient-card-overlay: linear-gradient(180deg, rgba(27, 22, 54, 0) 55%, rgba(27, 22, 54, 0.9) 100%);
+  --gradient-banner-deco: linear-gradient(var(--color-banner-deco), var(--color-banner-deco));
+
+  /* Sombras */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 48px rgba(0, 0, 0, 0.55);
+  --shadow-nav: 0 1px 20px rgba(135, 116, 232, 0.08);
+  --shadow-cta: 0 4px 16px rgba(135, 116, 232, 0.35);
+  --shadow-cta-active: 0 2px 8px rgba(135, 116, 232, 0.2);
 }
+
+/* --------------------------------------------------------------------------
+   3. SEMANTIC TOKENS — LIGHT THEME
+   -------------------------------------------------------------------------- */
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  /* Superficies */
+  --color-background: #f5f3fb;
+  --color-background-secondary: #ece9f7;
+  --color-surface: #ffffff;
+  --color-surface-elevated: #ffffff;
+  --color-surface-muted: #f1effa;
+
+  /* Texto */
+  --color-text-primary: #1a1a26;
+  --color-text-secondary: #484857;
+  --color-text-tertiary: #636372;
+  --color-text-muted: #838393;
+  --color-text-disabled: #a3a3b4;
+  --color-text-inverse: #ffffff;
+
+  /* Borders */
+  --color-border: rgba(76, 58, 156, 0.25);
+  --color-border-subtle: rgba(76, 58, 156, 0.12);
+  --color-border-strong: rgba(76, 58, 156, 0.45);
+
+  /* Marca (morado algo más profundo para contraste AA sobre blanco) */
+  --color-primary: #6a52d4;
+  --color-primary-hover: #5d48c2;
+  --color-primary-active: #4c3a9c;
+  --color-primary-deep: #5d48c2;
+  --color-primary-muted: rgba(106, 82, 212, 0.1);
+  --color-primary-soft: rgba(106, 82, 212, 0.14);
+  --color-primary-text: #5d48c2;
+  --color-primary-foreground: #ffffff;
+  --color-focus: #6a52d4;
+
+  /* Estados interactivos */
+  --color-hover: rgba(106, 82, 212, 0.14);
+  --color-active: rgba(106, 82, 212, 0.22);
+  --color-disabled: rgba(76, 58, 156, 0.35);
+
+  /* Componentes específicos */
+  --color-nav-glass: rgba(255, 255, 255, 0.68);
+  --color-nav-bg: rgba(255, 255, 255, 0.96);
+  --color-logo-surface: #ffffff;
+  --color-logo-border: rgba(60, 50, 110, 0.14);
+  --color-input-bg: rgba(106, 82, 212, 0.05);
+  --color-toast-bg: rgba(255, 255, 255, 0.96);
+  --color-overlay-badge: rgba(10, 8, 24, 0.5);
+  --color-cta-outline: rgba(76, 58, 156, 0.45);
+  --color-banner-deco: #e2dbf6;
+  --color-hero-panel: var(--color-banner-deco);
+  --color-hero-panel-deep: var(--color-banner-deco);
+  /* Sin fundido en modo claro: la foto se ve natural. */
+  --hero-blend-mode: normal;
+
+  /* Estados semánticos (detallados) */
+  --color-success: #16a34a;
+  --color-success-text: #15803d;
+  --color-success-border: rgba(22, 163, 74, 0.35);
+  --color-success-soft: rgba(22, 163, 74, 0.1);
+  --color-warning: #b45309;
+  --color-warning-soft: rgba(180, 83, 9, 0.12);
+  --color-warning-border: rgba(180, 83, 9, 0.35);
+  --color-error: #dc2626;
+  --color-error-soft: rgba(220, 38, 38, 0.12);
+  --color-info: #2563eb;
+  --color-info-soft: rgba(37, 99, 235, 0.12);
+
+  /* Gradientes */
+  --gradient-hero: radial-gradient(
+    circle at 50% 30%,
+    #e9e4f9 0%,
+    #f5f3fb 65%,
+    #edeaf7 100%
+  );
+  --gradient-primary: linear-gradient(135deg, #6a52d4, #5d48c2);
+  --gradient-accent: linear-gradient(120deg, #6a52d4, #8774e8);
+  --gradient-card: linear-gradient(160deg, #ffffff, #f3f0fb);
+  --gradient-card-form: linear-gradient(160deg, #ffffff, #f5f2fc);
+  --gradient-card-overlay: linear-gradient(180deg, rgba(27, 22, 54, 0) 55%, rgba(27, 22, 54, 0.9) 100%);
+  --gradient-banner-deco: linear-gradient(var(--color-banner-deco), var(--color-banner-deco));
+
+  /* Sombras */
+  --shadow-xs: 0 1px 2px rgba(60, 50, 110, 0.06);
+  --shadow-sm: 0 2px 8px rgba(60, 50, 110, 0.08);
+  --shadow-md: 0 6px 20px rgba(60, 50, 110, 0.1);
+  --shadow-lg: 0 12px 32px rgba(60, 50, 110, 0.14);
+  --shadow-xl: 0 20px 48px rgba(60, 50, 110, 0.18);
+  --shadow-nav: 0 1px 20px rgba(60, 50, 110, 0.06);
+  --shadow-cta: 0 4px 16px rgba(106, 82, 212, 0.3);
+  --shadow-cta-active: 0 2px 8px rgba(106, 82, 212, 0.18);
+}
+

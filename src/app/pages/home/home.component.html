@@ -5,7 +5,7 @@
   <app-whyme></app-whyme>
 </section>
 <section id="skills">
-  <app-specilizing [startScrolling]="start"></app-specilizing>
+  <app-specilizing></app-specilizing>
 </section>
 <section id="techs">
   <app-technologies></app-technologies>
@@ -20,5 +20,14 @@
   <app-experiences></app-experiences>
 </section>
 <section id="contact-me">
-  <app-contact></app-contact>
+  <!-- Diferido: el formulario (ReactiveForms + EmailJS) solo se carga al
+       acercarse a la sección, fuera del bundle inicial. -->
+  @defer (on viewport) {
+    <app-contact />
+  } @placeholder {
+    <div class="contact-placeholder" aria-hidden="true">
+      <div class="contact-placeholder__block"></div>
+      <div class="contact-placeholder__block"></div>
+    </div>
+  }
 </section>

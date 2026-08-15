@@ -1,6 +1,7 @@
-import { NgFor, NgIf } from '@angular/common';
+import { NgIf } from '@angular/common';
 import {
   AfterViewInit,
+  ChangeDetectionStrategy,
   Component,
   ElementRef,
   QueryList,
@@ -11,9 +12,10 @@ import { UtilsService } from '../../services/utils.service';
 @Component({
   selector: 'app-educations',
   standalone: true,
-  imports: [NgFor, NgIf],
+  imports: [NgIf],
   templateUrl: './educations.component.html',
   styleUrl: './educations.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EducationsComponent implements AfterViewInit {
   constructor(private utilsService: UtilsService) {}
@@ -24,7 +26,7 @@ export class EducationsComponent implements AfterViewInit {
     {
       education: 'Universidad Libre Seccional Barranquilla',
       time: 'Feb 2021 - Mar 2026',
-      logo: 'assets/unilibre.jpg',
+      logo: 'assets/unilibre.webp',
       positions: [
         {
           title: 'Ingeniería de sistemas',
@@ -34,7 +36,7 @@ export class EducationsComponent implements AfterViewInit {
     {
       education: 'Universidad de los Andes (Colombia)',
       time: '2024',
-      logo: 'assets/uniandes.jpg',
+      logo: 'assets/uniandes.webp',
       link: 'https://www.linkedin.com/posts/william-insignares-4648a837_innovaciaejn-tecnologaeda-educaciaejn-activity-7199898714579030019-5BVV?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFIoueEBV4n9JK6BzpcJ6umsx_k_7uD4kck',
       positions: [
         {
@@ -45,7 +47,7 @@ export class EducationsComponent implements AfterViewInit {
     {
       education: 'SENA',
       time: '2018 - 2020',
-      logo: 'assets/sena.png',
+      logo: 'assets/sena.webp',
       positions: [
         {
           title: 'Tecnico de sistemas',

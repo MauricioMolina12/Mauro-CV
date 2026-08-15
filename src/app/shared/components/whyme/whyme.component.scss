@@ -1,5 +1,5 @@
-$primary: #8774e8;
-$primary-light: #a897f2;
+$primary: var(--color-primary);
+$primary-light: var(--color-primary-text);
 
 .wrapper {
   width: 100%;
@@ -12,7 +12,7 @@ $primary-light: #a897f2;
   .title {
     font-size: 1.7rem;
     font-weight: 800;
-    color: #3a2f70;
+    color: var(--color-text-secondary);
     max-width: 100%;
     text-align: center;
     line-height: 1.1;
@@ -26,7 +26,7 @@ $primary-light: #a897f2;
     span {
       display: block;
       font-size: 3rem;
-      color: #d9d1ff;
+      color: var(--color-primary-text);
       font-weight: 800;
       word-break: break-word;
     }
@@ -46,13 +46,13 @@ $primary-light: #a897f2;
     .card {
       width: 100%;
       border-radius: 20px;
-      background-color: $primary;
+      background-color: var(--color-primary);
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
       gap: 6px;
-      color: white;
+      color: var(--color-primary-foreground);
       padding: 20px;
       background-repeat: no-repeat;
 
@@ -75,20 +75,20 @@ $primary-light: #a897f2;
     }
 
     .card-1 {
-      background-image: url(../../../../../public/assets/ux.jpg);
+      background-image: url('/assets/ux.webp');
       background-size: cover;
       background-blend-mode: soft-light;
     }
 
     .card-2 {
-      background-image: url(../../../../../public/assets/whyme.png);
+      background-image: url('/assets/whyme.webp');
       background-size: cover;
       background-position: center -150px;
     }
 
     .card-3 {
-      background: linear-gradient(160deg, #251e47, #1b1636);
-      border: 1px solid rgba(135, 116, 232, 0.18);
+      background: var(--gradient-card);
+      border: 1px solid var(--color-border-subtle);
       gap: 22px;
 
       .mindset-head {
@@ -98,12 +98,12 @@ $primary-light: #a897f2;
 
         h2 {
           font-size: 1.15rem;
-          color: #f2f0ff;
+          color: var(--color-text-primary);
         }
 
         span {
           font-size: 0.82rem;
-          color: rgb(180, 180, 195);
+          color: var(--color-text-muted);
         }
       }
 
@@ -119,14 +119,14 @@ $primary-light: #a897f2;
           gap: 8px;
           padding: 16px;
           border-radius: 14px;
-          background: rgba(135, 116, 232, 0.08);
-          border: 1px solid rgba(135, 116, 232, 0.16);
+          background: var(--color-primary-muted);
+          border: 1px solid var(--color-border-subtle);
           transition:
             border-color 0.3s ease,
             transform 0.3s ease;
 
           &:hover {
-            border-color: rgba(135, 116, 232, 0.4);
+            border-color: var(--color-border-strong);
             transform: translateY(-3px);
 
             .trait-icon {
@@ -140,21 +140,21 @@ $primary-light: #a897f2;
             width: 42px;
             height: 42px;
             border-radius: 12px;
-            color: #ffffff;
-            background: linear-gradient(135deg, $primary, $primary-light);
+            color: var(--color-primary-foreground);
+            background: var(--gradient-primary);
             transition: transform 0.3s ease;
           }
 
           h3 {
             font-size: 0.95rem;
             font-weight: 700;
-            color: #f2f0ff;
+            color: var(--color-text-primary);
           }
 
           p {
             font-size: 0.8rem;
             line-height: 1.5;
-            color: rgb(190, 190, 205);
+            color: var(--color-text-muted);
           }
         }
       }

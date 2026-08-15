@@ -38,11 +38,13 @@
 
       <!-- Enlaces múltiples (proyectos con varios módulos) -->
       <div class="hero-actions" *ngIf="story.links?.length; else singleLinks">
-        <a *ngFor="let link of story.links" class="btn"
-          [ngClass]="link.kind === 'primary' ? 'btn-primary' : 'btn-ghost'"
-          [href]="link.url" target="_blank" rel="noopener">
-          {{ link.label }}
-        </a>
+        @for (link of story.links; track link.url) {
+          <a class="btn"
+            [ngClass]="link.kind === 'primary' ? 'btn-primary' : 'btn-ghost'"
+            [href]="link.url" target="_blank" rel="noopener">
+            {{ link.label }}
+          </a>
+        }
       </div>
 
       <!-- Fallback: demo / repo -->
@@ -59,7 +61,8 @@
     </div>
 
     <div class="hero-media">
-      <img [src]="story.cover" [alt]="project.title">
+      <!-- LCP de la página de detalle: eager + fetchpriority high. -->
+      <img [src]="story.cover" [alt]="project.title" fetchpriority="high" decoding="async">
     </div>
   </header>
 
@@ -67,10 +70,12 @@
   <section class="tech-strip">
     <h2>Tecnologías</h2>
     <div class="techs">
-      <figure *ngFor="let tech of project.techs">
-        <img [src]="tech.icon" [alt]="tech.name">
-        <figcaption>{{ tech.name }}</figcaption>
-      </figure>
+      @for (tech of project.techs; track tech.name) {
+        <figure>
+          <img [src]="tech.icon" [alt]="tech.name" loading="lazy" decoding="async">
+          <figcaption>{{ tech.name }}</figcaption>
+        </figure>
+      }
     </div>
   </section>
 
@@ -105,7 +110,9 @@
       <div>
         <h2>Lo que construí</h2>
         <ul class="feature-list">
-          <li *ngFor="let feature of story.features">{{ feature }}</li>
+          @for (feature of story.features; track feature) {
+            <li>{{ feature }}</li>
+          }
         </ul>
       </div>
     </section>
@@ -115,9 +122,11 @@
   <section class="gallery" *ngIf="story.gallery.length">
     <h2>Galería</h2>
     <div class="gallery-grid">
-      <figure *ngFor="let shot of story.gallery">
-        <img [src]="shot" [alt]="project.title" loading="lazy">
-      </figure>
+      @for (shot of story.gallery; track shot) {
+        <figure>
+          <img [src]="shot" [alt]="project.title" loading="lazy" decoding="async">
+        </figure>
+      }
     </div>
   </section>
 
@@ -125,7 +134,9 @@
   <section class="results" *ngIf="story.results?.length">
     <h2>Resultados</h2>
     <ul class="results-list">
-      <li *ngFor="let result of story.results">{{ result }}</li>
+      @for (result of story.results; track result) {
+        <li>{{ result }}</li>
+      }
     </ul>
   </section>
 

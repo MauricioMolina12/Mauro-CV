@@ -6,7 +6,6 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import emailjs from '@emailjs/browser';
 
 @Component({
   selector: 'app-contact',
@@ -36,7 +35,7 @@ export class ContactComponent {
     });
   }
 
-  onSubmit(): void {
+  async onSubmit(): Promise<void> {
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       this.showToast('error', 'Por favor completa todos los campos requeridos.');
@@ -44,6 +43,9 @@ export class ContactComponent {
     }
 
     this.loading = true;
+
+    // Carga diferida: @emailjs/browser solo se descarga al enviar el formulario.
+    const emailjs = (await import('@emailjs/browser')).default;
 
     emailjs
       .send(

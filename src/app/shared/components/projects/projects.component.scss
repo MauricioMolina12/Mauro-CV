@@ -1,5 +1,5 @@
-$primary: #8774e8;
-$primary-light: #a897f2;
+$primary: var(--color-primary);
+$primary-light: var(--color-primary-text);
 
 .carousel-container {
   position: relative;
@@ -24,13 +24,13 @@ $primary-light: #a897f2;
         font-size: 0.8rem;
         font-weight: 700;
         letter-spacing: 3px;
-        color: $primary-light;
+        color: var(--color-primary-text);
       }
 
       .section-title {
         font-size: 2rem;
         font-weight: 800;
-        color: #f2f0ff;
+        color: var(--color-text-primary);
       }
     }
 
@@ -54,8 +54,8 @@ $primary-light: #a897f2;
       gap: 10px;
 
       span {
-        color: #cfc9ee;
-        border: 1px solid rgba(135, 116, 232, 0.28);
+        color: var(--color-text-tertiary);
+        border: 1px solid var(--color-border);
         border-radius: 20px;
         font-size: 0.82rem;
         font-weight: 500;
@@ -65,13 +65,13 @@ $primary-light: #a897f2;
         transition: all 0.3s ease;
 
         &:hover {
-          border-color: $primary;
-          color: #ffffff;
+          border-color: var(--color-primary);
+          color: var(--color-text-primary);
         }
 
         &.active {
-          color: #ffffff;
-          background: linear-gradient(135deg, $primary, $primary-light);
+          color: var(--color-primary-foreground);
+          background: var(--gradient-primary);
           border-color: transparent;
         }
       }
@@ -86,8 +86,8 @@ $primary-light: #a897f2;
 
     .card {
       width: 100%;
-      background: linear-gradient(160deg, #251e47, #1b1636);
-      border: 1px solid rgba(135, 116, 232, 0.16);
+      background: var(--gradient-card);
+      border: 1px solid var(--color-border-subtle);
       border-radius: 18px;
       display: flex;
       flex-direction: column;
@@ -103,7 +103,7 @@ $primary-light: #a897f2;
       }
 
       &:hover {
-        border-color: rgba(135, 116, 232, 0.45);
+        border-color: var(--color-border-strong);
         transform: translateY(-5px);
 
         .card-media img {
@@ -128,11 +128,7 @@ $primary-light: #a897f2;
           content: "";
           position: absolute;
           inset: 0;
-          background: linear-gradient(
-            180deg,
-            rgba(27, 22, 54, 0) 55%,
-            rgba(27, 22, 54, 0.9) 100%
-          );
+          background: var(--gradient-card-overlay);
         }
 
         .card-type {
@@ -143,10 +139,10 @@ $primary-light: #a897f2;
           font-size: 0.68rem;
           font-weight: 600;
           text-transform: capitalize;
-          color: #ffffff;
+          color: var(--color-text-inverse);
           padding: 4px 10px;
           border-radius: 20px;
-          background: rgba(14, 11, 31, 0.55);
+          background: var(--color-overlay-badge);
           backdrop-filter: blur(6px);
         }
 
@@ -162,28 +158,28 @@ $primary-light: #a897f2;
           text-transform: uppercase;
           padding: 4px 10px;
           border-radius: 20px;
-          background: rgba(14, 11, 31, 0.55);
+          background: var(--color-overlay-badge);
           backdrop-filter: blur(6px);
 
           &.card-dev {
             right: 12px;
             top: 12px;
-            color: #ffd27a;
+            color: var(--color-warning);
 
             &::before {
               content: "";
               width: 6px;
               height: 6px;
               border-radius: 50%;
-              background: #ffc53d;
+              background: var(--color-warning);
             }
           }
 
           &.card-professional {
             right: 12px;
             top: 12px;
-            color: #6fcf97;
-            border: 1px solid rgba(111, 207, 151, 0.3);
+            color: var(--color-success);
+            border: 1px solid var(--color-success-border);
 
             svg {
               flex-shrink: 0;
@@ -202,13 +198,13 @@ $primary-light: #a897f2;
         h2 {
           font-size: 1.15rem;
           font-weight: 700;
-          color: #f2f0ff;
+          color: var(--color-text-primary);
         }
 
         p {
           font-size: 0.82rem;
           line-height: 1.55;
-          color: rgb(188, 188, 203);
+          color: var(--color-text-muted);
           display: -webkit-box;
           -webkit-line-clamp: 4;
           -webkit-box-orient: vertical;
@@ -228,8 +224,8 @@ $primary-light: #a897f2;
             display: grid;
             place-items: center;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(135, 116, 232, 0.25);
+            background: var(--color-primary-muted);
+            border: 1px solid var(--color-border);
 
             img {
               width: 20px;
@@ -264,19 +260,19 @@ $primary-light: #a897f2;
           }
 
           .btn-demo {
-            color: #ffffff;
+            color: var(--color-primary-foreground);
             border: none;
-            background: linear-gradient(135deg, $primary, $primary-light);
+            background: var(--gradient-primary);
           }
 
           .btn-code {
-            color: #e3e0f5;
-            background: rgba(135, 116, 232, 0.1);
-            border: 1px solid rgba(135, 116, 232, 0.35);
+            color: var(--color-text-secondary);
+            background: var(--color-primary-muted);
+            border: 1px solid var(--color-border-strong);
 
             &:hover {
-              background: rgba(135, 116, 232, 0.2);
-              border-color: rgba(135, 116, 232, 0.6);
+              background: var(--color-hover);
+              border-color: var(--color-border-strong);
             }
           }
         }
@@ -314,17 +310,17 @@ $primary-light: #a897f2;
           width: 46px;
           display: grid;
           place-items: center;
-          background: rgba(135, 116, 232, 0.12);
-          color: #e9e6ff;
-          border: 1px solid rgba(135, 116, 232, 0.3);
+          background: var(--color-primary-muted);
+          color: var(--color-text-secondary);
+          border: 1px solid var(--color-border);
           cursor: pointer;
           font-size: 18px;
           border-radius: 12px;
           transition: all 0.3s ease;
 
           &:hover {
-            background: linear-gradient(135deg, $primary, $primary-light);
-            color: #ffffff;
+            background: var(--gradient-primary);
+            color: var(--color-primary-foreground);
             border-color: transparent;
           }
         }

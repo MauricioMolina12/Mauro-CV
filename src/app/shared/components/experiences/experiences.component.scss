@@ -1,5 +1,5 @@
-$primary: #8774e8;
-$primary-light: #a897f2;
+$primary: var(--color-primary);
+$primary-light: var(--color-primary-text);
 
 .experiences-wrapper {
     width: 100%;
@@ -19,11 +19,11 @@ $primary-light: #a897f2;
             font-size: 0.8rem;
             font-weight: 700;
             letter-spacing: 3px;
-            color: $primary-light;
+            color: var(--color-primary-text);
         }
 
         h2 {
-            color: #f2f0ff;
+            color: var(--color-text-primary);
             font-size: 2rem;
             font-weight: 800;
         }
@@ -44,9 +44,9 @@ $primary-light: #a897f2;
             width: 2px;
             background: linear-gradient(
                 180deg,
-                $primary 0%,
-                rgba(135, 116, 232, 0.4) 60%,
-                rgba(135, 116, 232, 0.05) 100%
+                var(--color-primary) 0%,
+                var(--color-border-strong) 60%,
+                transparent 100%
             );
         }
 
@@ -68,19 +68,19 @@ $primary-light: #a897f2;
                 width: 16px;
                 height: 16px;
                 border-radius: 50%;
-                background: $primary;
-                border: 3px solid #16122e;
+                background: var(--color-primary);
+                border: 3px solid var(--color-background);
             }
 
             .experience-card {
-                background: linear-gradient(160deg, #251e47, #1b1636);
-                border: 1px solid rgba(135, 116, 232, 0.16);
+                background: var(--gradient-card);
+                border: 1px solid var(--color-border-subtle);
                 border-radius: 16px;
                 padding: 20px;
                 transition: border-color 0.35s ease, transform 0.35s ease;
 
                 &:hover {
-                    border-color: rgba(135, 116, 232, 0.4);
+                    border-color: var(--color-border-strong);
                     transform: translateY(-3px);
                 }
 
@@ -95,7 +95,7 @@ $primary-light: #a897f2;
                         height: 44px;
                         border-radius: 10px;
                         overflow: hidden;
-                        background: #ffffff;
+                        background: var(--color-logo-surface);
                         flex-shrink: 0;
                         display: grid;
                         place-items: center;
@@ -114,13 +114,13 @@ $primary-light: #a897f2;
                         min-width: 140px;
 
                         .role {
-                            color: #f2f0ff;
+                            color: var(--color-text-primary);
                             font-size: 1.02rem;
                             font-weight: 700;
                         }
 
                         .company {
-                            color: $primary-light;
+                            color: var(--color-primary-text);
                             font-size: 0.85rem;
                             font-weight: 500;
                         }
@@ -129,11 +129,11 @@ $primary-light: #a897f2;
                     .time {
                         font-size: 0.72rem;
                         font-weight: 600;
-                        color: #cfc9ee;
+                        color: var(--color-text-tertiary);
                         padding: 5px 10px;
                         border-radius: 20px;
-                        background: rgba(135, 116, 232, 0.14);
-                        border: 1px solid rgba(135, 116, 232, 0.25);
+                        background: var(--color-primary-muted);
+                        border: 1px solid var(--color-border);
                         white-space: nowrap;
                     }
                 }
@@ -148,14 +148,14 @@ $primary-light: #a897f2;
 
                     .item {
                         h4 {
-                            color: #d9d1ff;
+                            color: var(--color-text-secondary);
                             font-size: 0.9rem;
                             font-weight: 600;
                             margin-bottom: 4px;
                         }
 
                         p {
-                            color: rgb(232, 232, 232);
+                            color: var(--color-text-secondary);
                             font-size: 0.85rem;
                             line-height: 1.55;
                         }
@@ -173,12 +173,12 @@ $primary-light: #a897f2;
                                 padding: 6px 12px 6px 8px;
                                 border-radius: 20px;
                                 text-decoration: none;
-                                background: rgba(135, 116, 232, 0.1);
-                                border: 1px solid rgba(135, 116, 232, 0.22);
+                                background: var(--color-primary-muted);
+                                border: 1px solid var(--color-border);
                                 transition: background 0.25s ease, transform 0.25s ease;
 
                                 &:hover {
-                                    background: rgba(135, 116, 232, 0.22);
+                                    background: var(--color-hover);
                                     transform: translateY(-2px);
                                 }
 
@@ -189,7 +189,7 @@ $primary-light: #a897f2;
                                 }
 
                                 span {
-                                    color: #e9e6ff;
+                                    color: var(--color-text-secondary);
                                     font-size: 0.78rem;
                                     font-weight: 500;
                                 }

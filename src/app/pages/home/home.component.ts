@@ -24,6 +24,4 @@ import { ContactComponent } from '../../shared/components/contact/contact.compon
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent {
-  start = false;
-}
+export class HomeComponent {}

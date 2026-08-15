@@ -15,6 +15,8 @@ export class UtilsService {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add('parallax');
+              // Dejar de observar: la transición ocurre una sola vez.
+              this.observer.unobserve(entry.target);
             }
           });
         },

@@ -17,7 +17,7 @@
     bottom: 0;
     width: 380px;
     height: 480px;
-    background: linear-gradient(#3a2f70, #3a2f70);
+    background: var(--gradient-banner-deco);
     backdrop-filter: blur(30px);
     border-radius: 80px 0 0 80px;
     z-index: -1000;
@@ -32,13 +32,13 @@
     align-self: flex-end;
     background: transparent;
     border-radius: 0;
-    background-color: #8774e8;
+    background-color: var(--color-hero-panel);
     border-radius: 500px 0 0 500px;
-    background-image: url(../../../../../public/assets/banner2.png);
+    background-image: url('/assets/banner2.webp');
     background-repeat: no-repeat;
     background-position: center -30px;
     background-size: cover;
-    background-blend-mode: hard-light;
+    background-blend-mode: var(--hero-blend-mode);
   }
 
   .banner-title {
@@ -54,12 +54,12 @@
     margin-top: 20px;
 
     span {
-      color: rgb(203, 203, 203);
+      color: var(--color-text-muted);
       font-size: clamp(0.95rem, 3.6vw, 1.3rem);
     }
 
     h1 {
-      color: #d9d1ff;
+      color: var(--color-text-secondary);
       display: flex;
       flex-direction: column;
       font-size: clamp(1rem, 6vw, 1.8rem);
@@ -69,11 +69,11 @@
         display: inline-block;
         white-space: nowrap;
         font-size: inherit;
-        background: linear-gradient(120deg, #8774e8, #b3a5f7);
+        background: var(--gradient-accent);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
-        border-right: 2px solid #8774e8;
+        border-right: 2px solid var(--color-primary);
         padding-right: 4px;
         opacity: 1;
         transform: translateY(0);
@@ -94,7 +94,7 @@
       max-width: 90%;
       font-size: clamp(0.9rem, 3.4vw, 1.05rem);
       line-height: 1.6;
-      color: rgb(203, 203, 203);
+      color: var(--color-text-muted);
     }
 
     .item {
@@ -108,12 +108,12 @@
 
       h2 {
         font-size: clamp(1.1rem, 4.5vw, 1.4rem);
-        color: #8774e8;
+        color: var(--color-primary);
       }
 
       span {
         font-size: clamp(0.85rem, 3.2vw, 1rem);
-        color: rgb(203, 203, 203);
+        color: var(--color-text-muted);
       }
     }
 
@@ -128,14 +128,15 @@
         box-sizing: border-box;
         border-radius: 10px;
         margin-top: 12px;
-        background-color: #8774e8;
-        color: white;
+        background-color: var(--color-primary);
+        color: var(--color-primary-foreground);
         cursor: pointer;
         text-decoration: none;
 
         &:last-of-type {
           background-color: transparent;
-          border: 1px solid white;
+          border: 1px solid var(--color-cta-outline);
+          color: var(--color-text-primary);
         }
       }
     }
@@ -156,7 +157,7 @@
     .point {
       width: 3px;
       height: 3px;
-      background-color: rgb(188, 188, 188);
+      background-color: var(--color-text-muted);
       clip-path: circle();
     }
   }
@@ -177,7 +178,7 @@
 @keyframes caretBlink {
   0%,
   100% {
-    border-color: #8774e8;
+    border-color: var(--color-primary);
   }
   50% {
     border-color: transparent;
@@ -200,7 +201,7 @@
       width: 380px;
       height: 480px;
       border-radius: 0 80px 80px 0;
-      background: linear-gradient(#3a2f70, #3a2f70);
+      background: var(--gradient-banner-deco);
       z-index: -1000;
     }
 
@@ -213,14 +214,14 @@
       justify-content: center;
       background: transparent;
       border-radius: 0;
-      background-color: #443880;
+      background-color: var(--color-hero-panel-deep);
       margin-bottom: 90px;
       border-radius: 500px 0 0 500px;
-      background-image: url(../../../../../public/assets/banner2.png);
+      background-image: url('/assets/banner2.webp');
       background-repeat: no-repeat;
       background-position: center -100px;
       background-size: cover;
-      background-blend-mode: hard-light;
+      background-blend-mode: var(--hero-blend-mode);
 
       img {
         position: absolute;
@@ -235,13 +236,13 @@
       order: 1;
 
       span {
-        color: rgb(203, 203, 203);
+        color: var(--color-text-muted);
         font-size: 1.3rem;
       }
 
       h1 {
         max-width: 60%;
-        color: #d9d1ff;
+        color: var(--color-text-secondary);
       }
 
       p {

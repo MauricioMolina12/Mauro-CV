@@ -5,11 +5,13 @@
     <span> Hola, Bienvenido </span>
     <h1>Soy Mauricio un <span class="job" [class.is-hidden]="!jobVisible">{{ currentJob }}</span></h1>
     <p>
-      No soy un robot… pero soy una máquina cuando se trata de crear interfaces UI/UX y código frontend de alto nivel.
+      No soy un robot… pero soy una máquina cuando se trata de crear interfaces UI/UX y escribir código de alto nivel.
     </p>
-    <div class="item" *ngFor="let item of data">
-      <h2>{{ item.title }}</h2>
-      <span>{{ item.subtitle }}</span>
+    <div class="item">
+      @for (item of data; track item.title) {
+        <h2>{{ item.title }}</h2>
+        <span>{{ item.subtitle }}</span>
+      }
     </div>
     <div class="buttons">
       <a class="button-call-action" (click)="start()">Empezar</a>

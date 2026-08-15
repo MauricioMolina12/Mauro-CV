@@ -1,30 +1,21 @@
-import { DOCUMENT, isPlatformBrowser, NgFor } from '@angular/common';
-import {
-  Component,
-  EventEmitter,
-  Inject,
-  OnDestroy,
-  OnInit,
-  Output,
-  PLATFORM_ID,
-} from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
 
 @Component({
   selector: 'app-banner',
   standalone: true,
-  imports: [NgFor],
+  imports: [],
   templateUrl: './banner.component.html',
   styleUrl: './banner.component.scss',
 })
 export class BannerComponent implements OnInit, OnDestroy {
-  @Output() startClicked = new EventEmitter<void>();
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
-  constructor(
-    @Inject(DOCUMENT) private document: Document,
-    @Inject(PLATFORM_ID) private platformId: Object,
-  ) {}
-
-  jobs = ['Desarrollador Frontend', 'Diseñador UI/UX', 'Desarrollador Móvil'];
+  jobs = [
+    'Desarrollador Full Stack',
+    'Diseñador UI/UX',
+    'Desarrollador Móvil',
+  ];
   currentJob = this.jobs[0];
   jobVisible = true;
 
@@ -57,10 +48,6 @@ export class BannerComponent implements OnInit, OnDestroy {
       this.currentJob = this.jobs[this.index];
       this.jobVisible = true;
     }, 400);
-  }
-
-  onStartClick() {
-    this.startClicked.emit();
   }
 
   start() {

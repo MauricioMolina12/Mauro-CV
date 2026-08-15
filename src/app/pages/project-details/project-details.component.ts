@@ -1,5 +1,5 @@
-import { NgClass, NgFor, NgIf } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { NgClass, NgIf } from '@angular/common';
+import { ChangeDetectionStrategy, Component, Input, OnChanges } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router, RouterLink } from '@angular/router';
 import { Project } from '../../core/models/project.model';
@@ -8,11 +8,12 @@ import { ProjectsService } from '../../core/services/projects.service';
 @Component({
   selector: 'app-project-details',
   standalone: true,
-  imports: [NgIf, NgFor, NgClass, RouterLink],
+  imports: [NgIf, NgClass, RouterLink],
   templateUrl: './project-details.component.html',
   styleUrl: './project-details.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProjectDetailsComponent implements OnInit {
+export class ProjectDetailsComponent implements OnChanges {
   /** Recibido desde la ruta /project/:slug vía withComponentInputBinding(). */
   @Input() slug = '';
 
@@ -27,7 +28,11 @@ export class ProjectDetailsComponent implements OnInit {
     private meta: Meta
   ) {}
 
-  ngOnInit(): void {
+  /**
+   * Se recalcula cada vez que cambia el slug (incluye navegar entre proyectos
+   * con "Anterior/Siguiente", donde Angular reutiliza la instancia).
+   */
+  ngOnChanges(): void {
     this.project = this.projectsService.getBySlug(this.slug);
 
     if (!this.project?.story) {

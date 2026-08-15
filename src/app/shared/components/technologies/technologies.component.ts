@@ -1,6 +1,6 @@
-import { NgFor } from '@angular/common';
 import {
   AfterViewInit,
+  ChangeDetectionStrategy,
   Component,
   ElementRef,
   QueryList,
@@ -22,9 +22,10 @@ interface TechCategory {
 @Component({
   selector: 'app-technologies',
   standalone: true,
-  imports: [NgFor],
+  imports: [],
   templateUrl: './technologies.component.html',
   styleUrl: './technologies.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TechnologiesComponent implements AfterViewInit {
   constructor(private utilsService: UtilsService) {}
@@ -42,7 +43,28 @@ export class TechnologiesComponent implements AfterViewInit {
         { name: 'HTML5', icon: 'assets/tech/html5.svg' },
         { name: 'CSS3', icon: 'assets/tech/css3.svg' },
         { name: 'Sass', icon: 'assets/tech/sass.svg' },
-        { name: 'Tailwind', icon: 'assets/tech/tailwind.svg' },
+        { name: 'Tailwind CSS', icon: 'assets/tech/tailwind.svg' },
+      ],
+    },
+    {
+      title: 'Backend & APIs',
+      size: 'wide',
+      techs: [
+        { name: 'Java', icon: 'assets/tech/java.svg' },
+        { name: 'Spring Boot', icon: 'assets/tech/spring.svg' },
+        { name: 'Node.js', icon: 'assets/tech/nodejs.svg' },
+        // { name: 'Spring Security', icon: 'assets/tech/spring.svg' },
+        // { name: 'Spring Data JPA', icon: 'assets/tech/spring.svg' },
+        { name: 'Hibernate', icon: 'assets/tech/hibernate.svg' },
+        { name: 'REST API', icon: 'assets/tech/restapi.svg' },
+      ],
+    },
+    {
+      title: 'Bases de Datos',
+      size: 'normal',
+      techs: [
+        { name: 'PostgreSQL', icon: 'assets/tech/postgresql.svg' },
+        { name: 'MySQL', icon: 'assets/tech/mysql.svg' },
       ],
     },
     {
@@ -55,23 +77,33 @@ export class TechnologiesComponent implements AfterViewInit {
       ],
     },
     {
-      title: 'UI / UX',
-      size: 'normal',
-      techs: [{ name: 'Figma', icon: 'assets/tech/figma.svg' }],
-    },
-    {
-      title: 'Herramientas',
+      title: 'DevOps & Tools',
       size: 'wide',
       techs: [
-        { name: 'VS Code', icon: 'assets/tech/vscode.svg' },
+        { name: 'Docker', icon: 'assets/tech/docker.svg' },
+        // { name: 'Docker Compose', icon: 'assets/tech/docker.svg' },
         { name: 'Git', icon: 'assets/tech/git.svg' },
-        { name: 'Sanity Headless', icon: 'assets/tech/sanity.svg' },
         { name: 'GitHub', icon: 'assets/tech/github.svg' },
-        { name: 'Node.js', icon: 'assets/tech/nodejs.svg' },
-        { name: 'Firebase', icon: 'assets/tech/firebase.svg' },
         { name: 'Vercel', icon: 'assets/tech/vercel.svg' },
-        { name: 'Notion', icon: 'assets/tech/notion.svg' },
-        { name: 'MySQL', icon: 'assets/tech/mysql.svg' },
+        { name: 'Firebase', icon: 'assets/tech/firebase.svg' },
+        { name: 'VS Code', icon: 'assets/tech/vscode.svg' },
+      ],
+    },
+    {
+      title: 'UI / UX',
+      size: 'normal',
+      techs: [
+        { name: 'Figma', icon: 'assets/tech/figma.svg' },
+        { name: 'Prototipado', icon: 'assets/tech/prototyping.svg' },
+        { name: 'Design System', icon: 'assets/tech/design-system.svg' },
+      ],
+    },
+    {
+      title: 'CMS & Contenido',
+      size: 'normal',
+      techs: [
+        { name: 'Sanity', icon: 'assets/tech/sanity.svg' },
+        { name: 'WordPress', icon: 'assets/tech/wordpress.svg' },
       ],
     },
     {
@@ -83,7 +115,8 @@ export class TechnologiesComponent implements AfterViewInit {
         { name: 'Astro', icon: 'assets/tech/astro.svg' },
         { name: 'Flutter', icon: 'assets/tech/flutter.svg' },
         { name: 'Ionic', icon: 'assets/tech/ionic.svg' },
-        { name: 'WordPress', icon: 'assets/tech/wordpress.svg' },
+        // { name: 'Kotlin', icon: 'assets/tech/kotlin.svg' },
+        { name: 'Notion', icon: 'assets/tech/notion.svg' },
       ],
     },
   ];

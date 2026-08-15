@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { ProjectDetailsComponent } from './pages/project-details/project-details.component';
 
 export const routes: Routes = [
   {
@@ -10,7 +9,11 @@ export const routes: Routes = [
   },
   {
     path: 'project/:slug',
-    component: ProjectDetailsComponent,
+    // Lazy loading: la página de detalle solo se descarga al navegar a un proyecto.
+    loadComponent: () =>
+      import('./pages/project-details/project-details.component').then(
+        (m) => m.ProjectDetailsComponent
+      ),
   },
   {
     path: '**',

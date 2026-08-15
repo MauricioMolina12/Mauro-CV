@@ -2,6 +2,28 @@ section {
   scroll-margin-top: 90px;
 }
 
+
+/* Placeholder del contacto (sección diferida). Reserva la altura para
+   evitar CLS cuando el contenido real reemplaza al placeholder. */
+.contact-placeholder {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  min-height: 950px;
+
+  &__block {
+    border-radius: 18px;
+    background: var(--gradient-card);
+    border: 1px solid var(--color-border-subtle);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: 0.85fr 1.15fr;
+    min-height: 560px;
+  }
+}
+
+
 /* Todas las secciones bajo el banner comparten el mismo ancho,
    el mismo espacio inline desde los bordes y la misma separación vertical */
 section:not(#home) {

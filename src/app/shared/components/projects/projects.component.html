@@ -17,9 +17,10 @@
         </div> -->
 
         <div class="slider" #carouselWrapper>
-            <div #card class="card" *ngFor="let card of cards">
+            @for (card of cards; track card.slug) {
+            <div #card class="card">
                 <div class="card-media">
-                    <img [src]="card.image" [alt]="card.title" loading="lazy">
+                    <img [src]="card.image" [alt]="card.title" loading="lazy" decoding="async">
                     <span class="card-type">{{ card.type }}</span>
                     <span class="card-badge card-dev" *ngIf="card.devMode">En desarrollo</span>
                     <span class="card-badge card-professional" *ngIf="card.ownership === 'professional'"
@@ -34,9 +35,11 @@
                     <p *ngIf="card.description">{{ card.description }}</p>
 
                     <div class="card-tech">
-                        <figure *ngFor="let tech of card.techs">
-                            <img [src]="tech.icon" [alt]="tech.name" [title]="tech.name" loading="lazy">
-                        </figure>
+                        @for (tech of card.techs; track tech.name) {
+                            <figure>
+                                <img [src]="tech.icon" [alt]="tech.name" [title]="tech.name" loading="lazy" decoding="async">
+                            </figure>
+                        }
                     </div>
 
                     <div class="card-actions" *ngIf="card.story || card.demo || card.repo">
@@ -71,6 +74,7 @@
                     </div>
                 </div>
             </div>
+            }
         </div>
     </div>
 </div>

@@ -1,6 +1,7 @@
-import { NgFor, NgIf } from '@angular/common';
+import { NgIf } from '@angular/common';
 import {
   AfterViewInit,
+  ChangeDetectionStrategy,
   Component,
   ElementRef,
   QueryList,
@@ -11,9 +12,10 @@ import { UtilsService } from '../../services/utils.service';
 @Component({
   selector: 'app-experiences',
   standalone: true,
-  imports: [NgFor, NgIf],
+  imports: [NgIf],
   templateUrl: './experiences.component.html',
   styleUrl: './experiences.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ExperiencesComponent implements AfterViewInit {
   @ViewChildren('item') items!: QueryList<ElementRef>;
@@ -22,26 +24,44 @@ export class ExperiencesComponent implements AfterViewInit {
 
   experiences = [
     {
-      company: 'Edutin Academy',
-      role: 'Frontend Developer',
-      time: 'Junio 2025 - Julio 2026',
-      logo: 'assets/logo-edutin.png',
+      company: 'Star Grow Studio',
+      role: 'Fundador & Ingeniero de Software',
+      time: '2025 - Actualidad',
+      logo: 'assets/stargrow.jpg',
       positions: [
         {
           title: '',
-          description: 'Lideré el desarrollo, mantenimiento y evolución de Edutin Business, Edutin Affiliate y Edutin Institutions, implementando nuevas funcionalidades y optimizaciones enfocadas en el rendimiento, la escalabilidad y la experiencia de usuario. Integré arquitecturas basadas en microfrontends con módulos desarrollados por otros equipos y gestioné la comunicación con servicios mediante APIs REST y GraphQL. Además, trabajé de forma colaborativa con los equipos de Diseño UI/UX, Comercial, Project Management y Backend para convertir requerimientos de negocio en soluciones técnicas de alta calidad, aplicando buenas prácticas de desarrollo y asegurando la evolución continua de las plataformas en producción.'
+          description: 'Como fundador de Star Grow Studio, lidero la creación y desarrollo de soluciones digitales para empresas y emprendimientos. Me encargo de transformar ideas y necesidades de negocio en productos digitales funcionales, modernos y escalables, participando en todo el proceso: análisis de requerimientos, definición de soluciones, arquitectura, desarrollo frontend y backend, integración de servicios, despliegue y mantenimiento.'
+        },
+        {
+          title: '',
+          description: 'Además de la parte técnica, participo en la gestión de proyectos, relación con clientes y toma de decisiones estratégicas, buscando combinar tecnología, diseño y visión de negocio para crear soluciones que generen valor real.'
         }
+      ],
+    },
+    {
+      company: 'Edutin Academy',
+      role: 'Frontend Developer',
+      time: 'Junio 2025 - Julio 2026',
+      logo: 'assets/logo-edutin.webp',
+      positions: [
+        {
+          title: '',
+          description:
+            'Lideré el desarrollo, mantenimiento y evolución de Edutin Business, Edutin Affiliate y Edutin Institutions, implementando nuevas funcionalidades y optimizaciones enfocadas en el rendimiento, la escalabilidad y la experiencia de usuario. Integré arquitecturas basadas en microfrontends con módulos desarrollados por otros equipos y gestioné la comunicación con servicios mediante APIs REST y GraphQL. Además, trabajé de forma colaborativa con los equipos de Diseño UI/UX, Comercial, Project Management y Backend para convertir requerimientos de negocio en soluciones técnicas de alta calidad, aplicando buenas prácticas de desarrollo y asegurando la evolución continua de las plataformas en producción.',
+        },
       ],
     },
     {
       company: 'Mercadatos',
       role: 'Desarrollador Frontend',
       time: 'Enero 2025 - Junio 2025',
-      logo: 'assets/mercadatos.jpg',
+      logo: 'assets/mercadatos.webp',
       positions: [
         {
           title: '',
-          description: 'Diseñé y desarrollé un nuevo sitio web corporativo de extremo a extremo, definiendo la experiencia e interfaz de usuario en Figma, validando propuestas con los equipos de marketing y dirección, e implementando la solución con Angular bajo una metodología Scrum, logrando una plataforma moderna, optimizada y alineada con los objetivos de negocio.'
+          description:
+            'Diseñé y desarrollé un nuevo sitio web corporativo de extremo a extremo, definiendo la experiencia e interfaz de usuario en Figma, validando propuestas con los equipos de marketing y dirección, e implementando la solución con Angular bajo una metodología Scrum, logrando una plataforma moderna, optimizada y alineada con los objetivos de negocio.',
         },
       ],
     },
@@ -49,11 +69,12 @@ export class ExperiencesComponent implements AfterViewInit {
       company: 'Edutin Academy',
       role: 'Frontend & Mobile Developer · Instructor',
       time: 'Mayo 2024  - Diciembre 2024',
-      logo: 'assets/logo-edutin.png',
+      logo: 'assets/logo-edutin.webp',
       positions: [
         {
           title: '',
-          description: 'Participé en el desarrollo y evolución de la aplicación móvil de Edutin utilizando Angular, Ionic y Kotlin, implementando nuevas funcionalidades que formaron parte de importantes lanzamientos del producto. Integré servicios mediante APIs REST y GraphQL, así como servicios de AWS, colaborando estrechamente con un equipo multidisciplinario bajo metodologías ágiles para entregar soluciones de alta calidad que contribuyeron a la mejora continua de la experiencia del usuario y al crecimiento de la plataforma.'
+          description:
+            'Participé en el desarrollo y evolución de la aplicación móvil de Edutin utilizando Angular, Ionic y Kotlin, implementando nuevas funcionalidades que formaron parte de importantes lanzamientos del producto. Integré servicios mediante APIs REST y GraphQL, así como servicios de AWS, colaborando estrechamente con un equipo multidisciplinario bajo metodologías ágiles para entregar soluciones de alta calidad que contribuyeron a la mejora continua de la experiencia del usuario y al crecimiento de la plataforma.',
         },
         {
           title: 'Instructor y diseñador de cursos',

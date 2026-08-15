@@ -29,7 +29,7 @@ export const PROJECTS: Project[] = [
     type: 'web',
     devMode: true,
     description: 'Mi propia plataforma de e-commerce, construida desde cero con Angular y pensada como un ecosistema modular. Incluye un servicio de autenticación independiente que centraliza el acceso a toda la plataforma, con foco en escalabilidad, arquitectura limpia y buenas prácticas.',
-    image: 'assets/projects/holnex/mockup.png',
+    image: 'assets/projects/holnex/mockup.webp',
     demo: 'https://holnex.com',
     repo: 'https://github.com/MauricioMolina12/holnex',
     techs: [TECHS['angular']],
@@ -37,7 +37,7 @@ export const PROJECTS: Project[] = [
       year: '2026',
       role: 'Fundador · Desarrollador Frontend · Diseñador UI/UX',
       client: 'Proyecto propio',
-      cover: 'assets/projects/holnex/mockup.png',
+      cover: 'assets/projects/holnex/mockup.webp',
       context: 'Holnex nace como un proyecto personal con una visión de largo plazo: construir mi propia plataforma de e-commerce, no como un ejercicio puntual, sino como un producto real capaz de crecer y sostener nuevos servicios con el tiempo. Es un espacio donde aplico, con total libertad y rigor, las decisiones técnicas y de arquitectura que considero correctas.',
       challenge: 'El principal reto no era mostrar productos en una pantalla, sino diseñar una base sólida y escalable desde el primer día. La autenticación es una responsabilidad transversal a todo el ecosistema, así que necesitaba resolverla de una forma que no acoplara el e-commerce a un único módulo y que permitiera, en el futuro, sumar nuevas aplicaciones bajo el mismo sistema de acceso.',
       solution: 'Tomé la decisión deliberada de separar la plataforma en proyectos independientes. Por un lado, el core del e-commerce (catálogo, detalle de producto, carrito). Por otro, un servicio de autenticación aparte (Holnex Auth) que centraliza el acceso a todo el ecosistema Holnex. Esta modularización desacopla responsabilidades, permite desplegar y evolucionar cada parte por separado, y prepara el terreno para escalar hacia una arquitectura de múltiples aplicaciones que comparten identidad. Cada pieza está desarrollada con Angular, cuidando la estructura del proyecto, la reutilización de componentes y la consistencia de la interfaz.',
@@ -49,10 +49,10 @@ export const PROJECTS: Project[] = [
         'Arquitectura modular y desacoplada, pensada para escalar a nuevas aplicaciones.',
       ],
       gallery: [
-        'assets/projects/holnex/product-detail.png',
-        'assets/projects/holnex/product-detail-2.png',
-        'assets/projects/holnex/shopcart.png',
-        'assets/projects/holnex/auth.png',
+        'assets/projects/holnex/product-detail.webp',
+        'assets/projects/holnex/product-detail-2.webp',
+        'assets/projects/holnex/shopcart.webp',
+        'assets/projects/holnex/auth.webp',
       ],
       links: [
         {
@@ -84,14 +84,14 @@ export const PROJECTS: Project[] = [
     type: 'web',
     description:
       'Diseño y desarrollo de un sitio web corporativo para una empresa de desarrollo de software, diseño y asesoría empresarial, con un enfoque en transmitir profesionalismo, destacar sus servicios y fortalecer su presencia digital.',
-    image: 'assets/projects/stargrowstudio/stargrowstudio.png',
+    image: 'assets/projects/stargrowstudio/stargrowstudio.webp',
     demo: 'https://stargrowstudio.com',
     techs: [TECHS['next'], TECHS['sanity']],
     story: {
       year: '2025',
       role: 'Frontend Developer & UI Designer',
       client: 'Star Grow Studio',
-      cover: 'assets/projects/stargrowstudio/stargrowstudio.png',
+      cover: 'assets/projects/stargrowstudio/stargrowstudio.webp',
       context:
         'Star Grow Studio es una empresa de desarrollo de software, diseño y asesoría empresarial fundada con el objetivo de impulsar la transformación digital de otras organizaciones. Durante sus primeros meses no contaba con una presencia digital que reflejara su propuesta de valor ni permitiera generar oportunidades comerciales.',
 
@@ -109,8 +109,8 @@ export const PROJECTS: Project[] = [
         'Diseño responsive con enfoque en rendimiento y experiencia de usuario.',
       ],
       gallery: [
-        'assets/projects/stargrowstudio/contact_form.png',
-        'assets/projects/stargrowstudio/section.png',
+        'assets/projects/stargrowstudio/contact_form.webp',
+        'assets/projects/stargrowstudio/section.webp',
       ],
       results: [
         'Presencia digital alineada con el posicionamiento premium de la marca.',
@@ -125,14 +125,14 @@ export const PROJECTS: Project[] = [
     type: 'web',
     description:
       'Desarrollo integral de identidad digital para una empresa multiservicios, incluyendo branding, diseño de propuesta comercial y desarrollo de un sitio web corporativo moderno y orientado a la captación de clientes.',
-    image: 'assets/projects/opera/opera.png',
+    image: 'assets/projects/opera/opera.webp',
     demo: 'https://operasas.com',
     techs: [TECHS['next']],
     story: {
       year: '2026',
       role: 'Frontend Developer & UI Designer',
       client: 'OPERA SAS',
-      cover: 'assets/projects/opera/opera.png',
+      cover: 'assets/projects/opera/opera.webp',
       context:
         'OPERA S.A.S. es una empresa multiservicios que necesitaba construir una identidad de marca sólida y una presencia digital capaz de transmitir profesionalismo, confianza y la diversidad de sus servicios. El proyecto abarcó desde la definición de la marca hasta el desarrollo de su ecosistema digital.',
 
@@ -151,10 +151,10 @@ export const PROJECTS: Project[] = [
       ],
 
       gallery: [
-        'assets/projects/opera/services.png',
-        'assets/projects/opera/table.png',
-        'assets/projects/opera/logo.jpg',
-        'assets/projects/opera/mockup.jpeg',
+        'assets/projects/opera/services.webp',
+        'assets/projects/opera/table.webp',
+        'assets/projects/opera/logo.webp',
+        'assets/projects/opera/mockup.webp',
       ],
 
       results: [
@@ -171,7 +171,7 @@ export const PROJECTS: Project[] = [
     type: 'web',
     description:
       'Plataforma corporativa de capacitación empresarial desarrollada con microfrontends en Angular, integrando autenticación centralizada, catálogo de cursos, gestión de grupos y reportes analíticos sobre AWS.',
-    image: 'assets/projects/edutin_b/edutin_b.png',
+    image: 'assets/projects/edutin_b/edutin_b.webp',
     techs: [
       TECHS['angular'],
       TECHS['typescript'],
@@ -187,7 +187,7 @@ export const PROJECTS: Project[] = [
       year: '2025 — 2026',
       role: 'Frontend Developer',
       client: 'Edutin Academy',
-      cover: 'assets/projects/edutin_b/edutin_b.png',
+      cover: 'assets/projects/edutin_b/edutin_b.webp',
       context:
         'Edutin Academy es una plataforma educativa con miles de estudiantes activos. Como parte de su evolución, la compañía identificó la necesidad de una solución independiente para el segmento corporativo: un producto que permitiera a empresas e instituciones gestionar programas de capacitación para sus equipos. El proyecto comenzó como un MVP y, durante mi participación, creció hasta convertirse en un módulo de producto con arquitectura propia dentro del ecosistema de Edutin.',
       challenge:
@@ -207,11 +207,11 @@ export const PROJECTS: Project[] = [
         'Componentes reutilizables con Angular CDK como base del Design System interno.',
       ],
       gallery: [
-        'assets/projects/edutin_b/edutin_b.png',
-        'assets/projects/edutin_b/catalog.png',
-        'assets/projects/edutin_b/groups.png',
-        'assets/projects/edutin_b/users.png',
-        'assets/projects/edutin_b/reports.png',
+        'assets/projects/edutin_b/edutin_b.webp',
+        'assets/projects/edutin_b/catalog.webp',
+        'assets/projects/edutin_b/groups.webp',
+        'assets/projects/edutin_b/users.webp',
+        'assets/projects/edutin_b/reports.webp',
       ],
       results: [
         'Arquitectura modular que permitió al equipo escalar el producto sin reescribir el shell principal.',
@@ -228,7 +228,7 @@ export const PROJECTS: Project[] = [
     type: 'web',
     description:
       'Sistema de afiliación para Edutin Academy que permite a usuarios promocionar cursos, gestionar comisiones y acceder a métricas de rendimiento en tiempo real mediante una arquitectura Angular con microfrontends.',
-    image: 'assets/projects/edutin_a/edutin_a.png',
+    image: 'assets/projects/edutin_a/edutin_a.webp',
     techs: [
       TECHS['angular'],
       TECHS['typescript'],
@@ -244,7 +244,7 @@ export const PROJECTS: Project[] = [
       year: '2025 — 2026',
       role: 'Frontend Developer',
       client: 'Edutin Academy',
-      cover: 'assets/projects/edutin_a/edutin_a.png',
+      cover: 'assets/projects/edutin_a/edutin_a.webp',
       context:
         'Edutin Academy necesitaba un canal de crecimiento orientado a afiliados: personas que promocionan cursos a cambio de comisiones por cada inscripción generada. El producto exigía una plataforma autónoma con panel de control, estadísticas en tiempo real y gestión de pagos, todo integrado al ecosistema principal de Edutin sin afectar su operación. Me incorporé al equipo para desarrollar los módulos core del frontend desde las primeras etapas del proyecto.',
       challenge:
@@ -264,10 +264,10 @@ export const PROJECTS: Project[] = [
         'Optimización de rendimiento con ChangeDetectionStrategy OnPush y trackBy en listados.',
       ],
       gallery: [
-        'assets/projects/edutin_a/edutin_a.png',
-        'assets/projects/edutin_a/metrics.png',
-        'assets/projects/edutin_a/request.png',
-        'assets/projects/edutin_a/resources.png',
+        'assets/projects/edutin_a/edutin_a.webp',
+        'assets/projects/edutin_a/metrics.webp',
+        'assets/projects/edutin_a/request.webp',
+        'assets/projects/edutin_a/resources.webp',
       ],
       results: [
         'Plataforma autónoma de afiliados operando como microfrontend sin afectar el shell principal de Edutin.',
@@ -278,23 +278,23 @@ export const PROJECTS: Project[] = [
       ],
     },
   },
-  {
-    title: 'App Edutin Academy',
-    slug: 'app-edutin-academy',
-    type: 'mobile',
-    description:
-      'Aplicación móvil de Edutin Academy desarrollada con Angular e Ionic. Trabajé en interfaces intuitivas y responsivas, alineadas con la experiencia web de la plataforma.',
-    image: 'assets/projects/appedutin.png',
-    demo: 'https://play.google.com/store/apps/details?id=com.edutin.app&hl=es_CO',
-    techs: [TECHS['ionic']],
-  },
+  // {
+  //   title: 'App Edutin Academy',
+  //   slug: 'app-edutin-academy',
+  //   type: 'mobile',
+  //   description:
+  //     'Aplicación móvil de Edutin Academy desarrollada con Angular e Ionic. Trabajé en interfaces intuitivas y responsivas, alineadas con la experiencia web de la plataforma.',
+  //   image: 'assets/projects/appedutin.webp',
+  //   demo: 'https://play.google.com/store/apps/details?id=com.edutin.app&hl=es_CO',
+  //   techs: [TECHS['ionic']],
+  // },
   {
     title: 'Mercadatos',
     slug: 'mercadatos',
     type: 'web',
     description:
       'Desarrollo de un sitio web corporativo durante mi etapa de prácticas profesionales, enfocado en fortalecer la presencia digital de la empresa. El proyecto incluyó el diseño y desarrollo de una plataforma moderna, optimizada para presentar sus servicios, mejorar la experiencia de navegación y proyectar una imagen profesional de la marca.',
-    image: 'assets/projects/mercadatos.png',
+    image: 'assets/projects/mercadatos.webp',
     repo: 'https://github.com/MauricioMolina12/mercadatos',
     techs: [TECHS['angular']],
     demo: 'https://mercadatos.vercel.app/'
@@ -305,7 +305,7 @@ export const PROJECTS: Project[] = [
     type: 'web',
     description:
       'Proyecto universitario: sistema de renta de autos donde cada vehículo cuenta con sus propias características y disponibilidad.',
-    image: 'assets/projects/rentago.jpg',
+    image: 'assets/projects/rentago.webp',
     repo: 'https://github.com/Samue2408/Reserva_Vehiculos',
     techs: [TECHS['angular'], TECHS['nodejs']],
   },
@@ -315,7 +315,7 @@ export const PROJECTS: Project[] = [
     type: 'web',
     description:
       'Plataforma universitaria para la gestión de las actividades de los profesores, con control de tareas, horarios y responsabilidades.',
-    image: 'assets/projects/unilibre.png',
+    image: 'assets/projects/unilibre.webp',
     repo: 'https://github.com/MauricioMolina12/ClassroomProject',
     techs: [TECHS['html5'], TECHS['css3'], TECHS['javascript']],
   },
@@ -325,7 +325,7 @@ export const PROJECTS: Project[] = [
     type: 'web',
     description:
       'Software que implementa el método simplex para resolver problemas de programación lineal, mostrando paso a paso la solución óptima.',
-    image: 'assets/projects/PL-software.png',
+    image: 'assets/projects/PL-software.webp',
     repo: 'https://github.com/MauricioMolina12/metodo-simplex',
     techs: [TECHS['vue']],
   },
@@ -344,7 +344,7 @@ export const PROJECTS: Project[] = [
   //   slug: 'mm-cake-shop',
   //   type: 'design',
   //   description: 'Diseño UI/UX de una tienda de repostería, creado en Figma.',
-  //   image: 'assets/projects/m&m.png',
+  //   image: 'assets/projects/m&m.webp',
   //   techs: [TECHS['figma']],
   // },
   // {
@@ -353,7 +353,7 @@ export const PROJECTS: Project[] = [
   //   type: 'design',
   //   description:
   //     'Concepto de app para el cuidado y mantenimiento de vehículos, diseñado en Figma.',
-  //   image: 'assets/projects/vehicleCare.png',
+  //   image: 'assets/projects/vehicleCare.webp',
   //   techs: [TECHS['figma']],
   // },
   // {
@@ -362,7 +362,7 @@ export const PROJECTS: Project[] = [
   //   type: 'design',
   //   description:
   //     'Diseño de una app de comida a domicilio, prototipado en Figma.',
-  //   image: 'assets/projects/food.png',
+  //   image: 'assets/projects/food.webp',
   //   techs: [TECHS['figma']],
   // },
 ];

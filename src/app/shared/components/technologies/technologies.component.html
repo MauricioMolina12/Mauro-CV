@@ -1,21 +1,25 @@
 <div class="tech-wrapper">
   <div class="section-head">
     <span class="eyebrow">STACK</span>
-    <h2>Tecnologías que domino</h2>
-    <p>Un vistazo a las herramientas y tecnologías con las que trabajo a diario.</p>
+    <h2>Stack tecnológico</h2>
+    <p>Un vistazo a las herramientas y tecnologías con las que construyo productos digitales.</p>
   </div>
 
   <div class="bento">
-    <div class="tech-cat" #cat *ngFor="let category of categories" [class.wide]="category.size === 'wide'">
-      <h3>{{ category.title }}</h3>
-      <div class="tech-grid">
-        <div class="tech" *ngFor="let tech of category.techs">
-          <span class="avatar">
-            <img [src]="tech.icon" [alt]="tech.name" loading="lazy" />
-          </span>
-          <span class="tech-name">{{ tech.name }}</span>
+    @for (category of categories; track category.title) {
+      <div class="tech-cat" #cat [class.wide]="category.size === 'wide'">
+        <h3>{{ category.title }}</h3>
+        <div class="tech-grid">
+          @for (tech of category.techs; track tech.name) {
+            <div class="tech">
+              <span class="avatar">
+                <img [src]="tech.icon" [alt]="tech.name" loading="lazy" decoding="async" />
+              </span>
+              <span class="tech-name">{{ tech.name }}</span>
+            </div>
+          }
         </div>
       </div>
-    </div>
+    }
   </div>
 </div>
